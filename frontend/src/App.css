@@ -1,0 +1,37 @@
+:root{
+  /* root colors */
+  --btn-color: #143423;
+  --btn-color-hover: #1e5e3f;
+  --btn-color-active: #1e5e3f;
+  --btn-color-disabled: #a0a0a0;
+  --btn-color-disabled-hover: #a0a0a0;
+  --btn-color-disabled-active: #a0a0a0;
+
+  --btn-text-color: #ffffff;
+  --btn-text-color-hover: #ffffff;
+  --btn-text-color-active: #ffffff;
+  --btn-text-color-disabled: #ffffff;
+  --btn-text-color-disabled-hover: #ffffff;
+  --btn-text-color-disabled-active: #ffffff;
+
+  --btn-border-color: #143423;
+  --btn-border-color-hover: #1e5e3f;
+  --btn-border-color-active: #1e5e3f;
+  --btn-border-color-disabled: #a0a0a0;
+
+  /* navbar colors */
+  --navbar-bg-color: #e4b687;
+  --navbar-text-color: #ffffff;
+  --navbar-text-color-hover: #ffffff;
+  --navbar-text-color-active: #ffffff;
+  --navbar-text-color-disabled: #ffffff;
+  --navbar-text-color-disabled-hover: #ffffff;
+  --navbar-text-color-disabled-active: #ffffff;
+  --navbar-border-color: #e4b687;
+
+  /* footer colors */
+  --footer-bg-color: #d2878b;
+
+ /* text colors */
+ 
+}
