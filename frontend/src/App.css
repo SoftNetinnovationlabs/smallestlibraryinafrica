@@ -35,3 +35,20 @@
  /* text colors */
  
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+  background-color: var(--btn-color);
+  color: var(--btn-text-color);
+  border: 1px solid var(--btn-border-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
