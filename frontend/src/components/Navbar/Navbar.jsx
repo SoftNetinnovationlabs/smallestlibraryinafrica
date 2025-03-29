@@ -10,29 +10,29 @@ function Navbar() {
           <nav className="navbar">
             <ul className="nav-links">
               <li className="links">
-                <a href="HOME" className="link">
+                <Link to="/" className="link">
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="links">
-                <a href="ABOUT US" className="link">
+                <Link to="/about" className="link">
                   ABOUT US
-                </a>
+                </Link>
               </li>
               <li className="links">
-                <a href="OUR WORK" className="link">
+                <Link to="/our-work" className="link">
                   OUR WORK
-                </a>
+                </Link>
               </li>
               <li className="links">
-                <a href="OUR IMPACT" className="link">
+                <Link to="/our-impact" className="link">
                   OUR IMPACT
-                </a>
+                </Link>
               </li>
               <li className="links">
-                <a href="GET INVOLVED" className="link">
+                <Link to="/regiter" className="link">
                   GET INVOLVED
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

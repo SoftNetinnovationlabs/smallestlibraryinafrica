@@ -1,0 +1,11 @@
+footer{
+    background-color: var(--footer-bg-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Set the height of the footer */
+    line-height: 50px; /* Set the line-height to match the height */
+}
