@@ -30,7 +30,7 @@ function Navbar() {
                 </Link>
               </li>
               <li className="links">
-                <Link to="/regiter" className="link">
+                <Link to="/register" className="link">
                   GET INVOLVED
                 </Link>
               </li>

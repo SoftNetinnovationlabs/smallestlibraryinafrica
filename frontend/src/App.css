@@ -30,10 +30,10 @@
   --navbar-border-color: #e4b687;
 
   /* footer colors */
-  --footer-bg-color: #d2878b;
+  --footer-bg-color: #011627;
 
  /* text colors */
- 
+ --text-color: #ba181b;
 }
 *{
   margin: 0;
@@ -51,4 +51,35 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--text-color);
+}
+h1{
+  font-size: 3rem;
+}
+@media screen and (max-width: 768px) {
+  h1{
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1{
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  h1{
+    font-size: 1rem;
+  }
+  
+}
+.btn:hover{
+  background-color: var(--btn-color-hover);
+  color: var(--btn-text-color-hover);
+  border: 1px solid var(--btn-border-color-hover);
+}
+.btn:active{
+  background-color: var(--btn-color-active);
+  color: var(--btn-text-color-active);
 }
