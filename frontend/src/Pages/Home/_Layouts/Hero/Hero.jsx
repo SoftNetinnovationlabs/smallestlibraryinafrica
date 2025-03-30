@@ -12,10 +12,10 @@ const Hero = () => {
           <p className="hero__description">
             Lighting Up Sustainable Opportunities for children and youths{" "}
           </p>
-          <p>
+          {/* <p>
             <span className="hero__highlight">Discover</span> your next
             opportunity to contribute to the fight against poverty.
-          </p>
+          </p> */}
           <Link to="/about" className="hero__button btn">
             Learn More
           </Link>

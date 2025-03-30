@@ -1,5 +1,6 @@
 import React from "react";
 import "./Vision.css";
+import { assets } from "../../../../assets/assets";
 const Vision = () => {
   return (
     <div className="vision">
@@ -20,7 +21,7 @@ const Vision = () => {
       <div className="vision__images">
         <div className="vision__image">
           {" "}
-          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="vision1" />
+          <img src={assets.childrenModel} alt="vision1" />
         </div>
         <div className="vision__image">
           {" "}
