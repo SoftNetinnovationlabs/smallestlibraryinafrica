@@ -89,3 +89,8 @@ h1{
   background-color: var(--btn-color-active);
   color: var(--btn-text-color-active);
 }
+p{
+  color: rgb(4, 5, 63);
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+}

@@ -33,6 +33,9 @@ const TheNeed = () => {
           <div className="description">
             <div className="img">
               <img src={assets.image3} alt="" />
+              <div className="overlay_text">
+                <p style={{color: "white"}}>aerial view of Mugure Slums</p>
+              </div>
             </div>
           </div>
         </div>
