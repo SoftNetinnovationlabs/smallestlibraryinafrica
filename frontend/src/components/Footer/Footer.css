@@ -1,7 +1,7 @@
 footer{
     background-color: var(--footer-bg-color);
+    min-height: 20vh; /* Set a minimum height for the footer */
     color: white;
-    padding: 20px;
     text-align: center;
     font-size: 14px;
     bottom: 0;

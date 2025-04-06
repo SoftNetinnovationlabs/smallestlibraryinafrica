@@ -9,7 +9,7 @@ function Footer() {
       <div className="footer-container">
 
       </div>
-      <div className="copy">&copy; - All rights reserved</div>
+      <div className="copy">&copy; {new Date().getFullYear()} smallest library in Africa. All rights reserved</div>
     </footer>
     </>
   )
