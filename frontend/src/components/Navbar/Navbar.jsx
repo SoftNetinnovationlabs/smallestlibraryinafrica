@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <header>
       <div className="header_container">
-        <div className="logo">logo</div>
+        <div className="logo"><Link to={'/'}>logo</Link></div>
 
         <nav className={`navbar ${isOpen ? "open" : ""}`}>
           {isOpen && (
