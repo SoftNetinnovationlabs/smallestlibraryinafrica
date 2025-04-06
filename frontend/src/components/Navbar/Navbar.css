@@ -8,6 +8,7 @@ header{
     z-index: 1;
     padding: 2rem 2rem;
     position: fixed;
+    max-height: 30px;
 }
 .header_container{
     display: flex;
@@ -41,4 +42,61 @@ header{
 .nav-links a:hover{
     color: var(--navbar-text-color-hover);
 }
+.menu{
+    display: none;
+}
 
+@media screen and (max-width: 768px) {
+    .navbar{
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        background-color: var(--navbar-bg-color);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: left;
+    }
+    .navbar.open{
+        display: flex;
+    }
+    .nav-links{
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    
+    .nav-links li{
+        margin: 1rem 0;
+    }
+    .menu{
+        display: block;
+        cursor: pointer;
+    }
+    .menu-icon{
+        font-size: 2rem;
+        color: var(--navbar-text-color);
+    }
+    .navbar.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .close,.menu{
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        Font-size: 2rem;
+    }
+
+    .nav_btn{
+        display: none;
+    }
+}
