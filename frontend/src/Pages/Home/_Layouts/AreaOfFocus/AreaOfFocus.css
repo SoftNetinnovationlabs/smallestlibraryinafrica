@@ -2,6 +2,10 @@
     padding: 100px 0;
     width: 98%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Area__focus_container{
@@ -57,4 +61,31 @@ text-align: center;
     justify-content: center;
     align-items: center;
     max-width: 20%;
+    text-decoration: none;
+}
+
+.arrow{
+    width: 60px;
+    font-size: 30px;
+    height:60px;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.arrow:hover{
+    background-color: hsla(0, 88%, 27%);
+    animation: moveLeft 0.5s linear forwards;
+}
+
+@keyframes moveLeft {
+    from{
+        transform:translate(0px);
+    }
+    to{
+        transform: translate(10px);
+    }
 }

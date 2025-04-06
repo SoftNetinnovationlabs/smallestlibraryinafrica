@@ -37,7 +37,6 @@ const AreaOfFocus = () => {
               schooling levels.Furthermore, we also promote access to clean
               water to schools and communities in informal settlements
             </p>
-            <Link to="/about" className="btn icons_btn"><span className="material-symbols-outlined">arrow_right_alt</span></Link>
 
           </div>
         </div>
@@ -55,6 +54,8 @@ const AreaOfFocus = () => {
           </div>
         </div>
       </div>
+                   <Link to="/about" className=" icons_btn"><span className="material-symbols-outlined arrow">arrow_right_alt</span></Link> 
+
     </div>
   );
 };
