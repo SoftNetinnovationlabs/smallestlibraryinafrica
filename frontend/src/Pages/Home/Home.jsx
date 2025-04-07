@@ -4,6 +4,8 @@ import TheNeed from "./_Layouts/TheNeed/TheNeed.jsx";
 import Hero from "./_Layouts/Hero/Hero.jsx";
 import Display from "./_Layouts/Display/Display";
 import AreaOfFocus from "./_Layouts/AreaOfFocus/AreaOfFocus.jsx";
+import Vision2 from './_Layouts/Vision2/Vision2'
+
 const Home = () => {
   return (
     <div>
@@ -12,6 +14,7 @@ const Home = () => {
       <TheNeed />
       <AreaOfFocus />
       <Display />
+      <Vision2 />
     </div>
   );
 };

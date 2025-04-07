@@ -6,6 +6,7 @@ import image3 from './IMG-0246.webp'
 import image4 from './IMG-0184.webp'
 import image5 from './IMG-0152.webp'
 import image6 from './IMG-0103.webp'
+import collague from './collague.jpeg'
 export const assets = {
     childrenModel,
     education,
@@ -14,6 +15,7 @@ export const assets = {
     image3,
     image4,
     image5,
-    image6
+    image6,
+    collague
 
 };
