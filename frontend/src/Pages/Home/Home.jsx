@@ -5,7 +5,8 @@ import Hero from "./_Layouts/Hero/Hero.jsx";
 import Display from "./_Layouts/Display/Display";
 import AreaOfFocus from "./_Layouts/AreaOfFocus/AreaOfFocus.jsx";
 import Vision2 from './_Layouts/Vision2/Vision2'
-
+import Partners from "./_Layouts/Partners/Partners.jsx";
+import CoreValues from "./_Layouts/CoreValues/CoreValues.jsx";
 const Home = () => {
   return (
     <div>
@@ -13,8 +14,10 @@ const Home = () => {
       <Vision />
       <TheNeed />
       <AreaOfFocus />
-      <Display />
+  <Display />
       <Vision2 />
+      <CoreValues />
+      <Partners />
     </div>
   );
 };

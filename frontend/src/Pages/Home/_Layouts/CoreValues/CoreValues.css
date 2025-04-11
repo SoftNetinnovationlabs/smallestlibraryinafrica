@@ -1,0 +1,15 @@
+.core-values{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.values-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+
+}

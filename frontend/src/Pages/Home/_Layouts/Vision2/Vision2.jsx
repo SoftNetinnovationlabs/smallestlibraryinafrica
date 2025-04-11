@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { assets } from '../../../../assets/assets';
 import './Vision2.css';
+import {Link} from 'react-router-dom'
 
 const Vision2 = () => {
   const [toggleData, setToggleData] = useState('vision');
@@ -52,6 +53,7 @@ const Vision2 = () => {
             {toggleData === 'mission' && (
               <div className='vision__mission'>
                 <p>{visionMissionDataSet.mission}</p>
+                <div style={{marginTop: '20px'}}><Link to='/our-programs' className='btn'>Our programs</Link></div>
               </div>
             )}
           </section>

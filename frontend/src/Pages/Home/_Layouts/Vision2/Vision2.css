@@ -41,6 +41,19 @@
   
   .vision2__content  ul li span.active {
     color: orangered;
+    /* background: hsla(0, 90%, 5%); */
     border-bottom: 2px solid orangered;
+    transition
   }
+
+
+  .vision__mission{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 20px;
+  }
+  .visionMission__sect .vision__mision p{
+    margin-bottom: 20px;
+   }
   
