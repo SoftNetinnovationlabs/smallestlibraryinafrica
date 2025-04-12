@@ -5,6 +5,20 @@ import { assets } from "../../../../assets/assets";
 const Partners = () => {
   const logos = [
     assets.softNetLogo,
+    assets.Vayacom,
+    assets.t4b,
+    assets.safaricom,
+    assets.Vayacom,
+    assets.t4b,
+    assets.softNetLogo,
+    assets.Vayacom,
+    assets.safaricom,
+
+
+
+
+
+
    
   ];
 

@@ -8,7 +8,12 @@ import image5 from './IMG-0152.webp'
 import image6 from './IMG-0103.webp'
 import collague from './collague.jpeg'
 import softNetLogo from './softnet.jpg'
+import Vayacom from './vayacomrm.png'
+import t4b from './t4b.png'
+import safaricom from './saf.jpeg'
 export const assets = {
+    t4b,
+    safaricom,
     childrenModel,
     education,
     image1,
@@ -19,5 +24,6 @@ export const assets = {
     image6,
     collague,
     softNetLogo,
+    Vayacom,
 
 };
