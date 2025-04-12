@@ -1,24 +1,30 @@
 import React from 'react';
 import './CoreValues.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHeart, faLightbulb, faPeopleGroup, faStar} from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faLightbulb, faPeopleGroup, faStar,faGlobe} from '@fortawesome/free-solid-svg-icons';
+
+import {FaHandsHelping} from 'react-icons/fa'
 const CoreValues = () => {
     const values = [
-        {   icon: faHeart,
-            title: 'Integrity',
-            description: 'We uphold the highest standards of integrity in all our actions.',
-        },
         {   icon: faLightbulb,
-            title: 'Innovation',
-            description: 'We strive to bring new ideas and creative solutions to the table.',
+            title: 'Striving for Excellence',
+            description: 'In every work we do we commit our best efforts',
         },
-        {   icon: faPeopleGroup,
-            title: 'Community',
-            description: 'We are committed to building a strong and supportive community.',
+        {   icon: faHeart,
+            title: 'Empathy',
+            description: 'We see our work  from the perspective of our target beneficiaries',
         },
-        {   icon: faStar,
-            title: 'Excellence',
-            description: 'We aim for excellence in everything we do.',
+        {   icon:  faPeopleGroup,
+            title: 'Compassion',
+            description: 'We are committed to relieve hopelessness of every individual through our approaches',
+        },
+        {   icon: faGlobe,
+            title: 'Diversity',
+            description: 'We are committed to embracing everyone regardless of their region, race economice background and gender',
+        },
+         {   icon: FaHandsHelping,
+            title: 'Team Work',
+            description: 'We believe that greater change comes when we work together',
         },
     ];
 

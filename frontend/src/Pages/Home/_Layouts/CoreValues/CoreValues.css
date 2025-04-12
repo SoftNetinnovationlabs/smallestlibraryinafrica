@@ -11,5 +11,36 @@
     flex-wrap: wrap;
     width: 80%;
     margin: auto;
+    gap: 20px;
+    justify-content: center;
 
+}
+
+.value-item{
+    flex: 1 1 240px; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 300px; /* Optional: limit the maximum width of each item */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.value-icon{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Change this to your desired color */
+    transition: transform 0.3s ease; /* Animation on hover */
+}
+.value-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.value-description{
+    font-size: 16px;
+}   
+.value-item:hover .value-icon{
+    transform: scale(1.2); /* Scale up the icon on hover */
 }

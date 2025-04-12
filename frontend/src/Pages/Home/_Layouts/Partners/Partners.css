@@ -1,0 +1,15 @@
+.trusted-container {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 20px;
+    filter: grayscale(95%);
+    backdrop-filter: blur(5px);
+  }
+  
