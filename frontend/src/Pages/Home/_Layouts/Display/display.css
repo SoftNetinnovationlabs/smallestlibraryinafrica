@@ -8,9 +8,13 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    align-items: center;
 }
 .display__content{
     flex:1 1 250px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
 .display__image{
     width: 300px;

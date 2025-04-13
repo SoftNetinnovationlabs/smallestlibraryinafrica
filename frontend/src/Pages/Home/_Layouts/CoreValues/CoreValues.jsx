@@ -1,7 +1,7 @@
 import React from 'react';
 import './CoreValues.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faHeart, faLightbulb, faPeopleGroup, faStar,faGlobe} from '@fortawesome/free-solid-svg-icons';
+import {faHeart, faLightbulb,faPeopleGroup, faStar,faGlobe, faHands} from '@fortawesome/free-solid-svg-icons';
 
 import {FaHandsHelping} from 'react-icons/fa'
 const CoreValues = () => {
@@ -22,7 +22,7 @@ const CoreValues = () => {
             title: 'Diversity',
             description: 'We are committed to embracing everyone regardless of their region, race economice background and gender',
         },
-         {   icon: FaHandsHelping,
+        {   icon: faHands,
             title: 'Team Work',
             description: 'We believe that greater change comes when we work together',
         },

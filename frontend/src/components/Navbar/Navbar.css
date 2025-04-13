@@ -9,6 +9,7 @@ header{
     padding: 2rem 2rem;
     position: fixed;
     max-height: 30px;
+    z-index: 1000;
 }
 .header_container{
     display: flex;

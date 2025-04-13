@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.area_of_focus h1{
+    margin-bottom: 20px;
+}
+
 .Area__focus_container{
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +20,7 @@
     align-items: center;
 }
 .area__focus{
-    flex: 1 1 200px;
+    flex: 1 1 250px;
     text-align: center;
 }
 .area__focus .body p{
@@ -69,7 +73,7 @@ text-align: center;
     font-size: 30px;
     height:60px;
     border-radius: 50%;
-    background-color: red;
+    background-color: var(--btn-color-hover);
     display: flex;
     justify-content: center;
     align-items: center;

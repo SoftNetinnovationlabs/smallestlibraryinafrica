@@ -28,3 +28,9 @@ footer{
     color: #fff;
     text-decoration: none;
 }
+
+.footer__content .footer__links .footer__link a:hover{
+    color: red;
+    cursor: pointer;
+}
+

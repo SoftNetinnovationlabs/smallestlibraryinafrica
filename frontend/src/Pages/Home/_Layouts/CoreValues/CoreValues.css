@@ -30,7 +30,7 @@
 .value-icon{
     font-size: 50px;
     margin-bottom: 10px;
-    color: #4CAF50; /* Change this to your desired color */
+    color: var(--btn-color-hover);
     transition: transform 0.3s ease; /* Animation on hover */
 }
 .value-title{

@@ -13,14 +13,22 @@ function Footer() {
       <div className='footer__content'>
         <h2>Quick Links</h2>
   <ul className='footer__links'>
-    <li className='footer__link'><Link className='link'>Home</Link></li>
-    <li className='footer__link'><Link className='link'>About</Link></li>
-    <li className='footer__link'><Link className='link'>Contact Us</Link></li>
-    <li className='footer__link'><Link className='link'>Our Impact</Link></li>
+    <li className='footer__link'><Link className='link' to='/'>Home</Link></li>
+    <li className='footer__link'><Link className='link' to='/about'>About</Link></li>
+    <li className='footer__link'><Link className='link' to='/contact'>Contact Us</Link></li>
+    <li className='footer__link'><Link className='link' to='/our-impact'>Our Impact</Link></li>
   </ul>
       </div>
       <div className='footer__content'></div>
-      <div className='footer__content'></div>
+      <div className='footer__content'>
+      <h2>More</h2>
+  <ul className='footer__links'>
+    <li className='footer__link'><Link className='link' to='/'>Innovation Center</Link></li>
+    <li className='footer__link'><Link className='link' to='/signup'>Get Involved</Link></li>
+    <li className='footer__link'><Link className='link' to='/contact'>Contact Us</Link></li>
+    <li className='footer__link'><Link className='link' to='/our-impact'>Our Impact</Link></li>
+  </ul>
+      </div>
 
       </div>
       <div className="copy">&copy; {new Date().getFullYear()} smallest library in Africa. All rights reserved</div>
