@@ -7,6 +7,7 @@ import AreaOfFocus from "./_Layouts/AreaOfFocus/AreaOfFocus.jsx";
 import Vision2 from './_Layouts/Vision2/Vision2'
 import Partners from "./_Layouts/Partners/Partners.jsx";
 import CoreValues from "./_Layouts/CoreValues/CoreValues.jsx";
+import Counter from './_Layouts/Counter/Counter'
 const Home = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const Home = () => {
   <Display />
       <Vision2 />
       <CoreValues />
+      <Counter />
       <Partners />
     </div>
   );

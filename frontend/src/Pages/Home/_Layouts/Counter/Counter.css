@@ -1,0 +1,24 @@
+.counter{
+    padding: 50px 0;
+}
+.counter__container{
+    width: 80%;;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.count__content{
+    text-align: center;
+
+}
+.count__content p{
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: 800;
+}
+ 
