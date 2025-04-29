@@ -1,5 +1,7 @@
 import React from "react";
 import "./Story.css";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Story = () => {
   return (
     <div>
@@ -12,6 +14,7 @@ const Story = () => {
             days a week from 5:30pm-7:30pm and would remain closed during the
             short and long rains
           </p>
+         
         </div>
         <div className="story__content">
           <p>
@@ -20,6 +23,7 @@ const Story = () => {
             school going children who could now access books and conducive
             learning space , something that seemed impossible.
           </p>
+         
         </div>
         <div className="story__content">
           <p>
@@ -28,6 +32,7 @@ const Story = () => {
             saw this and believed that he could inspire his community to change
             their narrative from impossibilities to possibilities.
           </p>
+         
         </div>
         <div className="story__content">
           <p>
@@ -38,6 +43,7 @@ const Story = () => {
             communities. All this has been made possible as we try to blend
             technology in designing and implementing our solutions
           </p>
+
         </div>
       </div>
       <section className="about__container">
@@ -49,6 +55,9 @@ const Story = () => {
               We are a team of passionate individuals who are committed to
               creating a better future for children and youths in Africa
             </p>
+            <Link className="link" to="/about/our-people">
+          <FaArrowRight />
+          </Link>
           </div>
         </div>
         <div className="about__card">
@@ -59,6 +68,9 @@ const Story = () => {
               Our founder is a young entrepreneur who is passionate about
               creating a better future for children and youths in Africa
             </p>
+            <Link className="link" to="/about/founder">
+          <FaArrowRight />
+          </Link>
           </div>
         </div>
         <div className="about__card">
@@ -70,6 +82,9 @@ const Story = () => {
               are committed to creating a better future for children and youths
               in Africa
               </p>
+              <Link className="link" to="/about/board-of-directors">
+          <FaArrowRight />
+          </Link>
           </div>
         </div>
       </section>
