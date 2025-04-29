@@ -40,6 +40,39 @@ const Story = () => {
           </p>
         </div>
       </div>
+      <section className="about__container">
+        <div className="about__card">
+          <div className="about__content">
+            <h4>Our people</h4>
+            <p>
+              {" "}
+              We are a team of passionate individuals who are committed to
+              creating a better future for children and youths in Africa
+            </p>
+          </div>
+        </div>
+        <div className="about__card">
+          <div className="about__content">
+            <h4>Our Founder</h4>
+            <p>
+              {" "}
+              Our founder is a young entrepreneur who is passionate about
+              creating a better future for children and youths in Africa
+            </p>
+          </div>
+        </div>
+        <div className="about__card">
+          <div className="about__content">
+            <h4>Our board of directors</h4>
+            <p>
+              {" "}
+              Our board of directors is made up of experienced professionals who
+              are committed to creating a better future for children and youths
+              in Africa
+              </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
