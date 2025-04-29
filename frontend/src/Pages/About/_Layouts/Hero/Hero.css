@@ -1,3 +1,13 @@
+.hero_bg{
+  background-image: url(../../../../assets/overlapping_circles-1745936096581.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .hero-container {
   min-height: 100vh;
   position: relative;
