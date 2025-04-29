@@ -1,0 +1,24 @@
+.story__container{
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: justify;
+}
+
+.story__container__title{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+.story__content p{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    
+}

@@ -5,8 +5,8 @@ const Hero = () => {
   return (
 
     <div>
-      <div className="hero_bg">
-        <div className="heading" style={{ color: "white", fontSize: "50px", paddingLeft: '10px' }}>About Us</div>
+      <div className="hero__bg">
+        <div style={{ color: "white", fontSize: "50px", paddingLeft: '10px' }}>About Us</div>
       </div>
       <div className="hero-container">
         <div className="two_images-top-left">
