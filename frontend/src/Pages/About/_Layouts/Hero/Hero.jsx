@@ -14,12 +14,14 @@ const Hero = () => {
         </div>
 
 <div className="text__center">
-  <div className="text__description">
+  <div className="c">
     <div className="heading">
       <h1></h1>
     </div>
     <div className="paragraph">
-
+<p>
+      We are a non-profit organization dedicated to providing educational resources and support to underprivileged children in India. We believe that education is the key to breaking the cycle of poverty and creating a better future for these children and their families.
+</p>
     </div>
 <div className="btns">
   <button className="btn">Get Involved</button>
