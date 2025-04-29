@@ -41,9 +41,7 @@
   
   .vision2__content  ul li span.active {
     color: orangered;
-    /* background: hsla(0, 90%, 5%); */
     border-bottom: 2px solid orangered;
-    transition
   }
 
 
