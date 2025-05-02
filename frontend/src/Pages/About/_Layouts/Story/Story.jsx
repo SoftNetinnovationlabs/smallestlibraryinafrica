@@ -87,6 +87,20 @@ const Story = () => {
           </Link>
           </div>
         </div>
+        <div className="about__card">
+          <div className="about__content">
+            <h4>Our Staff</h4>
+            <p>
+              {" "}
+              Our board of directors is made up of experienced professionals who
+              are committed to creating a better future for children and youths
+              in Africa
+              </p>
+              <Link className="link" to="/about/board-of-directors">
+          <FaArrowRight />
+          </Link>
+          </div>
+        </div>
       </section>
     </div>
   );

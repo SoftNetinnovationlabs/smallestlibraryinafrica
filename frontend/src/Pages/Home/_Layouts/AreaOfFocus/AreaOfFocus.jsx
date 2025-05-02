@@ -55,8 +55,7 @@ const AreaOfFocus = () => {
           </div>
         </div>
       </div>
-                   <Link to="/about" className=" icons_btn"><span className="material-symbols-outlined arrow">arrow_right_alt</span></Link> 
-
+       <Link to="/about" className=" icons_btn"><span className="material-symbols-outlined arrow">arrow_right_alt</span></Link> 
     </div>
   );
 };
