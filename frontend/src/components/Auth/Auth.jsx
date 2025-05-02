@@ -23,7 +23,8 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = currState === 'signup' ? '/auth/register' : '/auth/login';
-    const dataToSend = currState === 'signup'
+    const isSignup = currState === 'signup';
+    const dataToSend = isSignup
       ? formData
       : { email: formData.email, password: formData.password };
 
@@ -38,7 +39,7 @@ const Auth = () => {
       if (!res.ok) throw new Error(data.message);
 
       login({ user: data.user, token: data.token });
-      navigate('/'); // or wherever you want after login
+      navigate(isSignup ? '/volunteer-details' : '/dashboard'); // or wherever you want after login
     } catch (error) {
       alert(error.message);
     }
