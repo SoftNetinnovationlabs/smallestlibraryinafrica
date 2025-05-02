@@ -13,6 +13,7 @@ const Auth = () => {
     email: '',
     password: '',
   });
+  const [loading, setIsLoading] = useState(false)
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const Auth = () => {
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true)
     e.preventDefault();
     const endpoint = currState === 'signup' ? '/auth/register' : '/auth/login';
     const isSignup = currState === 'signup';
@@ -87,7 +89,7 @@ const Auth = () => {
         />
 
         <button className="btn" type="submit">
-          {currState === 'signup' ? 'Register' : 'Login'}
+          {loading ? 'please wait...' :( currState === 'signup' ? 'Register' : 'Login')}
         </button>
 
         <p>
