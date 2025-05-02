@@ -38,7 +38,7 @@ const Auth = () => {
       if (!res.ok) throw new Error(data.message);
 
       login({ user: data.user, token: data.token });
-      navigate('/dashboard'); // or wherever you want after login
+      navigate('/'); // or wherever you want after login
     } catch (error) {
       alert(error.message);
     }
