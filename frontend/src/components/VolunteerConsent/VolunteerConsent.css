@@ -1,0 +1,37 @@
+.volunteer-consent {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .checkbox-field {
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  .checkbox-field input {
+    margin-right: 10px;
+  }
+  
+  .submit-consent {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-consent:hover {
+    background: #3578c4;
+  }
+  

@@ -2,6 +2,9 @@ import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import VolunteerDetails from './components/VolunteerDetails/VolunteerDetails'; 
+import VolunteerExperience from './components/VolunteerExperience/VolunteerExperience';
+import VolunteerConsent from './components/VolunteerConsent/VolunteerConsent';
 import Auth from './components/Auth/Auth';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
@@ -10,7 +13,7 @@ import './App.css';
 const App = () => {
   const location = useLocation();
 
-  const hideLayoutPaths = ['/register'];
+  const hideLayoutPaths = ['/register', "/volunteer-details", '/volunteer-experience', '/volunteer-consent'];
 
   const hideLayout = hideLayoutPaths.includes(location.pathname);
 
@@ -23,8 +26,12 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/our-work' element={<h1>Our work under development</h1>} />
         <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
+        <Route path="/volunteer-details" element={<VolunteerDetails />} />
+        <Route path="/volunteer-experience" element={<VolunteerExperience />} />
+        <Route path="/volunteer-consent" element={<VolunteerConsent />} />
         <Route path='/register' element={<Auth />} />
         <Route path='/dashboard' element={<h1>404</h1>} />
+
       </Routes>
 
       {!hideLayout && <Footer />}
