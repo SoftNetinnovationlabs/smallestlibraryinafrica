@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Auth.css';
 import { Link } from 'react-router-dom';
-
+import {FaArrowLeft} from 'react-icons/fa'
 const Auth = () => {
   const [currState, setCurrState] = useState('signup');
 
@@ -12,7 +12,7 @@ const Auth = () => {
 
   return (
     <div className="Auth">
-      <Link to="/">← Back</Link>
+      <Link to="/" className='back'><FaArrowLeft /></Link>
       <h2>Volunteer Process</h2>
       <h4>{currState === 'signup' ? 'Sign Up Details' : 'Login'}</h4>
 
