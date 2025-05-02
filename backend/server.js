@@ -7,7 +7,7 @@ import AuthRoutes from './routes/auth.routes.js'
 dotenv.config();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://smallestlibrary.org'],
+  origin: ['http://localhost:5173', 'https://smallestlibraryinafrica.org'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
