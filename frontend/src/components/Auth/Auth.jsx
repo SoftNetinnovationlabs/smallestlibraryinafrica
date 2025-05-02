@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import './Auth.css';
 import {Link} from 'react-router-dom'
 const Auth = () => {
+  const [currState, setCurrState] = useState('signup')
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: Handle form data here
@@ -16,9 +17,9 @@ const Auth = () => {
 
       <form className="auth__body" onSubmit={handleSubmit}>
         <input type="text" required placeholder="Full Name" name="fullName" />
-        <input type="email" required placeholder="Email" name="email" />
         <input type="tel" required placeholder="Phone Number" name="phone" />
-        
+        <input type="email" required placeholder="Email" name="email" />
+        <input type='password' required placeholder='password' name='password' />
         <button className='btn' type="submit">Register</button>
       </form>
     </div>
