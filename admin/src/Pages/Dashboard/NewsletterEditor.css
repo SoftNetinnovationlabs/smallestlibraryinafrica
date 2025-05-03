@@ -1,0 +1,21 @@
+.newsletter-editor {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fefefe;
+    min-height: 200px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .ProseMirror {
+    outline: none;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .ProseMirror p {
+    margin: 0 0 1rem;
+  }
+  
