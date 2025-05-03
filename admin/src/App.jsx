@@ -11,8 +11,6 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/sendNewsletters" element={<NewsLetterSender />} />
       </Routes>
-      <h1>Admin Dashboard</h1>
-      <p>Welcome to the admin dashboard!</p>
     </div>
   );
 }

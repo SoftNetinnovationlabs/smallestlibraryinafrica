@@ -1,21 +1,42 @@
-.newsletter-editor {
+.editor-container {
     border: 1px solid #ccc;
-    padding: 1rem;
     border-radius: 8px;
-    background-color: #fefefe;
-    min-height: 200px;
+    background: #fff;
+    padding: 1rem;
     margin-top: 1rem;
+  }
+  
+  .menu-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-bottom: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .menu-bar button {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  
+  .menu-bar button:hover {
+    background: #e0e0e0;
+  }
+  
+  .menu-bar button.is-active {
+    background-color: #0077cc;
+    color: white;
+    border-color: #0077cc;
   }
   
   .ProseMirror {
+    min-height: 200px;
     outline: none;
     font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  .ProseMirror p {
-    margin: 0 0 1rem;
+    line-height: 1.6;
   }
   
