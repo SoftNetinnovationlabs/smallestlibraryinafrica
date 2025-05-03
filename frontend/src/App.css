@@ -44,7 +44,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn{
@@ -59,7 +59,7 @@
 }
 h1,h2,h3,h4,h5,h6{
   color: var(--text-color);
-  font-family: "DynaPuff", system-ui;
+  /* font-family: "DynaPuff", system-ui; */
 }
 h4{
 color: gray;
