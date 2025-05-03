@@ -51,7 +51,7 @@ const Auth = () => {
     <div className="Auth">
       <Link to="/" className="back"><FaArrowLeft /></Link>
       <h2>Volunteer Process</h2>
-      <h4>{currState === 'signup' ? 'Sign Up Details' : 'Login'}</h4>
+      <h1>{currState === 'signup' ? 'Sign Up Details' : 'Welcome Back!'}</h1>
 
 <div className="auth__content">
   <div className="auth__body">
