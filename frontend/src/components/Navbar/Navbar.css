@@ -19,11 +19,26 @@ header{
     padding: 0 2rem;
     width: 100%;
 }
-.logo{
-    font-size: 2rem;
+.logo_2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--navbar-text-color);
-}
+    color: #2c3e50; /* Deep navy */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #1abc9c, #3498db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-in-out;
+    user-select: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
 .navbar{
     display: flex;
     gap: 1rem;
