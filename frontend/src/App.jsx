@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer';
 import VolunteerDetails from './components/VolunteerDetails/VolunteerDetails'; 
 import VolunteerExperience from './components/VolunteerExperience/VolunteerExperience';
 import VolunteerConsent from './components/VolunteerConsent/VolunteerConsent';
-import Dashboard from './Pages/Dashboard/dashboard';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import DashboardHome from './Pages/Dashboard/DashboardHome.jsx';
 import Profile from './Pages/Dashboard/Profile';
 import Newsletters from './Pages/Dashboard/Newsletters.jsx';
