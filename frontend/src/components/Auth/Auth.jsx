@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useAuth } from '../Auth/Context/Auth.context'; 
 import BASE_URL from '../../../config.js'
-
+import {assets} from '../../assets/assets'
 const Auth = () => {
   const [currState, setCurrState] = useState('signup');
   const [formData, setFormData] = useState({
@@ -53,7 +53,13 @@ const Auth = () => {
       <h2>Volunteer Process</h2>
       <h4>{currState === 'signup' ? 'Sign Up Details' : 'Login'}</h4>
 
-      <form className="auth__body" onSubmit={handleSubmit}>
+<div className="auth__content">
+  <div className="auth__body">
+    <div className="auth__image">
+      <img src={assets.Selection} />
+    </div>
+  </div>
+  <form className="auth__body" onSubmit={handleSubmit}>
         {currState === 'signup' && (
           <>
             <input
@@ -88,7 +94,7 @@ const Auth = () => {
           onChange={handleChange}
         />
 
-        <button className="btn" type="submit">
+        <button className="btn__primary" type="submit">
           {loading ? 'please wait...' :( currState === 'signup' ? 'Register' : 'Login')}
         </button>
 
@@ -104,6 +110,7 @@ const Auth = () => {
           </span>
         </p>
       </form>
+</div>
     </div>
   );
 };

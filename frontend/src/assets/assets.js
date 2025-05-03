@@ -11,7 +11,9 @@ import softNetLogo from './softnet.jpg'
 import Vayacom from './vayacomrm.png'
 import t4b from './t4b.png'
 import safaricom from './saf.jpeg'
+import Selection from './Selection5.png'
 export const assets = {
+    Selection,
     t4b,
     safaricom,
     childrenModel,
