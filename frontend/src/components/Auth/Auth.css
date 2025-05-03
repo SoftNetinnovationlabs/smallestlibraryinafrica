@@ -53,8 +53,9 @@
     padding: 15px 5px;
     width: 100%;
     max-width: 400px;
-    border: 2px solid blue;
+    border: 1px solid #F3F4F6FF;
     border-radius: 10px;
+    background: #F3F4F6FF;
 }
 .btn__primary{
     background: #000;
