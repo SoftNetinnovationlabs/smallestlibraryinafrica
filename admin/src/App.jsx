@@ -1,35 +1,21 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import DashboardLayout from './Pages/Dashboard/DashboardLayout';
 import DashboardHome from './Pages/Dashboard/DashboardHome';
-import DashboardLayout from './Pages/Dashboard/DashboardLayout'
 import Profile from './Pages/Dashboard/Profile';
 import NewsLetterSender from './Pages/Dashboard/NewsLetterSender';
-import './App.css'
+import './App.css';
+
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" 
-        element={<DashboardLayout>
-          <DashboardHome/>
-          </DashboardLayout>
-          }>
-        </Route>
-        <Route path="/profile" 
-        element={<DashboardLayout>
-          <Profile />
-          </DashboardLayout>
-          } />
-        <Route path="/sendNewsletters" element={
-
-<DashboardLayout>
-<NewsLetterSender />
-</DashboardLayout>
-        }
-          />
-      </Routes>
-
-    </div>
+    <Routes>
+      <Route path="/" element={<DashboardLayout />}>
+        <Route index element={<DashboardHome />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="sendNewsletters" element={<NewsLetterSender />} />
+      </Route>
+    </Routes>
   );
-}
+};
+
 export default App;
