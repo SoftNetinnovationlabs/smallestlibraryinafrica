@@ -9,7 +9,7 @@ dotenv.config();
 const corsOptions = {
   origin: ['http://localhost:5173', 'http://localhost:5174', 'https://admin.smallestlibraryinafrica.org' ,'https://smallestlibraryinafrica.org'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-admin-secret'], // add your custom headers here
   credentials: true,
 };
 

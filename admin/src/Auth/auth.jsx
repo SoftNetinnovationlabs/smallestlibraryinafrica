@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import baseURL from '../../../../config';
+import { useAuth } from './AuthContext';
+import baseURL from '../../config';
+import { useNavigate } from 'react-router-dom';
 
 const Auth = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const { login } = useAuth();
+  const navigate = useNavigate(); // ✅ move to top-level
+  const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -17,40 +18,22 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await axios.post(`${baseURL}/api/auth/admin-login`, formData);
-      console.log('Login successful:', response.data);
-      // Optionally save token or redirect user
-    } catch (error) {
-      console.error('Login failed:', error.response?.data || error.message);
+      const res = await axios.post(`${baseURL}/api/auth/admin-login`, formData);
+      login(formData); // optionally use res.data if you return admin data
+      alert(res.data.message);
+      navigate('/'); // ✅ correctly used now
+    } catch (err) {
+      alert(err.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleSubmit}>
-        <input 
-          type='email' 
-          name='email' 
-          placeholder='Email' 
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input 
-          type='password' 
-          name='password' 
-          placeholder='Password' 
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <button type='submit'>
-          Login
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="email" name="email" onChange={handleChange} placeholder="Email" required />
+      <input type="password" name="password" onChange={handleChange} placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
   );
 };
 
