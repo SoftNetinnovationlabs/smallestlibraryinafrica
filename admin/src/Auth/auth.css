@@ -1,0 +1,13 @@
+.auth{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.auth-body{
+    flex:  1 1 250px;
+}
+.form{
+    
+}

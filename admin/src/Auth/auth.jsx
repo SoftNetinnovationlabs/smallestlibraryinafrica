@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useAuth } from './AuthContext';
 import baseURL from '../../config';
 import { useNavigate } from 'react-router-dom';
-
+import {assets} from '../assets/assets'
+import './auth.css'
 const Auth = () => {
   const { login } = useAuth();
   const navigate = useNavigate(); // ✅ move to top-level
@@ -29,11 +30,16 @@ const Auth = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+<div className='auth'>
+    <div className='auth-body'>
+        <img src={assets.loginImage} />
+        </div>
+<form className='auth-body form' onSubmit={handleSubmit}>
       <input type="email" name="email" onChange={handleChange} placeholder="Email" required />
       <input type="password" name="password" onChange={handleChange} placeholder="Password" required />
       <button type="submit">Login</button>
     </form>
+</div>
   );
 };
 
