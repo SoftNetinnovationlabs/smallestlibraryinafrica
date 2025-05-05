@@ -20,6 +20,10 @@ const authSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    randomAvatar: {
+      type: String,
+      default: 'https://www.gravatar.com/avatar/?d=mp&f=y',
+    }
   },
   { timestamps: true }
 );

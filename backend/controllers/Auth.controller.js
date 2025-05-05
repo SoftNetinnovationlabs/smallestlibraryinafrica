@@ -7,6 +7,13 @@ export const AuthController = async (req, res) => {
   const { fullName, email, phoneNumber, password } = req.body;
 
   try {
+    if(!email  || !password || phoneNumber || !fullName){
+      return res.status(400).json({message: 'all fields are required'});
+  
+    }
+    if(password.length < 6){
+      return res.status(400).json({message: 'password must be atleast 6 characters'})
+    }
     const existingUser = await AuthModel.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
@@ -14,13 +21,17 @@ export const AuthController = async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
+    const idx = Math.floor(Math.random() * 100) + 1;
+    const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
+    
     const newUser = new AuthModel({
       fullName,
       email,
       password: hashedPassword,
-      phoneNumber
+      phoneNumber,
+      randomAvatar,
     });
+
 
     await newUser.save();
 
@@ -37,6 +48,7 @@ export const AuthController = async (req, res) => {
         fullName: newUser.fullName,
         email: newUser.email,
         phoneNumber: newUser.phoneNumber,
+        randomAvatar: newUser.randomAvatar,
       }
     });
   } catch (error) {
