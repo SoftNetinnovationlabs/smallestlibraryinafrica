@@ -6,7 +6,7 @@ import Profile from './Pages/Dashboard/Profile';
 import NewsLetterSender from './Pages/Dashboard/NewsLetterSender';
 import Auth from './Auth/auth';
 import RegisterAdmin from './Auth/RegisterAdmin';
-import ProtectedRoute from './Auth/ProtectedRoute';
+import ProtectedRoute from './Auth/protectedRoute';
 
 import './App.css';
 
