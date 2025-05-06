@@ -4,13 +4,14 @@ import { useAuth } from './AuthContext';
 import baseURL from '../../config';
 import { Link, useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
-import toast from 'react-hot-toast'; // ✅ Toast import
+import toast from 'react-hot-toast'; // Toast import
 import './auth.css';
 
 const Auth = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -21,13 +22,18 @@ const Auth = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    const toastId = toast.loading('Logging in...');
+
     try {
       const res = await axios.post(`${baseURL}/api/auth/admin-login`, formData);
       login(formData);
-      toast.success(res.data.message || 'Login successful');
+      toast.success(res.data.message || 'Login successful', { id: toastId });
       navigate('/');
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Login failed');
+      toast.error(err.response?.data?.message || 'Login failed', { id: toastId });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,7 +62,9 @@ const Auth = () => {
           placeholder="Password"
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
         <p>
           Don't have an account? <Link to="/register-admin">Register</Link>
         </p>
