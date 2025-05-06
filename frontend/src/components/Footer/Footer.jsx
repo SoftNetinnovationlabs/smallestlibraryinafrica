@@ -17,6 +17,7 @@ function Footer() {
     <li className='footer__link'><Link className='link' to='/about'>About</Link></li>
     <li className='footer__link'><Link className='link' to='/contact'>Contact Us</Link></li>
     <li className='footer__link'><Link className='link' to='/our-impact'>Our Impact</Link></li>
+    <li className='footer__link'><Link className='link' to='/news'>NEWS</Link></li>
   </ul>
       </div>
       <div className='footer__content'></div>
