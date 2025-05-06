@@ -26,7 +26,7 @@ function Navbar() {
             <li className="links"><Link to="/our-work" className="link" onClick={() => setIsOpen(false)}>OUR WORK</Link></li>
             <li className="links"><Link to="/our-impact" className="link" onClick={() => setIsOpen(false)}>OUR IMPACT</Link></li>
             <li className="links"><Link to="/register" className="link" onClick={() => setIsOpen(false)}>GET INVOLVED</Link></li>
-            <li className="links"><Link to="/news" className="link" onClick={() => setIsOpen(false)}>News</Link></li>
+            <li className="links"><Link to="/news" className="link" onClick={() => setIsOpen(false)}>NEWS</Link></li>
           </ul>
         </nav>
 
