@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './news.css';
 
-import baseURL from '../../../config.js'; // Adjust if using proxy
+import baseURL from '../../../config.js';
 
 const News = () => {
   const [sections, setSections] = useState([{ title: '', content: '', image: null }]);
   const [mainImage, setMainImage] = useState(null);
+  const [newsList, setNewsList] = useState([]); // For showing and deleting news
+
+  // Fetch existing news posts
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await axios.get(`${baseURL}/api/news`);
+        setNewsList(res.data);
+      } catch (err) {
+        console.error('Failed to load news:', err);
+      }
+    };
+
+    fetchNews();
+  }, []);
 
   const addNew = () => {
     setSections([...sections, { title: '', content: '', image: null }]);
@@ -58,9 +73,25 @@ const News = () => {
       setMainImage(null);
       document.querySelector("input[name='mainTitle']").value = '';
       document.querySelector("textarea[name='excerpt']").value = '';
+
+      // Refresh news list
+      const updatedList = await axios.get(`${baseURL}/api/news`);
+      setNewsList(updatedList.data);
     } catch (err) {
       console.error('Error submitting:', err);
       alert('Submission failed.');
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this post?')) return;
+
+    try {
+      await axios.delete(`${baseURL}/api/news/${id}`);
+      setNewsList(newsList.filter((item) => item._id !== id));
+    } catch (err) {
+      console.error('Delete failed:', err);
+      alert('Could not delete the post.');
     }
   };
 
@@ -95,8 +126,21 @@ const News = () => {
         ))}
 
         <button type='button' onClick={addNew}>Add Section</button>
-        <button type='submit'>submit</button>
+        <button type='submit'>Submit</button>
       </form>
+
+      <hr />
+      <h2>Existing News Posts</h2>
+      <ul>
+        {newsList.map((post) => (
+          <li key={post._id}>
+            <strong>{post.title}</strong> — {post.excerpt}
+            <button onClick={() => handleDelete(post._id)} style={{ marginLeft: '10px', color: 'red' }}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

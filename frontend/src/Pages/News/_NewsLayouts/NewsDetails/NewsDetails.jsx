@@ -15,7 +15,8 @@ const NewsDetails = () => {
         const res = await axios.get(`${baseURL}/news/${id}`);
         setNewsItem(res.data);
         console.log("News Item:", res.data); // ✅ See what comes in
-      } catch (err) {
+      
+            } catch (err) {
         console.error('Error fetching news details:', err);
       }
     };

@@ -8,22 +8,30 @@ export const createNewsPost = async (req, res) => {
     console.log('Incoming body keys:', Object.keys(req.body));
     console.log('Incoming full body:', req.body);
 
-    const mainImage = req.files['mainImage']?.[0]?.path || null;
-    const sectionImages = req.files['sectionImages'] || [];
+    const mainImage = req.files?.['mainImage']?.[0]?.path || null;
+    const sectionImages = req.files?.['sectionImages'] || [];
 
-    const sections = [];
+    let sections = [];
 
-    // Count number of section titles submitted (to determine section count)
-    const sectionCount = Object.keys(req.body).filter((key) =>
-      key.includes('sections[') && key.includes('][title]')
-    ).length;
+    // Parse sections based on actual format
+    let rawSections = req.body.sections;
 
-    for (let i = 0; i < sectionCount; i++) {
-      const title = req.body[`sections[${i}][title]`] || '';
-      const content = req.body[`sections[${i}][content]`] || '';
-      const image = sectionImages[i]?.path || '';
+    // If sections is JSON string (common if sent via FormData), parse it
+    if (typeof rawSections === 'string') {
+      try {
+        rawSections = JSON.parse(rawSections);
+      } catch (parseErr) {
+        console.error('Failed to parse sections JSON:', parseErr);
+        rawSections = [];
+      }
+    }
 
-      sections.push({ title, content, image });
+    if (Array.isArray(rawSections)) {
+      sections = rawSections.map((section, index) => ({
+        title: section.title || '',
+        content: section.content || '',
+        image: sectionImages[index]?.path || '',
+      }));
     }
 
     const post = new NewsModel({
@@ -59,5 +67,19 @@ export const getSingleNews = async (req, res) => {
     res.status(200).json(newsItem);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching news item' });
+  }
+};
+
+//delete news 
+export const deleteNewsPost = async (req, res) => {
+  try {
+    const deletedPost = await NewsModel.findByIdAndDelete(req.params.id);
+    if (!deletedPost) {
+      return res.status(404).json({ message: 'News post not found' });
+    }
+    res.status(200).json({ message: 'News post deleted successfully' });
+  } catch (err) {
+    console.error('Delete news post error:', err);
+    res.status(500).json({ message: 'Failed to delete news post' });
   }
 };

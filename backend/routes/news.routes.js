@@ -4,6 +4,7 @@ import {
   createNewsPost,
   getAllNews,
   getSingleNews,
+  deleteNewsPost,
 } from '../controllers/news.controller.js';
 
 const router = express.Router();
@@ -21,5 +22,5 @@ router.post(
 // Get all news posts
 router.get('/', getAllNews);
 router.get('/:id', getSingleNews);
-
+router.delete('/:id', deleteNewsPost)
 export default router;
