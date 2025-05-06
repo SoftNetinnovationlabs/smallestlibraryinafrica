@@ -16,6 +16,9 @@ const SideBar = () => {
         <NavLink to="/sendNewsletters" className="sidebar-link">
           Send Newsletters
         </NavLink>
+        <NavLink to="/news" className="sidebar-link">
+          News
+        </NavLink>
       </nav>
     </div>
   );

@@ -7,7 +7,7 @@ import NewsLetterSender from './Pages/Dashboard/NewsLetterSender';
 import Auth from './Auth/auth';
 import RegisterAdmin from './Auth/RegisterAdmin';
 import ProtectedRoute from './Auth/protectedRoute';
-
+import News from './Pages/News/News'
 import './App.css';
 import { Toaster } from 'react-hot-toast'; // ✅ Import toaster
 
@@ -30,6 +30,7 @@ const App = () => {
           <Route index element={<DashboardHome />} />
           <Route path="profile" element={<Profile />} />
           <Route path="sendnewsletters" element={<NewsLetterSender />} />
+          <Route path='news' element={<News />} />
         </Route>
       </Routes>
     </>

@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './config/DB.js';
 import AuthRoutes from './routes/auth.routes.js'
 import NewsletterRoutes from './routes/newsletter.routes.js'
+import Router from './routes/news.routes.js'
 dotenv.config();
 
 const corsOptions = {
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/auth/', AuthRoutes)
 app.use('/api/newsletter', NewsletterRoutes)
+app.use('/api/news',Router )
 
 
 

@@ -12,6 +12,8 @@ import Newsletters from './Pages/Dashboard/Newsletters.jsx';
 import Auth from './components/Auth/Auth';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
+import NewsList from './Pages/News/_NewsLayouts/NewsList/NewsList';
+import NewsDetails from './Pages/News/_NewsLayouts/NewsDetails/NewsDetails';
 import './App.css';
 
 const App = () => {
@@ -34,8 +36,8 @@ const App = () => {
         <Route path="/volunteer-details" element={<VolunteerDetails />} />
         <Route path="/volunteer-experience" element={<VolunteerExperience />} />
         <Route path="/volunteer-consent" element={<VolunteerConsent />} />
-
-        {/* Dashboard with nested routes */}
+        <Route path="/news" element={<NewsList />} />
+        <Route path="/news/:id" element={<NewsDetails />} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<DashboardHome />} />
           <Route path='profile' element={<Profile />} />
