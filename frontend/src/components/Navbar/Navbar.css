@@ -107,7 +107,7 @@ header{
     .close,.menu{
         display: block;
         position: absolute;
-        top: 2.7rem;
+        top: 2.4rem;
         right: 1rem;
         cursor: pointer;
         Font-size: 2rem;
