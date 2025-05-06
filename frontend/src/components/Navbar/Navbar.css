@@ -32,6 +32,13 @@ header{
     user-select: none;
   }
   
+
+  .active-link {
+    border-bottom: 3px solid #4A90E2; /* Blue border when active */
+    color: #4A90E2; /* Change text color to match the border */
+  }
+
+
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
