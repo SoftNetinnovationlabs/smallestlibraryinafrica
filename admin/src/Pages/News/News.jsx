@@ -95,7 +95,7 @@ const News = () => {
         ))}
 
         <button type='button' onClick={addNew}>Add Section</button>
-        <button type='submit'>Submit</button>
+        <button type='submit'>submit</button>
       </form>
     </div>
   );
