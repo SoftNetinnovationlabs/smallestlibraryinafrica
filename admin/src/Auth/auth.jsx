@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from './AuthContext';
 import baseURL from '../../config';
-import { useNavigate } from 'react-router-dom';
-import {assets} from '../assets/assets'
-import './auth.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { assets } from '../assets/assets';
+import toast from 'react-hot-toast'; // ✅ Toast import
+import './auth.css';
+
 const Auth = () => {
   const { login } = useAuth();
-  const navigate = useNavigate(); // ✅ move to top-level
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -21,25 +23,45 @@ const Auth = () => {
     e.preventDefault();
     try {
       const res = await axios.post(`${baseURL}/api/auth/admin-login`, formData);
-      login(formData); // optionally use res.data if you return admin data
-      alert(res.data.message);
-      navigate('/'); // ✅ correctly used now
+      login(formData);
+      toast.success(res.data.message || 'Login successful');
+      navigate('/');
     } catch (err) {
-      alert(err.response?.data?.message || 'Login failed');
+      toast.error(err.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-<div className='auth'>
-    <div className='auth-body'>
-        <img src={assets.loginImage} />
+    <div className="auth">
+      <div className="auth-body">
+        <img src={assets.loginImage} alt="Login visual" />
+      </div>
+      <form className="auth-body form" id="form" onSubmit={handleSubmit}>
+        <div className="auth-header">
+          <h2>Hello</h2>
+          <h1>Welcome Back!</h1>
+          <p>Login to your account</p>
         </div>
-<form className='auth-body form' onSubmit={handleSubmit}>
-      <input type="email" name="email" onChange={handleChange} placeholder="Email" required />
-      <input type="password" name="password" onChange={handleChange} placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-</div>
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          onChange={handleChange}
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account? <Link to="/register-admin">Register</Link>
+        </p>
+      </form>
+    </div>
   );
 };
 

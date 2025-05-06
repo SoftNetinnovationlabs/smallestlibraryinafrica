@@ -2,12 +2,48 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin: auto;
     justify-content: center;
     align-items: center;
+    width: 90%;
 }
 .auth-body{
-    flex:  1 1 250px;
+    flex:  1 1 200px;
+       margin: auto;
+
 }
-.form{
-    
+
+ #form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    max-width: 400px;
+    border: 1px solid #ccc;
+}
+#form input{
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #F3F4F6FF;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #F3F4F6FF;
+}
+#form button{
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }

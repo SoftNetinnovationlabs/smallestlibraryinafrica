@@ -9,26 +9,30 @@ import RegisterAdmin from './Auth/RegisterAdmin';
 import ProtectedRoute from './Auth/protectedRoute';
 
 import './App.css';
+import { Toaster } from 'react-hot-toast'; // ✅ Import toaster
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<Auth />} />
-      <Route path="/register-admin" element={<RegisterAdmin />} />
-      
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <DashboardLayout />
-          </ProtectedRoute>
-        }
-      >
-        <Route index element={<DashboardHome />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="sendnewsletters" element={<NewsLetterSender />} />
-      </Route>
-    </Routes>
+    <>
+      <Toaster position="top-right" reverseOrder={false} /> {/* ✅ Global toast container */}
+      <Routes>
+        <Route path="/login" element={<Auth />} />
+        <Route path="/register-admin" element={<RegisterAdmin />} />
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<DashboardHome />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="sendnewsletters" element={<NewsLetterSender />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
