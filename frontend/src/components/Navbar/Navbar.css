@@ -62,7 +62,7 @@ header{
     font-weight: 500;
 }
 .nav-links a:hover{
-    color: var(--navbar-text-color-hover);
+    color: red;
 }
 .menu{
     display: none;

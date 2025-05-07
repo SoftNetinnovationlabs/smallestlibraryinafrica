@@ -1,0 +1,18 @@
+.embed{
+    text-align: center;
+    padding: 100px 0;
+}
+.body-tube{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+.content-tube{
+    flex: 1 1 250px;
+}
+.content-tube iframe{
+background: #f9930d;
+    border-radius: 10px;
+
+}
