@@ -1,18 +1,31 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { IoPersonCircle } from "react-icons/io5";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
+    <header className={isScrolled ? "scrolled" : ""}>
       <div className="header_container">
-        <div className="logo_2"><NavLink to={'/'}> SmLibA</NavLink></div>
+        <div className="logo_2">
+          <NavLink to="/">SmLibA</NavLink>
+        </div>
 
         <nav className={`navbar ${isOpen ? "open" : ""}`}>
           {isOpen && (
@@ -22,63 +35,57 @@ function Navbar() {
           )}
           <ul className="nav-links">
             <li className="links">
-              <NavLink 
-                to="/" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link" // Add activeClassName
+              <NavLink
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
                 HOME
               </NavLink>
             </li>
             <li className="links">
-              <NavLink 
-                to="/about" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link"
+              <NavLink
+                to="/about"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
                 ABOUT US
               </NavLink>
             </li>
             <li className="links">
-              <NavLink 
-                to="/our-work" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link"
+              <NavLink
+                to="/our-work"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
                 OUR WORK
               </NavLink>
             </li>
             <li className="links">
-              <NavLink 
-                to="/our-impact" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link"
+              <NavLink
+                to="/our-impact"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
                 OUR IMPACT
               </NavLink>
             </li>
             <li className="links">
-              <NavLink 
-                to="/register" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link"
+              <NavLink
+                to="/news"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
-                GET INVOLVED
+                NEWS
               </NavLink>
             </li>
             <li className="links">
-              <NavLink 
-                to="/news" 
-                className="link" 
-                onClick={() => setIsOpen(false)} 
-                activeClassName="active-link"
+              <NavLink
+                to="/register"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link register-icon" : "link register-icon"}
               >
-                NEWS
+                <IoPersonCircle className="register-icon" />
               </NavLink>
             </li>
           </ul>
