@@ -125,7 +125,7 @@ header.scrolled {
     .close,.menu{
         display: block;
         position: absolute;
-        top: 2.4rem;
+        top: 1rem;
         right: 1rem;
         cursor: pointer;
         Font-size: 2rem;
