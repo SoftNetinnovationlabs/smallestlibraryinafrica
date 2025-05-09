@@ -92,9 +92,7 @@ const Story = () => {
             <h4>Our Staff</h4>
             <p>
               {" "}
-              Our board of directors is made up of experienced professionals who
-              are committed to creating a better future for children and youths
-              in Africa
+              meet our staff members who make it perfect
               </p>
               <Link className="link" to="/about/board-of-directors">
           <FaArrowRight />

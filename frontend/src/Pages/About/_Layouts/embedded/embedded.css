@@ -7,12 +7,16 @@
     flex-wrap: wrap;
     width: 90%;
     margin: auto;
+    gap: 20px;
 }
 .content-tube{
     flex: 1 1 250px;
+
 }
 .content-tube iframe{
 background: #f9930d;
     border-radius: 10px;
-
+    min-height: 300px;
+    width: 100%;
+    height: 100%;
 }
