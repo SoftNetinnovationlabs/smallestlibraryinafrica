@@ -1,7 +1,8 @@
 import React from 'react';
 import { assets } from '../../../../../assets/assets';
 import './_structHero.css';
-import { FaFacebookF, FaXTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const _structHero = () => {
   return (
@@ -12,7 +13,7 @@ const _structHero = () => {
             <img src={assets.Founder} alt="Founder Cyril Peter Odhiambo" />
           </div>
         </div>
-        <div className='hero__content'>
+        <div className='hero__-content'>
           <h1>About Our Founder</h1>
           <h4>Cyril Peter Odhiambo</h4>
           <h5>A Story of Resilience: The Journey of Cyril Otieno and the Smallest Library in Africa</h5>
