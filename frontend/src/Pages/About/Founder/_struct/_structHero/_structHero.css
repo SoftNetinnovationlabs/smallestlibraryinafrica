@@ -5,8 +5,11 @@
     margin: auto;
 
 }
-.hero__-content .hero-image{
+.hero__-content {
     flex: 1 1 250px;
+
+}
+.hero__-content .hero-image{
     width: 400px;
     height: 400px;
     border-radius: 50px;
