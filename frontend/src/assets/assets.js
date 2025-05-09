@@ -12,7 +12,9 @@ import Vayacom from './vayacomrm.png'
 import t4b from './t4b.png'
 import safaricom from './saf.jpeg'
 import Selection from './Selection5.png'
+import Founder from './Founder.jpg'
 export const assets = {
+    Founder,
     Selection,
     t4b,
     safaricom,

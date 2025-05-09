@@ -14,6 +14,7 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import NewsList from './Pages/News/_NewsLayouts/NewsList/NewsList';
 import NewsDetails from './Pages/News/_NewsLayouts/NewsDetails/NewsDetails';
+import Founder from './Pages/About/Founder/Founder'
 import './App.css';
 
 const App = () => {
@@ -29,7 +30,10 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/about' element={<About />}>
+        <Route path='founder' element={<Founder />} />
+        </Route>
+        
         <Route path='/our-work' element={<h1>Our work under development</h1>} />
         <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
         <Route path='/register' element={<Auth />} />
@@ -38,6 +42,7 @@ const App = () => {
         <Route path="/volunteer-consent" element={<VolunteerConsent />} />
         <Route path="/news" element={<NewsList />} />
         <Route path="/news/:id" element={<NewsDetails />} />
+
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<DashboardHome />} />
           <Route path='profile' element={<Profile />} />

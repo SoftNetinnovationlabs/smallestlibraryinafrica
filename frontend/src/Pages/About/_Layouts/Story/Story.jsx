@@ -2,101 +2,84 @@ import React from "react";
 import "./Story.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const Story = () => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Our Story</h1>
+
       <div className="story__container">
         <div className="story__content">
           <p>
-            Smallest Library In Africa Initiative started as an open air library
-            in Mugure slums by Cyril Peter Otieno. The library would be open 5
-            days a week from 5:30pm-7:30pm and would remain closed during the
-            short and long rains
+            The Smallest Library In Africa Initiative began as an open-air library in Mugure slums, founded by Cyril Peter Otieno. The library operated five days a week from 5:30 pm to 7:30 pm, closing during the short and long rainy seasons.
           </p>
-         
         </div>
-        <div className="story__content">
-          <p>
-            {" "}
-            Despite its makeshift start , the library became a learning haven to
-            school going children who could now access books and conducive
-            learning space , something that seemed impossible.
-          </p>
-         
-        </div>
-        <div className="story__content">
-          <p>
-            {" "}
-            Having experienced the same learning and social challenges , Cyril
-            saw this and believed that he could inspire his community to change
-            their narrative from impossibilities to possibilities.
-          </p>
-         
-        </div>
-        <div className="story__content">
-          <p>
-            {" "}
-            Today, Smallest Library In Africa has become part of the global
-            movement of trying to end inequalities through promoting access to
-            education ,nutrition and sustainable livelihoods in marginalized
-            communities. All this has been made possible as we try to blend
-            technology in designing and implementing our solutions
-          </p>
 
+        <div className="story__content">
+          <p>
+            Despite its humble beginnings, the library became a vital learning space for school-going children, offering access to books and a safe, supportive environment—something previously unimaginable in the area.
+          </p>
+        </div>
+
+        <div className="story__content">
+          <p>
+            Having experienced similar educational and social challenges, Cyril believed in the potential of his community and was determined to transform their narrative from one of impossibilities to possibilities.
+          </p>
+        </div>
+
+        <div className="story__content">
+          <p>
+            Today, the Smallest Library In Africa is part of a global movement to end inequality by promoting education, nutrition, and sustainable livelihoods in marginalized communities. Our efforts are powered by technology and innovation to design and implement impactful solutions.
+          </p>
         </div>
       </div>
+
       <section className="about__container">
         <div className="about__card">
           <div className="about__content">
-            <h4>Our people</h4>
+            <h4>Our People</h4>
             <p>
-              {" "}
-              We are a team of passionate individuals who are committed to
-              creating a better future for children and youths in Africa
+              We are a team of passionate individuals committed to building a brighter future for children and youth across Africa.
             </p>
             <Link className="link" to="/about/our-people">
-          <FaArrowRight />
-          </Link>
+              <FaArrowRight />
+            </Link>
           </div>
         </div>
+
         <div className="about__card">
           <div className="about__content">
             <h4>Our Founder</h4>
             <p>
-              {" "}
-              Our founder is a young entrepreneur who is passionate about
-              creating a better future for children and youths in Africa
+              Meet the visionary behind the initiative—a young entrepreneur passionate about transforming communities through education and opportunity.
             </p>
             <Link className="link" to="/about/founder">
-          <FaArrowRight />
-          </Link>
+              <FaArrowRight />
+            </Link>
           </div>
         </div>
+
         <div className="about__card">
           <div className="about__content">
-            <h4>Our board of directors</h4>
+            <h4>Our Board of Directors</h4>
             <p>
-              {" "}
-              Our board of directors is made up of experienced professionals who
-              are committed to creating a better future for children and youths
-              in Africa
-              </p>
-              <Link className="link" to="/about/board-of-directors">
-          <FaArrowRight />
-          </Link>
+              Our board is composed of experienced leaders dedicated to advancing our mission and ensuring transparency, accountability, and sustainability.
+            </p>
+            <Link className="link" to="/about/board-of-directors">
+              <FaArrowRight />
+            </Link>
           </div>
         </div>
+
         <div className="about__card">
           <div className="about__content">
             <h4>Our Staff</h4>
             <p>
-              {" "}
-              meet our staff members who make it perfect
-              </p>
-              <Link className="link" to="/about/board-of-directors">
-          <FaArrowRight />
-          </Link>
+              Meet the dedicated team members who work tirelessly to bring our programs and initiatives to life.
+            </p>
+            <Link className="link" to="/about/staff">
+              <FaArrowRight />
+            </Link>
           </div>
         </div>
       </section>
