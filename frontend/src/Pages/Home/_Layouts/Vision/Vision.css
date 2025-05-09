@@ -89,3 +89,58 @@ box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
     }
     
 }
+.two__cards{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+.cardDet{
+    flex: 1 1 250px;
+    width: 400px;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    Outline: 1px solid black;
+}
+.flex-wrapper-container{
+    flex: 1 1 250px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+
+}
+.card-wrapper{
+    flex: 1 1 50px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+.card-wrapper h3{
+    background: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    padding: 4px;
+    margin-top: 3px;
+}
+.card_img{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+.card_img img{
+    width: 100%;
+    height: 100%;
+}
+.green{
+    background: rgba(185, 255, 102, 1);
+    box-shadow: 3px 0 5px 0 0 black;
+}
+.gray{
+    background: rgba(25, 26, 35, 1);
+}

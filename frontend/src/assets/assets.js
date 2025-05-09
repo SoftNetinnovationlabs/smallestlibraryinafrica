@@ -13,7 +13,9 @@ import t4b from './t4b.png'
 import safaricom from './saf.jpeg'
 import Selection from './Selection5.png'
 import Founder from './Founder.jpg'
+import content from './content.svg'
 export const assets = {
+    content,
     Founder,
     Selection,
     t4b,
