@@ -1,6 +1,7 @@
 import React from 'react';
 import { assets } from '../../../../../assets/assets';
 import './_structHero.css';
+import { FaFacebookF, FaXTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 const _structHero = () => {
   return (
@@ -22,6 +23,17 @@ const _structHero = () => {
               have easily deterred him from dreaming of a better future. Yet, it was these very hardships that fueled
               his determination to create change.
             </p>
+            <div className='social-links'>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <FaXTwitter />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
         </div>
       </div>
