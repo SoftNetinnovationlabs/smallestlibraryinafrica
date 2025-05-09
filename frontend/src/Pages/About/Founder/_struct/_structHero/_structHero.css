@@ -1,10 +1,12 @@
 .struct-hero-container{
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin: auto;
 
 }
 .hero__-content .hero-image{
+    flex: 1 1 250px;
     width: 400px;
     height: 400px;
     border-radius: 50px;
