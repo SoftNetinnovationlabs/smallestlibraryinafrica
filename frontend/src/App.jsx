@@ -30,9 +30,9 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />}>
-        <Route path='founder' element={<Founder />} />
-        </Route>
+        <Route path='/about' element={<About />} />
+        <Route path='/about/founder' element={<Founder />} />
+
         
         <Route path='/our-work' element={<h1>Our work under development</h1>} />
         <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
