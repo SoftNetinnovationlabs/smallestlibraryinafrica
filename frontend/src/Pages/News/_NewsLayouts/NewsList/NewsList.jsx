@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 import './newslist.css';
 
 import baseURL from '../../../../../config.js'; // Adjust to your project
 
+const fetchNews = async () => {
+  const res = await axios.get(`${baseURL}/news`);
+  return res.data;
+};
+
 const NewsList = () => {
-  const [news, setNews] = useState([]);
+  const { data: news = [], isLoading, isError, error } = useQuery({
+    queryKey: ['news'],
+    queryFn: fetchNews,
+  });
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const res = await axios.get(`${baseURL}/news`);
-        setNews(res.data);
-      } catch (err) {
-        console.error('Error fetching news:', err);
-      }
-    };
-
-    fetchNews();
-  }, []);
+  if (isLoading) return <div>Loading news...</div>;
+  if (isError) return <div>Error loading news: {error.message}</div>;
 
   return (
     <div className="news-list">
@@ -27,7 +26,6 @@ const NewsList = () => {
       <div className="news-cards">
         {news.map((item) => (
           <Link to={`/news/${item._id}`} key={item._id} className="news-card">
-            {/* Main image from Cloudinary */}
             {item.mainImage && (
               <img src={item.mainImage} alt={item.mainTitle} className="news-card-image" />
             )}
