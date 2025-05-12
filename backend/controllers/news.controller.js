@@ -1,10 +1,11 @@
 import NewsModel from '../models/news.model.js';
+import redisClient from '../utils/redisClient.js'; // Adjust if located elsewhere
 
+// Create News Post
 export const createNewsPost = async (req, res) => {
   try {
     const { mainTitle, excerpt } = req.body;
 
-    // Log for debugging
     console.log('Incoming body keys:', Object.keys(req.body));
     console.log('Incoming full body:', req.body);
 
@@ -12,11 +13,9 @@ export const createNewsPost = async (req, res) => {
     const sectionImages = req.files?.['sectionImages'] || [];
 
     let sections = [];
-
-    // Parse sections based on actual format
     let rawSections = req.body.sections;
 
-    // If sections is JSON string (common if sent via FormData), parse it
+    // Parse sections (likely stringified JSON from FormData)
     if (typeof rawSections === 'string') {
       try {
         rawSections = JSON.parse(rawSections);
@@ -42,6 +41,10 @@ export const createNewsPost = async (req, res) => {
     });
 
     await post.save();
+
+    // Invalidate Redis cache
+    await redisClient.del('news:all');
+
     res.status(201).json({ message: 'News post created', post });
   } catch (err) {
     console.error('Create news post error:', err);
@@ -49,12 +52,33 @@ export const createNewsPost = async (req, res) => {
   }
 };
 
-// Get All News
+// Get All News with Redis Caching
 export const getAllNews = async (req, res) => {
+  const cacheKey = 'news:all';
+
   try {
+    const cached = await redisClient.get(cacheKey);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        console.log('Serving /news from Redis cache');
+        return res.status(200).json(parsed);
+      } catch (jsonErr) {
+        console.warn('Corrupted cache found. Deleting it...');
+        await redisClient.del(cacheKey); // Remove corrupted cache
+      }
+    }
+
+    // Fetch from DB
     const news = await NewsModel.find().sort({ createdAt: -1 });
+
+    // Store in Redis cache for 1 hour (3600 seconds)
+    await redisClient.set(cacheKey, JSON.stringify(news), { ex: 3600 });
+
+    console.log('Serving /news from DB and cached');
     res.status(200).json(news);
   } catch (err) {
+    console.error('Error fetching news:', err);
     res.status(500).json({ message: 'Failed to fetch news' });
   }
 };
@@ -66,17 +90,22 @@ export const getSingleNews = async (req, res) => {
     if (!newsItem) return res.status(404).json({ message: 'Not found' });
     res.status(200).json(newsItem);
   } catch (err) {
+    console.error('Error fetching news item:', err);
     res.status(500).json({ message: 'Error fetching news item' });
   }
 };
 
-//delete news 
+// Delete News Post
 export const deleteNewsPost = async (req, res) => {
   try {
     const deletedPost = await NewsModel.findByIdAndDelete(req.params.id);
     if (!deletedPost) {
       return res.status(404).json({ message: 'News post not found' });
     }
+
+    // Invalidate Redis cache
+    await redisClient.del('news:all');
+
     res.status(200).json({ message: 'News post deleted successfully' });
   } catch (err) {
     console.error('Delete news post error:', err);
