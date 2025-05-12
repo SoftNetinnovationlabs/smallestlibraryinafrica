@@ -25,9 +25,9 @@ function Footer() {
       <h2>More</h2>
   <ul className='footer__links'>
     <li className='footer__link'><Link className='link' to='/'>Innovation Center</Link></li>
-    <li className='footer__link'><Link className='link' to='/signup'>Get Involved</Link></li>
+    <li className='footer__link'><Link className='link' to='/register'>Get Involved</Link></li>
     <li className='footer__link'><Link className='link' to='/About#story'>Story</Link></li>
-    <li className='footer__link'><Link className='link' to='/our-impact'>Our Work</Link></li>
+    <li className='footer__link'><Link className='link' to='/our-work'>Our Work</Link></li>
   </ul>
       </div>
 
