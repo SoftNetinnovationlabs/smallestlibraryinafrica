@@ -19,7 +19,7 @@ const Approach = () => {
         {
             id: 3,
             title: "Resilient livelihoods",
-            description: 'sustainable practices that protect the environment and promote conservation.',    
+            description: 'We focus on implementing a career, internship and entrepreneurship program that aims to provide information , build technical capacity and skills for the youths who are more vulnerable to unemployment , drug abuse, crime and radicalization.',    
             assets: assets.livelihoods,
          },
        
