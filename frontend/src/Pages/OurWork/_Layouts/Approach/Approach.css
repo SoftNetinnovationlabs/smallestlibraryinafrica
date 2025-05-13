@@ -1,7 +1,17 @@
-.approach-assets{
-    padding: 100px 0;
+.approach{
+    padding: 50px 0;
     width: 90%;
     margin: 0 auto;
+}
+.approach__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.approach-assets{
+    padding: 100px 0;
+    
 }
 .approach__wrapper{
     display: flex;
