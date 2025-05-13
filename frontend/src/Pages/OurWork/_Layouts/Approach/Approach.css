@@ -1,1 +1,21 @@
-,
+.approach-assets{
+    padding: 100px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+.approach__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.approach__wrapper .approach__content{
+    flex: 1 1 30%;
+    width: 30%;
+    margin-bottom: 2rem;
+}
+.approach__wrapper .approach__content img{
+    width: 100%;
+    height: auto;
+}
