@@ -4,7 +4,7 @@ const HeroWork = () =>{
     return(
         <div>
             <div className="hero-work">
-                <h1>Our work thant define us</h1>
+                <h1>Our work that define us</h1>
                 
                 </div>
         </div>
