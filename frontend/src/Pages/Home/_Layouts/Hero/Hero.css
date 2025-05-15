@@ -2,12 +2,13 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-image: url(../../../../assets/IMG-0146.webp);
     border-bottom-right-radius: 20px;
+    background-color: rgba(25, 26, 35, 1);
       }
   
 .hero__content{
