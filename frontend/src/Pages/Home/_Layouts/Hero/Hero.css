@@ -85,3 +85,30 @@ font-size: 12px;
     background-color: #f9930d;
     font-weight: bold;
   }
+
+  .socialmedia-links{
+    display: flex;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: white;
+  }
+  .social-section{
+    display: flex;
+    position: absolute;
+    right: 5%;
+    justify-content: center;
+    align-items: center;
+    bottom: 3%;
+}
+.social-section a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+        box-shadow: 0 5px 0 0 rgba(25, 26, 35, 1);
+        color: rgba(25, 26, 35, 1);
+       background-color: rgba(185, 255, 102, 1);
+    }

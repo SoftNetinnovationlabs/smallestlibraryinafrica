@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./Hero.css";
 import { Link } from "react-router-dom";
-
+      import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+      import {FaXTwitter} from 'react-icons/fa6'
 const Hero = () => {
   const DataSet = [
     {
@@ -51,8 +52,26 @@ const Hero = () => {
           Learn More
         </Link>
       </div>
-      <section>
-        </section>
+        
+
+<section className="social-section">
+  <div className="socialmedia-links">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+      <FaFacebook />
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <FaXTwitter />
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <FaInstagram />
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+      <FaLinkedin />
+    </a>
+  </div>
+</section>
+
+
     </div>
   );
 };
