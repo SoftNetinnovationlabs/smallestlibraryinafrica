@@ -59,7 +59,7 @@
   text-decoration: none;
 }
 h1,h2,h3,h4,h5,h6{
-  color: var(--text-color);
+  color: #133d68;
   /* font-family: "DynaPuff", system-ui; */
 }
 h4{
@@ -94,7 +94,7 @@ h1{
   color: var(--btn-text-color-active);
 }
 p{
-  color: rgb(4, 5, 63);
+  color: #3a84c5;
   font-family: "Outfit", sans-serif;
   font-size: 1.2rem;
 }
