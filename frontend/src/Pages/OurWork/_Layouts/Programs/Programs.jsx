@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Programs.css';
-import { FaBookReader, FaGraduationCap, FaHandsHelping, FaLaptopCode } from 'react-icons/fa';
+import { FaBookReader, FaGraduationCap, FaHandsHelping, FaLaptopCode, FaArrowRight } from 'react-icons/fa';
 import { assets } from '../../../../assets/assets';
-
+import {Link} from 'react-router-dom'
 const programsData = [
   {
     icon: <FaBookReader className="program-icon" />,
@@ -25,19 +25,60 @@ const programsData = [
     title: "Youth Digital Space",
     description: `Our digital space equips youth with skills in web design, data entry, coding, and digital marketing, helping them avoid drugs, crime, and unemployment through technology.`,
   },
+
 ];
+
+const infoGraphic = {
+  paragraphTop: 'Our Programs aimed to improve',
+  paragraphbottom: 'of schools have appreciated our cause'
+}
 
 const Programs = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
-
+  const [counts, setCounts] = useState(0)
   const toggleCard = (index) => {
     setExpandedIndex((prev) => (prev === index ? null : index));
   };
 
+  useEffect(() => {
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      setCounts(current);
+      if (current >= 90) {
+        clearInterval(interval);
+      }
+    }, 50);
+    return () => clearInterval(interval);
+  }, []);
+
+
+
   return (
     <section className="programs-section">
-      <div className='programs-container'>
-        <img src={assets.washImg} />
+    <div className='programs-container'>
+<div className='imageData'>
+  <img src={assets.washImg} />
+  <div className='overlayData'>
+  <div className='overlay__top'>
+    <p>{infoGraphic.paragraphTop}</p>
+      <Link className='iconTop' to='/about'>
+            <FaArrowRight />
+</Link>
+  </div>
+    <div className='overlay__bottomData'>
+      <div className='counter'>
+        <span className='counts'>{counts}%</span>
+        <div>
+          <div className='text'>
+            <p>{infoGraphic.paragraphbottom}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
       <div className="programs-container">
         <h2 className="programs-title">OUR PROGRAMS</h2>
