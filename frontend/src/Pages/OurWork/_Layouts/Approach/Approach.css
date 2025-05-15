@@ -21,7 +21,7 @@
 
 }
 .approach__wrapper .approach__content{
-    flex: 1 1 30%;
+    flex: 1 1 250px;
     width: 30%;
     margin-bottom: 2rem;
 }

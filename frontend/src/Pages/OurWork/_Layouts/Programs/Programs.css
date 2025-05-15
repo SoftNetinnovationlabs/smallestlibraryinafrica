@@ -1,0 +1,54 @@
+.programs-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.programs-container {
+    flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 20px;
+}
+.programs-container img{
+    width: 100%;
+    height: 100%;
+}
+.program-card {
+  background-color: #fff;
+  overflow: hidden;
+  border-top: 1px solid #c4c;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}  
+
+
+
+
+.program-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+
+
+.program-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.program-card-body {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.program-card-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.
