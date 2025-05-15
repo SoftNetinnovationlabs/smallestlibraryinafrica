@@ -112,3 +112,8 @@ font-size: 12px;
         color: rgba(25, 26, 35, 1);
        background-color: rgba(185, 255, 102, 1);
     }
+    @media screen and (max-width: 768px){
+        .social-section{
+            bottom: 2.9%;
+        }
+    }
