@@ -56,7 +56,7 @@ const Hero = () => {
 
 <section className="social-section">
   <div className="socialmedia-links">
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.facebook.com/share/12M22t7mL97/" target="_blank" rel="noopener noreferrer">
       <FaFacebook />
     </a>
     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
