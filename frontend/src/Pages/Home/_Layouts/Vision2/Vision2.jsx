@@ -67,10 +67,17 @@ const Vision2 = () => {
           <section className="visionMission__sect">
             <div className="vision__mission">
               <p>{visionMissionDataSet[toggleData]}</p>
-              {toggleData === 'mission' && (
+
+              {toggleData === 'mission'? (
                 <div style={{ marginTop: '20px' }}>
-                  <Link to="/our-programs" className="btn">
+                  <Link to="/our-work" className="btn">
                     Our Programs
+                  </Link>
+                </div>
+              ) : (
+                  <div style={{ marginTop: '20px' }}>
+                  <Link to="/our-impact" className="btn">
+                    Our Impact
                   </Link>
                 </div>
               )}
