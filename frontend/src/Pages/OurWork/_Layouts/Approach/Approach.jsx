@@ -12,7 +12,7 @@ const Approach = () => {
         },
         {
             id: 2,
-            title: "nutrition and Health",
+            title: "Nutrition and Health",
             description: 'Unsafe drinking water and severe food security due to poverty are some of the obvious drivers of malnutrition as 1 out of 3 children below 5 years are stunted.            We are working to improve access to clean water and sustainable feeding programs at both community and schooling level. Through this we are able to improve on the learning environment which is a critical element in             achieving high performance outcomes.',
             assets: assets.nutrition,
         },
