@@ -24,7 +24,7 @@ const AreaOfFocus = () => {
         </div>
         <div className="area__focus">
           <div className="icon">
-            <span className="material-symbols-outlined school health">
+            <span className="material-symbols-outlined school health" id="health">
               health_and_safety
             </span>
           </div>
