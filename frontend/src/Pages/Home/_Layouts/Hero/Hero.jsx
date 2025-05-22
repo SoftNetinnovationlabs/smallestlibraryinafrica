@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const DataSet = [
     {
-      title: "programs",
+      title: "Programs",
       description:
         "Started in 2014 in Mugure slums as an open air library, our objective as a program is to strengthen and create a reading culture among children in low-income communities.",
     },
@@ -16,7 +16,7 @@ const Hero = () => {
         "Our approach combines grassroots involvement with community-driven solutions, empowering locals to lead sustainable change.",
     },
     {
-      title: "area of focus",
+      title: "Area of focus",
       description:
         "We focus on education, mentorship, and community development through literacy and access to knowledge.",
     },
