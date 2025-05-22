@@ -8,7 +8,7 @@ AuthRoutes.post('/register', AuthController)
 AuthRoutes.post('/login', login)
 AuthRoutes.post('/admin-login', Login)
 AuthRoutes.post('/register-admin', checkAdminSecret, registerAdmin);
-AuthRoutes.post('/ping', (req,res)=>{
+AuthRoutes.get('/ping', (req,res)=>{
     res.status(200).json({message: "Server is alive"})
 })
 
