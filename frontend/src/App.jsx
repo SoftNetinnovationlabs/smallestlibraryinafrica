@@ -16,6 +16,7 @@ import NewsList from './Pages/News/_NewsLayouts/NewsList/NewsList';
 import NewsDetails from './Pages/News/_NewsLayouts/NewsDetails/NewsDetails';
 import Founder from './Pages/About/Founder/Founder'
 import OurWork from './Pages/OurWork/OurWork'
+import KeepAlive from './Pages/About/keepAlive.jsx';
 import './App.css';
 
 const App = () => {
@@ -28,13 +29,11 @@ const App = () => {
   return (
     <div className="App">
       {!hideLayout && <Navbar />}
-
+ <KeepAlive /> 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/about/founder' element={<Founder />} />
-
-      
         <Route path='/our-work' element={<OurWork/>} />
         <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
         <Route path='/register' element={<Auth />} />
