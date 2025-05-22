@@ -15,7 +15,7 @@ const KeepAlive = () => {
                 console.error('Error pinging server:', error)
             })
 
-    }, 80)
+    }, 800)
     return () => clearInterval(interval)
     }, [])
     return null
