@@ -11,7 +11,7 @@ const programsData = [
   },
   {
     icon: <FaGraduationCap className="program-icon" />,
-    title: "Nipeleke Shule Scholarship Program",
+    title: "Internet for Scholarship Program",
     description: `We identify and support vulnerable children by providing school fees, uniforms, and stationery. We also promote inclusion for children with disabilities by strengthening special needs schools in informal settlements.`,
   },
   {
