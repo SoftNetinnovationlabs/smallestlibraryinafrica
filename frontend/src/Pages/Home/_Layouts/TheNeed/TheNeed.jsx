@@ -1,5 +1,6 @@
 import React from "react";
 import "./TheNeed.css";
+import {Link} from 'react-router-dom'
 import {assets} from '../../../../assets/assets'
 const TheNeed = () => {
   return (
@@ -26,7 +27,7 @@ const TheNeed = () => {
               children and young adults are trapped by the systems that hold
               urban poverty
             </p>
-            <button className="btn">learn More</button>
+            <Link className="btn" to={'/our-work'}>learn More</Link>
           </div>
         </div>
         <div className="theneed__content">
