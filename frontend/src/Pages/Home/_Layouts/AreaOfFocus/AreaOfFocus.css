@@ -13,6 +13,8 @@
 }
 
 .Area__focus_container{
+    width: 98%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
