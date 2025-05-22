@@ -27,8 +27,8 @@ const Approach = () => {
   return (
     <div>
         <div className="approach">
-            <h1>Our Approach</h1>
-            <p>We are committed to creating a world where every child has the opportunity to thrive and reach their full potential. Our approach is centered around three key pillars:</p>
+            <h1 className='approach__title'>Our Approach</h1>
+            <p className='approach__paragraph'>We are committed to creating a world where every child has the opportunity to thrive and reach their full potential. Our approach is centered around three key pillars:</p>
             <div className="approach-assets">
                 {approachData.map((approach) => (
                     <div className="approach-asset" key={approach.id}>
