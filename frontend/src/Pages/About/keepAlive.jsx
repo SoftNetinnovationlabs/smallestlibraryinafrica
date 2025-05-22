@@ -4,7 +4,7 @@ import baseURL from '../../../config'
 const KeepAlive = () => {
     useEffect(() => {
         const interval = setInterval(() => {
-            const response = axios.get(`${baseURL}/api/auth/ping`)
+            const response = axios.get(`${baseURL}auth/ping`)
             response.then((res) => {
                 if (res.status === 200) {
                     console.log('Server is alive')
