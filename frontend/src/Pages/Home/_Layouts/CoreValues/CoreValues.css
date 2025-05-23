@@ -4,12 +4,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #f9854549;
+    padding: 100px 0;
     
 }
 .values-list{
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 90%;
     margin: auto;
     gap: 20px;
     justify-content: center;
@@ -17,8 +19,10 @@
 }
 
 .value-item{
-    flex: 1 1 240px; /* Flex-grow, flex-shrink, flex-basis */
-    max-width: 300px; /* Optional: limit the maximum width of each item */
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    max-width: 300px;
+    border: 1px solid red;
+    /* max-width: 200px; Optional: limit the maximum width of each item */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +38,7 @@
     transition: transform 0.3s ease; /* Animation on hover */
 }
 .value-title{
-    font-size: 20px;
+    font-size: 5rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
