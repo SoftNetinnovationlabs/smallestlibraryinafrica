@@ -62,13 +62,13 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="links">
-              <NavLink
+              {/* <NavLink
                 to="/our-impact"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) => isActive ? "link active-link" : "link"}
               >
                 OUR IMPACT
-              </NavLink>
+              </NavLink> */}
             </li>
             <li className="links">
               <NavLink

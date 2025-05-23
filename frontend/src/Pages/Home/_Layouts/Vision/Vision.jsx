@@ -1,13 +1,13 @@
 import React from "react";
 import "./Vision.css";
 import { assets } from "../../../../assets/assets";
+import Title from '../../../../components/UI/Title/Title'
 const Vision = () => {
   return (
     <div className="vision">
       <div className="vision__container">
         <div className="vision__container__title">
-          <h1>Our Vision for Change</h1>
-                              <div className='title-design'></div>
+          <Title text='Our Vision for change'/>
         </div>
         <div className="vision__container__content">
           <p>

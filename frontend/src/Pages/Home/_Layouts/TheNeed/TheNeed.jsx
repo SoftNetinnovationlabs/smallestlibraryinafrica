@@ -2,13 +2,12 @@ import React from "react";
 import "./TheNeed.css";
 import {Link} from 'react-router-dom'
 import {assets} from '../../../../assets/assets'
+import Title from '../../../../components/UI/Title/Title'
 const TheNeed = () => {
   return (
     <div className="theneed">
-   <div className='title'>
-                <h2 className='value-title'><h1>The Need</h1></h2>
-                    <div className='title-design'></div>
-                       </div>
+
+<Title text="The Need" />                          
       <div className="container__theneed">
         <div className="theneed__content">
           <div className="description">

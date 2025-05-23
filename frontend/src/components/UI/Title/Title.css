@@ -1,0 +1,46 @@
+.title {
+  margin-bottom: 2rem;
+}
+
+.title.center {
+  text-align: center;
+}
+
+.title.left {
+  text-align: left;
+}
+
+.title.right {
+  text-align: right;
+}
+
+.value-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 0.5rem;
+}
+
+.title.dark .value-title {
+  color: #EEEEEE;
+}
+
+.title-design {
+  width: 80px;
+  height: 4px;
+  background-color: #4A90E2;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.title.center .title-design {
+  margin: 0 auto;
+}
+
+.title.left .title-design {
+  margin-left: 0;
+}
+
+.title.right .title-design {
+  margin-left: auto;
+}

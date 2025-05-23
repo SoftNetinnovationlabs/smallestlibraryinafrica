@@ -2,6 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 import "./Partners.css";
 import { assets } from "../../../../assets/assets";
+import Title from '../../../../components/UI/Title/Title'
 const Partners = () => {
   const logos = [
     assets.softNetLogo,
@@ -24,8 +25,8 @@ const Partners = () => {
 
   return (
     <div className="trusted-container">
-      <h1>Our Partners</h1>  
-          
+            <Title text="Partners"/>
+
       <Marquee speed={90} gradient={false}>
         {logos.map((logo, index) => (
           <img
