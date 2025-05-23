@@ -127,6 +127,7 @@ text-align: center;
 }
 
 .subject{
+    display: none;
     animation: change-background  linear both;
     animation-timeline: scroll();
     width: 800px;
@@ -134,6 +135,7 @@ text-align: center;
 
 }
 .subject p{
+    display: none;
     animation: change-text-color  linear both;
     animation-timeline: scroll(scroll);
 }
