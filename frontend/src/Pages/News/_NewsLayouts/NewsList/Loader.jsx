@@ -20,7 +20,7 @@ const Loader = () => {
 const StyledWrapper = styled.div`
   .loader {
     position: relative;
-    width: 240px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
