@@ -21,6 +21,10 @@ const StyledWrapper = styled.div`
   .loader {
     position: relative;
     width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     height: 130px;
     margin-bottom: 10px;
     border: 1px solid #d3d3d3;

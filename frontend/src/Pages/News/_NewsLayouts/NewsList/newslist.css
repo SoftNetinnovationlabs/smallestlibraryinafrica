@@ -36,4 +36,13 @@
     padding: 0 1rem 1rem;
     color: #555;
   }
-  
+  .news-card {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.news-card.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
