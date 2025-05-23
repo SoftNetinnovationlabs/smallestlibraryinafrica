@@ -108,3 +108,41 @@ text-align: center;
         transform: translate(10px);
     }
 }
+
+@keyframes change-background{
+    from {
+        background-color: #0d6efd;
+    }
+    to {
+        background-color: #198754;
+    }
+}
+@keyframes change-text-color{
+    from{
+        color: red;
+    }
+    to {
+        color: green;
+    }
+}
+
+.subject{
+    animation: change-background  linear both;
+    animation-timeline: scroll();
+    width: 800px;
+    height: 800px;
+
+}
+.subject p{
+    animation: change-text-color  linear both;
+    animation-timeline: scroll(scroll);
+}
+
+@keyframes reveal {
+  from { opacity: 0; }
+}
+
+.scroller > * {
+  animation: reveal linear both;
+  animation-timeline: view();
+}

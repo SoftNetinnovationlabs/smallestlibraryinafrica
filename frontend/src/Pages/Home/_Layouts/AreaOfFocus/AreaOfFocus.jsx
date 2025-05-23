@@ -3,6 +3,7 @@ import "./AreaOfFocus.css";
 import { Link } from "react-router-dom";
 const AreaOfFocus = () => {
   return (
+    <>
     <div className="area_of_focus">
     <h1>Our Area Of Focus </h1>
       <div className="Area__focus_container">
@@ -55,8 +56,18 @@ const AreaOfFocus = () => {
           </div>
         </div>
       </div>
+       
        <Link to="/about" className=" icons_btn"><span className="material-symbols-outlined arrow">arrow_right_alt</span></Link> 
     </div>
+    <div className="test">
+      <div classname='scroller'>
+        <div className="subject">
+          tezt
+          <p> this  is the text test color</p>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 

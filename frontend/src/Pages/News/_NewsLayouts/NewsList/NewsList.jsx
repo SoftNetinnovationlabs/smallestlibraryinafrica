@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import './newslist.css';
+import Loader from './Loader'
 
 import baseURL from '../../../../../config.js'; // Adjust to your project
 
@@ -17,7 +18,7 @@ const NewsList = () => {
     queryFn: fetchNews,
   });
 
-  if (isLoading) return <div>Loading news...</div>;
+  if (isLoading) return <Loader/>;
   if (isError) return <div>Error loading news: {error.message}</div>;
 
   return (
