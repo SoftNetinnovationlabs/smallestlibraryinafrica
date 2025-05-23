@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { assets } from "../../assets/assets";
 import { IoPersonCircle } from "react-icons/io5";
 
 function Navbar() {
@@ -24,7 +25,7 @@ function Navbar() {
     <header className={isScrolled ? "scrolled" : ""}>
       <div className="header_container">
         <div className="logo_2">
-          <NavLink to="/">SmLibA</NavLink>
+          <NavLink to="/"><img src={assets.Logo} alt="" /></NavLink>
         </div>
 
         <nav className={`navbar ${isOpen ? "open" : ""}`}>

@@ -1,5 +1,6 @@
 .title {
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .title.center {
@@ -26,11 +27,14 @@
 }
 
 .title-design {
+  display: none;
+ bottom: -30px;
+  right: 0;
+  position: absolute;
   width: 80px;
   height: 4px;
   background-color: #4A90E2;
   border-radius: 2px;
-  margin: 0;
 }
 
 .title.center .title-design {

@@ -18,10 +18,12 @@ import safaricom from './saf.jpeg'
 import Selection from './Selection5.png'
 import Founder from './Founder.jpg'
 import content from './content.svg'
+import Logo from './logo.png'
 
 export const assets = {
     content,
     Founder,
+    Logo,
     Selection,
     t4b,
     safaricom,
