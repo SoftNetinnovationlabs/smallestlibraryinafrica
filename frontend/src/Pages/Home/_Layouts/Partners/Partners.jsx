@@ -24,7 +24,8 @@ const Partners = () => {
 
   return (
     <div className="trusted-container">
-      <h1>Our Partners</h1>      
+      <h1>Our Partners</h1>  
+          
       <Marquee speed={90} gradient={false}>
         {logos.map((logo, index) => (
           <img

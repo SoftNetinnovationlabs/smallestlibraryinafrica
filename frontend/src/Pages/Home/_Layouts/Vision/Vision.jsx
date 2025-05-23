@@ -7,6 +7,7 @@ const Vision = () => {
       <div className="vision__container">
         <div className="vision__container__title">
           <h1>Our Vision for Change</h1>
+                              <div className='title-design'></div>
         </div>
         <div className="vision__container__content">
           <p>

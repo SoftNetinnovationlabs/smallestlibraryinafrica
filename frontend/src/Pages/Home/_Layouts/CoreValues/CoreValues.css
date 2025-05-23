@@ -48,3 +48,19 @@
 .value-item:hover .value-icon{
     transform: scale(1.2); /* Scale up the icon on hover */
 }
+.title{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.title-design{
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+    bottom: 10%;
+    border-bottom: 10px;
+    background:  rgba(107, 46, 46, 0.9);
+    width: 100%;
+    width: 100px;
+    height: 10px;
+}

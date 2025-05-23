@@ -30,12 +30,15 @@ const CoreValues = () => {
 
     return (
         <div className="core-values">
-            <h2 className='value-title'>Our Core Values</h2>
+                       <div className='title'>
+                <h2 className='value-title'>Our Core Values</h2>
+                    <div className='title-design'></div>
+                       </div>
             <div className="values-list">
                 {values.map((value, index) => (
                     <div key={index} className="value-item">
                         <FontAwesomeIcon icon={value.icon} className="value-icon" />
-                        <h3>{value.title}</h3>
+             <h3>{value.title}</h3>
                         <p className='value-description'>{value.description}</p>
                     </div>
                 ))}

@@ -5,7 +5,10 @@ const AreaOfFocus = () => {
   return (
     <>
     <div className="area_of_focus">
-    <h1>Our Area Of Focus </h1>
+       <div className='title'>
+                <h2 className='value-title'><h1>Our Area Of Focus </h1></h2>
+                    <div className='title-design'></div>
+                       </div>
       <div className="Area__focus_container">
         <div className="area__focus">
           <div className="icon">

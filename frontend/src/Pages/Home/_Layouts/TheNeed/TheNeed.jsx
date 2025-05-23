@@ -5,7 +5,10 @@ import {assets} from '../../../../assets/assets'
 const TheNeed = () => {
   return (
     <div className="theneed">
-      <h1>The Need</h1>
+   <div className='title'>
+                <h2 className='value-title'><h1>The Need</h1></h2>
+                    <div className='title-design'></div>
+                       </div>
       <div className="container__theneed">
         <div className="theneed__content">
           <div className="description">
