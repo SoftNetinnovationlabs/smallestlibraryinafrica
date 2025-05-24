@@ -24,7 +24,7 @@ export const handleContactForm = async (req, res) => {
 
     // Send email notification
     await sendEmail(
-      ['smallest@smallestlibraryinafrica.org', 'youandusdev@gmail.com'],
+      ['smallest@smallestlibraryinafrica.org', 'youandusdev@gmail.com', 'softnet.innovationlab@gmail.com'],
       subject,
       html
     );
