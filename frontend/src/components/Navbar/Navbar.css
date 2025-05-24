@@ -33,7 +33,6 @@ header.scrolled {
     object-fit: cover;
     object-position: fill;
     overflow: hidden;
-    border: 1px solid red;
   }
   
   .logo_2 img{

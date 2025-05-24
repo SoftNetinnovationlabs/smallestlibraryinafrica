@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
-import baseURL from '../../../config'
+import baseURL from '../../../../../config'
 const Form = ({ label, name = '', email = '', message = '' }) => {
   const [formData, setFormData] = useState({ name, email, message });
   const [sent, setSent] = useState(false);
