@@ -2,12 +2,14 @@ import React from "react";
 import "./Story.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { assets } from "../../../../assets/assets";
 const Story = () => {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Our Story</h1>
-
+    <div className="story__wrapper">
+<div className="text-story">       
+   <h3>Our Story: the humble beginnings</h3>
+</div>
       <div className="story__container">
         <div className="story__content">
           <p>
@@ -15,44 +17,32 @@ const Story = () => {
           </p>
         </div>
 
-        <div className="story__content">
           <p>
             Despite its humble beginnings, the library became a vital learning space for school-going children, offering access to books and a safe, supportive environment—something previously unimaginable in the area.
           </p>
-        </div>
 
-        <div className="story__content">
           <p>
             Having experienced similar educational and social challenges, Cyril believed in the potential of his community and was determined to transform their narrative from one of impossibilities to possibilities.
           </p>
-        </div>
 
-        <div className="story__content">
           <p>
             Today, the Smallest Library In Africa is part of a global movement to end inequality by promoting education, nutrition, and sustainable livelihoods in marginalized communities. Our efforts are powered by technology and innovation to design and implement impactful solutions.
           </p>
-        </div>
       </div>
 
+    </div>
       <section className="about__container">
-        <div className="about__card">
-          <div className="about__content">
-            <h4>Our People</h4>
-            <p>
-              We are a team of passionate individuals committed to building a brighter future for children and youth across Africa.
-            </p>
-            <Link className="link" to="/about/our-people">
-              <FaArrowRight />
-            </Link>
-          </div>
-        </div>
+        
 
         <div className="about__card">
+          <div className="founder_people">
+            <img src={assets.Founder} alt="Founder" />
+          </div>
           <div className="about__content">
             <h4>Our Founder</h4>
-            <p>
+            {/* <p>
               Meet the visionary behind the initiative—a young entrepreneur passionate about transforming communities through education and opportunity.
-            </p>
+            </p> */}
             <Link className="link" to="/about/founder">
               <FaArrowRight />
             </Link>
@@ -61,18 +51,24 @@ const Story = () => {
 
         <div className="about__card">
           <div className="about__content">
+               <div className="founder_people">
+            <img src={assets.board} alt="Founder" />
+          </div>
             <h4>Our Board of Directors</h4>
-            <p>
+            {/* <p>
               Our board is composed of experienced leaders dedicated to advancing our mission and ensuring transparency, accountability, and sustainability.
-            </p>
+            </p> */}
             <Link className="link" to="/about/board-of-directors">
               <FaArrowRight />
             </Link>
           </div>
         </div>
 
-        <div className="about__card">
+        {/* <div className="about__card">
           <div className="about__content">
+               <div className="founder_people">
+            <img src={assets.Founder} alt="Founder" />
+          </div>
             <h4>Our Staff</h4>
             <p>
               Meet the dedicated team members who work tirelessly to bring our programs and initiatives to life.
@@ -81,7 +77,7 @@ const Story = () => {
               <FaArrowRight />
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

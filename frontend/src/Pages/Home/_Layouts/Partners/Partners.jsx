@@ -6,12 +6,15 @@ import Title from '../../../../components/UI/Title/Title'
 const Partners = () => {
   const logos = [
     assets.softNetLogo,
+        assets.PeanutLogo,
     assets.Vayacom,
     assets.t4b,
     assets.safaricom,
+    assets.PeanutLogo,
     assets.Vayacom,
     assets.t4b,
     assets.softNetLogo,
+    assets.PeanutLogo,
     assets.Vayacom,
     assets.safaricom,
 

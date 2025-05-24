@@ -19,9 +19,11 @@ import Selection from './Selection5.png'
 import Founder from './Founder.jpg'
 import content from './content.svg'
 import Logo from './logo.png'
-
+import PeanutLogo from './TPG_new_logo__1_-removebg-preview.png'
+import board from './board.JPG'
 export const assets = {
     content,
+    board,
     Founder,
     Logo,
     Selection,
@@ -42,5 +44,6 @@ export const assets = {
     collague,
     softNetLogo,
     Vayacom,
+    PeanutLogo
 
 };
