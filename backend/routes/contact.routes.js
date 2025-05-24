@@ -1,4 +1,4 @@
-import express from express
+import express from 'express'
 import {handleContactForm} from '../controllers/contact.controller.js'
 
 const contactRoutes = express.Router();

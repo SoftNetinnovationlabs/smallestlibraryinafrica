@@ -1,4 +1,4 @@
-import { sendEmail } from '../utils/sendEmails.js'; // make sure path & filename are correct
+import { sendEmail } from '../utils/senEmails.js'; // make sure path & filename are correct
 import ContactMessage from '../models/ContactMessage.js';
 
 export const handleContactForm = async (req, res) => {
