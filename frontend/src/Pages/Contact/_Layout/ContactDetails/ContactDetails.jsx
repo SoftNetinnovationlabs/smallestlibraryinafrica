@@ -31,7 +31,7 @@ const ContactDetails = () => {
             <FaEnvelope />
           </div>
           <div className="description">
-            <p>smallest@smallestlibraryinafrica.com</p>
+            <p>smallest@smallestlibraryinafrica.org</p>
             <small>Send us your questions anytime</small>
           </div>
         </div>
