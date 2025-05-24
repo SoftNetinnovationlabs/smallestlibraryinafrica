@@ -1,0 +1,23 @@
+form{
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+}
+.email_name{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    
+}
+.email_name input,.email_name .btn{
+    padding: 10px 20px;
+        border: 1px solid #F3F4F6FF;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 3%;
+        background: #F3F4F6FF;
+}
+textarea{
+    background: #F3F4F6FF;
+    border: 1px solid #F3F4F6FF;
+}

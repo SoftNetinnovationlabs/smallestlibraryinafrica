@@ -53,6 +53,15 @@ function Navbar() {
                 ABOUT US
               </NavLink>
             </li>
+               <li className="links">
+              <NavLink
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) => isActive ? "link active-link" : "link"}
+              >
+                CONTACT US
+              </NavLink>
+            </li>
             <li className="links">
               <NavLink
                 to="/our-work"

@@ -1,0 +1,39 @@
+.details{
+
+    margin-top: 20px;
+}
+.wrapper-contact {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  padding: 10px;
+}
+
+.contact-content {
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  position: relative;
+}
+
+.contact-content .icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+  position: absolute;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper-contact{
+          grid-template-columns: 1fr;
+    }
+}

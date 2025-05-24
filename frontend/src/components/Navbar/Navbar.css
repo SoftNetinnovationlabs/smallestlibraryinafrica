@@ -13,6 +13,7 @@ header{
     z-index: 1000;
     position: relative;
   transition: top 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
 }
 header.scrolled {
     position: fixed;
@@ -31,6 +32,8 @@ header.scrolled {
     height: 150px;
     object-fit: cover;
     object-position: fill;
+    overflow: hidden;
+    border: 1px solid red;
   }
   
   .logo_2 img{
