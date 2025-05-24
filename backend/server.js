@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth/', AuthRoutes)
 app.use('/api/newsletter', NewsletterRoutes)
 app.use('/api/news',Router )
-app.use('/api', contactRoutes)
+app.use('/api', ContactRoutes)
 
 
 const PORT = process.env.PORT || 5000;

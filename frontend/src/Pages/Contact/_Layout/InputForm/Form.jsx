@@ -19,7 +19,7 @@ const Form = ({ label, name = '', email = '', message = '' }) => {
     e.preventDefault();
 
     try {
-      await axios.post(`${baseURL}/api/contact`, formData);
+      await axios.post(`${baseURL}/contact`, formData);
       setSent(true);
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
