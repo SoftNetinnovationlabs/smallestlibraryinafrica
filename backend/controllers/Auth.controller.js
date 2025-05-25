@@ -7,7 +7,7 @@ export const AuthController = async (req, res) => {
   const { fullName, email, phoneNumber, password } = req.body;
 
   try {
-    if(!email  || !password || phoneNumber || !fullName){
+    if(!email  || !password || !phoneNumber || !fullName){
       return res.status(400).json({message: 'all fields are required'});
   
     }

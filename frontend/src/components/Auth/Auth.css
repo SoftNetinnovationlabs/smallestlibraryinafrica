@@ -57,19 +57,46 @@
     border-radius: 10px;
     background: #F3F4F6FF;
 }
-.btn__primary{
-    background: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
+
+  .btn__primary {
     width: 100%;
-    max-width: 400px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  max-width: 400px;
+  background-color: #4A90E2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
-.btn__primary:hover{
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
+
+.btn__primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn__loading {
+  background-color: #999;
+  position: relative;
+}
+
+/* Optional spinner icon (text-only fallback above works too) */
+.btn__loading::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
 }

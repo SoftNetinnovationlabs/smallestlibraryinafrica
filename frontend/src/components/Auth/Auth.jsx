@@ -43,6 +43,7 @@ const Auth = () => {
       login({ user: data.user, token: data.token });
       navigate(isSignup ? '/volunteer-details' : '/dashboard'); // or wherever you want after login
     } catch (error) {
+      console.log(error.message)
       alert(error.message);
     }
   };
@@ -94,9 +95,14 @@ const Auth = () => {
           onChange={handleChange}
         />
 
-        <button className="btn__primary" type="submit">
-          {loading ? 'please wait...' :( currState === 'signup' ? 'Register' : 'Login')}
-        </button>
+<button
+  className={`btn__primary ${loading ? 'btn__loading' : ''}`}
+  type="submit"
+  disabled={loading}
+>
+  {loading ? 'Please wait...' : (currState === 'signup' ? 'Register' : 'Login')}
+</button>
+
 
         <p>
           {currState === 'signup'
