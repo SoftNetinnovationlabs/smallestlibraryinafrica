@@ -4,6 +4,26 @@ import './_structHero.css';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
+const FounderData = [{
+  description: `
+  Cyril’s early life was marked by constant struggle. He was often sent home from school because his family couldn’t afford the fees. At times, even necessities like food were scarce. To survive, Cyril and his peers resorted to scavenging for scrap metal to sell. Life became even more precarious as he entered adolescence, with many 
+  of his friends turning to crime, lured by the promise of a flashy lifestyle. Tragically, this path often led to fatal outcomes, with young lives lost to mob justice or police violence.`
+},{
+description: `Amid this chaos, Cyril’s resilience began to shine. In 2011, while still in high school, he founded a garbage collection group. The initiative not only provided a modest income for him and his peers but also instilled in him the power of collective action. Cyril used his earnings to pay his school fees, ultimately graduating in 2012. This project was a turning point, sparking a realization: children and youth in his community needed alternatives to the destructive paths so many were forced to take.`
+},{
+  description: `In 2013, Cyril’s leadership potential earned him a scholarship to study Community Development and Project Planning at the Regional Institute of Business Management. Armed with newfound knowledge and skills, Cyril returned to his roots, determined to make a lasting impact.`
+},
+{
+  description: `At just 21 years old, in July 2014, Cyril identified a simple yet powerful way to address one of his community’s critical needs: education. He established the Smallest Library in Africa, starting with an open-air space to provide children with access to books and a quiet place to read. This initiative was more than just a library; it was a beacon of hope, symbolizing the transformative power of education.`
+},{
+  description: `
+  Over the years, the Smallest Library in Africa has evolved into a literacy powerhouse. What began as a humble collection of books has grown into a movement that conducts book drives and establishes libraries in remote schools and underserved communities. Beyond improving literacy, the library has united the community, demonstrating that lasting change is possible when people come together.`
+},{
+  description: `
+  Today, the Smallest Library in Africa continues to inspire. It not only provides educational resources but also fosters a sense of possibility and pride among the children and youth it serves. Cyril’s journey from a struggling boy in the slums to a community leader and changemaker is a testament to the resilience of the human spirit and the power of education to transform lives.`
+}
+]
+
 const _structHero = () => {
   return (
     <div className='struct-hero'>
@@ -37,7 +57,15 @@ const _structHero = () => {
             </div>
           </div>
         </div>
+       <div className='text_container'>
+      {FounderData.map((texts, index)=>(
+        <div className="paragraph" key={index}>
+          <p>{texts.description}</p>
+        </div>
+      ))}
+        </div>
       </div>
+      
     </div>
   );
 };

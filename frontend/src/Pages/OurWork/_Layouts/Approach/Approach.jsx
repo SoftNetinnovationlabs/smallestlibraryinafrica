@@ -3,32 +3,35 @@ import './Approach.css'
 import { assets } from '../../../../assets/assets'
 const Approach = () => {
 
-    const approachData = [
-        {
-            id: 1,
-            title: "Education",
-            description:"Access to safe and quality education in the informal settlements continues to be a pipe dream to many families. School drop out is still on the rise , dilapidated classrooms , dismal ratio of numbers of students per teacher, lack of reading materials and conducive learning spaces at the community level. Our education work is improving the current learning infrastructure in slums by establishing community and school libraries , helping schools have access to clean water and cooking            kitchens.We also tackle the high drop out rates of pupils by providing scholarships to needy but bright children at primary , secondary and tertiary level.",
-            assets: assets.education,
-        },
-        {
-            id: 2,
-            title: "Nutrition and Health",
-            description: 'Unsafe drinking water and severe food security due to poverty are some of the obvious drivers of malnutrition as 1 out of 3 children below 5 years are stunted.            We are working to improve access to clean water and sustainable feeding programs at both community and schooling level. Through this we are able to improve on the learning environment which is a critical element in             achieving high performance outcomes.',
-            assets: assets.nutrition,
-        },
-        {
-            id: 3,
-            title: "Resilient livelihoods",
-            description: 'We focus on implementing a career, internship and entrepreneurship program that aims to provide information , build technical capacity and skills for the youths who are more vulnerable to unemployment , drug abuse, crime and radicalization.',    
-            assets: assets.livelihoods,
-         },
-       
-    ]
+const approachData = [
+    {
+        id: 1,
+        title: "Education",
+        description: "Access to safe and quality education in the informal settlements continues to be a pipe dream to many families. School drop out is still on the rise, dilapidated classrooms, dismal ratio of students per teacher, lack of reading materials, and conducive learning spaces at the community level. Our education work is improving the current learning infrastructure in slums by establishing community and school libraries, helping schools have access to clean water and kitchens. We also tackle high dropout rates by providing scholarships to needy but bright children at primary, secondary, and tertiary levels.",
+        assets: assets.education,
+        overlayText: 'Empowering minds through education'
+    },
+    {
+        id: 2,
+        title: "Nutrition and Health",
+        description: 'Unsafe drinking water and severe food insecurity due to poverty are some of the obvious drivers of malnutrition, with 1 in 3 children under five being stunted. We are working to improve access to clean water and sustainable feeding programs at both community and school levels. This supports a better learning environment, which is critical to achieving high performance outcomes.',
+        assets: assets.Nutrition,
+        overlayText: 'Nourishing futures, one meal at a time'
+    },
+    {
+        id: 3,
+        title: "Resilient Livelihoods",
+        description: 'We focus on implementing a career, internship, and entrepreneurship program that aims to provide information, build technical capacity, and equip youths—who are most vulnerable to unemployment, drug abuse, crime, and radicalization—with sustainable skills.',
+        assets: assets.Livelihood,
+        overlayText: 'Building brighter futures through opportunity'
+    },
+]
+
   return (
     <div>
         <div className="approach">
-            <h1 className='approach__title'>Our Approach</h1>
-            <p className='approach__paragraph'>We are committed to creating a world where every child has the opportunity to thrive and reach their full potential. Our approach is centered around three key pillars:</p>
+            <h1 className='approach__title'>Approach</h1>
+            <p className='approach__paragraph'>we are committed to creating a world where every child has the opportunity to thrive and reach their full potential. Our approach is centered around three key pillars:</p>
             <div className="approach-assets">
                 {approachData.map((approach) => (
                     <div className="approach-asset" key={approach.id}>
@@ -38,7 +41,12 @@ const Approach = () => {
                         <p>{approach.description}</p>
                         </div>
                         <div className="approach__content">
+                             <div className='overlay_container'>
                              <img src={approach.assets}/>
+                             <div className='overlay__body'>
+                                <p style={{color: 'white'}}>{approach.overlayText}</p>
+                                </div>
+                             </div>
                         </div>
                        </div>
                     </div>

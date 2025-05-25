@@ -31,15 +31,16 @@ const Story = () => {
       </div>
 
     </div>
-      <section className="about__container">
-        
-
+     <div className='team' style={{textAlign: 'center', padding: '100px 0'}}>
+      <h1 >Our Team </h1>
+       <section className="about__container">
         <div className="about__card">
           <div className="founder_people">
-            <img src={assets.Founder} alt="Founder" />
+            <img src={assets.Cyril} alt="Founder" />
           </div>
           <div className="about__content">
             <h4>Our Founder</h4>
+            <h5>Cyril Peter Otieno</h5>
             {/* <p>
               Meet the visionary behind the initiative—a young entrepreneur passionate about transforming communities through education and opportunity.
             </p> */}
@@ -79,6 +80,7 @@ const Story = () => {
           </div>
         </div> */}
       </section>
+     </div>
     </div>
   );
 };
