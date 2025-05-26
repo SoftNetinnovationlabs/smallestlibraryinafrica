@@ -6,6 +6,7 @@ import AuthRoutes from './routes/auth.routes.js'
 import NewsletterRoutes from './routes/newsletter.routes.js'
 import Router from './routes/news.routes.js'
 import ContactRoutes from './routes/contact.routes.js'
+import DonationRoute from './routes/Donation.routes.js'
 dotenv.config();
 
 const corsOptions = {
