@@ -3,7 +3,7 @@ import {initiateDonation,handleMpesaCallback } from '../controllers/Donation.con
 
 const DonationRoute = express.Router();
 
-DonationRoute.post('/donation', initiateDonation)
+DonationRoute.post('/payment', initiateDonation)
 DonationRoute.post('/donation/callback', handleMpesaCallback)
 
 export  default DonationRoute
