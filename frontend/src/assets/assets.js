@@ -23,7 +23,7 @@ import PeanutLogo from './TPG_new_logo__1_-removebg-preview.png'
 import board from './board.JPG'
 import Cyril from './cyril.jpg'
 import Nutrition from './IMG-0880.JPG'
-import Livelihood from './IMG-0223.JPG'
+import Livelihood from './IMG-0223.jpg'
 export const assets = {
     Livelihood,
     Nutrition,
