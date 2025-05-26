@@ -30,7 +30,7 @@ app.use('/api/auth/', AuthRoutes)
 app.use('/api/newsletter', NewsletterRoutes)
 app.use('/api/news',Router )
 app.use('/api', ContactRoutes)
-app.use('/api/donation/', DonationRoute)
+app.use('/api/donation', DonationRoute)
 
 
 

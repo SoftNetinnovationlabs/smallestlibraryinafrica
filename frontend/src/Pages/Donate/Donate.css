@@ -59,3 +59,13 @@
   font-size: 0.95rem;
   color: #2c3e50;
 }
+
+.donation-message.success {
+  color: green;
+  margin-top: 10px;
+}
+
+.donation-message.error {
+  color: red;
+  margin-top: 10px;
+}
