@@ -56,7 +56,7 @@ const Donate = () => {
           onChange={(e) => setAmount(e.target.value)}
           required
         />
-        <button type="submit" disabled={loading}>
+        <button type="submit" className='btn' disabled={loading}>
           {loading ? 'Processing...' : 'Donate Now'}
         </button>
       </form>

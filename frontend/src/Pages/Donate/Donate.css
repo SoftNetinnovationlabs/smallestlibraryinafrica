@@ -34,7 +34,7 @@
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
 
-.donate-container button {
+/* .donate-container button {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   background-color: #4caf50;
@@ -43,7 +43,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
+} */
 
 .donate-container button:disabled {
   background-color: #a5d6a7;
