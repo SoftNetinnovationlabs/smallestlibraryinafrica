@@ -109,7 +109,7 @@ const VolunteerDetails = () => {
 
         <button type="submit" className="submit-btn">Submit</button>
       </form>
-      <button onClick={handleContinue} className="continue-btn">Next</button>
+      <button onClick={handleContinue} className="btn">Next</button>
     </div>
   );
 };

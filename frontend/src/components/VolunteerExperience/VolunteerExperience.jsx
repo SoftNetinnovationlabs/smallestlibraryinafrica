@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './VolunteerExperience.css';
-
+import {useNavigate} from 'react-router-dom'
 const VolunteerExperience = () => {
   const [skills, setSkills] = useState('');
   const [motivation, setMotivation] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
@@ -14,6 +14,9 @@ const VolunteerExperience = () => {
     console.log('Volunteer Experience Submitted:', formData);
     alert('Experience submitted!');
     // Navigate or send to backend
+    navigate('/volunteer-consent')
+
+
   };
 
   return (
@@ -42,7 +45,7 @@ const VolunteerExperience = () => {
           />
         </label>
 
-        <button type="submit" className="submit-btn">Submit</button>
+        <button type="submit" className="btn">Submit</button>
       </form>
     </div>
   );
