@@ -32,8 +32,8 @@ const Counter = () => {
       <div className="counter__container">
         {countersData.map((count, i) => (
           <div className="count__content" key={i}>
-            <h2>{count.label}</h2>
             <p>{counts[i].toLocaleString()}+</p>
+            <h2>{count.label}</h2>
           </div>
         ))}
       </div>

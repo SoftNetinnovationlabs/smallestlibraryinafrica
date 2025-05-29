@@ -1,5 +1,5 @@
 .counter{
-    padding: 50px 0;
+    padding: 100px 0;
 }
 .counter__container{
     width: 80%;;
@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 
 }
 
@@ -18,8 +18,12 @@
 
 }
 .count__content p{
-    font-size: 30px;
+    font-size: 9rem;
     margin-top: 20px;
     font-weight: 800;
 }
- 
+ @media screen and (max-width: 768px){
+    .count__content p{
+        font-size: 3rem;
+    }
+ }

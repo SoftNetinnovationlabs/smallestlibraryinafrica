@@ -40,15 +40,17 @@
   }
   
   .vision2__content  ul li span.active {
-    color: orangered;
-    border-bottom: 2px solid orangered;
+    color: rgb(61, 115, 187);
+    border-bottom: 2px solid rgb(0, 38, 255);
   }
 
 
   .vision__mission{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content:center;
+    text-align: center;
     gap: 20px;
   }
   .visionMission__sect .vision__mision p{

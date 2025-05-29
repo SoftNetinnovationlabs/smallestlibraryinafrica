@@ -13,28 +13,89 @@
 .display__content{
     flex:1 1 250px;
     display: flex;
-    margin: auto;
     justify-content: center;
+    align-items: center;
+    margin: auto;
 }
+
 .display__image{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     width: 300px;
     height: 400px;
     overflow: hidden;
     object-fit: cover;
     border-radius: 20px;
-          /* inner glow 👇 */
-box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
-100%, 0.075),
-/* shadow ring 👇 */
-0 0 0 1px hsla(0, 0%, 0%, 0.05),
-/* multiple soft shadows 👇 */
-0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
-0 3.5px 6px hsla(0, 0%, 0%, 0.09);
-
+    /* inner glow 👇 */
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring 👇 */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows 👇 */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+    
 }
+
 .display__image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.overlay-content{
+    background: linear-gradient(to top,rgb(0, 0, 13), rgba(8, 5, 5, 0.2));
+    position: absolute;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    z-index: +1;
+    height: 50%;
+       box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring 👇 */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows 👇 */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+.overlay-content p{
+    color: white;
+       box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring 👇 */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows 👇 */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+.cta{
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 1.2rem;
+    background-color: wheat;
+    padding: 4px 20px;
+    border-radius: 20px;
+       box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring 👇 */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows 👇 */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+
 }
