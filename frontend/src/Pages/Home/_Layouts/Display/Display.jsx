@@ -1,49 +1,50 @@
-import React from 'react'
-import { assets } from '../../../../assets/assets'
-import './display.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { assets } from '../../../../assets/assets';
+import './display.css';
+import { Link } from 'react-router-dom';
+
 const Display = () => {
-    return(
+    return (
         <div className='display'>
             <div className="display__container">
                 <div className="display__content">
                     <div className="display__image">
-                        <img src={assets.image4} alt="" />
-                         <div className='overlay-content'>
-                            <div className="text">
-                                <p>we believe in a our culture of growth and sustainability</p>
-                            </div>
-                            <Link to={'/about#programs'} className='cta'>Our Programs</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="display__content">
-                    <div className="test">
-           <div className="display__image">
-                        <img src={assets.image5} alt="" />
+                        <img src={assets.image4} alt="growth-vision" />
                         <div className='overlay-content'>
                             <div className="text">
-                                <p>we believe in a our culture of growth and sustainability</p>
+                                <p>We foster a mindset of innovation, growth, and positive impact.</p>
                             </div>
                             <Link to={'/about#programs'} className='cta'>Our Programs</Link>
                         </div>
                     </div>
-                    </div>
-     
                 </div>
+
                 <div className="display__content">
-                <div className="display__image">
-                        <img src={assets.image6} alt="" />
-                         <div className='overlay-content'>
+                    <div className="display__image">
+                        <img src={assets.image5} alt="community-engagement" />
+                        <div className='overlay-content'>
                             <div className="text">
-                                <p>we believe in a our culture of growth and sustainability</p>
+                                <p>Our programs empower communities through sustainable development.</p>
                             </div>
-                            <Link to={'/about#programs'} className='cta'>Our Programs</Link>
+                            <Link to={'/about#programs'} className='cta'>Explore Initiatives</Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="display__content">
+                    <div className="display__image">
+                        <img src={assets.image6} alt="education-and-skills" />
+                        <div className='overlay-content'>
+                            <div className="text">
+                                <p>We nurture talent and provide tools for lifelong learning and success.</p>
+                            </div>
+                            <Link to={'/about#programs'} className='cta'>See How We Help</Link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
-export default Display
+    );
+};
+
+export default Display;
