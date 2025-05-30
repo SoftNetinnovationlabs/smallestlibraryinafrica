@@ -94,9 +94,6 @@
     border-radius: 20px;
     object-fit: cover;
 }
-.team{
-    background:rgb(231, 198, 188);
-}
 
 .text_container{
     display: flex;
