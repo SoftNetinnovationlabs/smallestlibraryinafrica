@@ -20,6 +20,7 @@ import KeepAlive from './Pages/About/keepAlive.jsx';
 import Spinner from './components/Spinner';
 import Contact from './Pages/Contact/Contact'
 import Donate from './Pages/Donate/Donate'
+import Board from './Pages/About/Board/Board'
 import './App.css';
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
             <Route path='/contact' element={<Contact />} />
             <Route path='/Donate' element={<Donate />} />
             <Route path='/about/founder' element={<Founder />} />
+            <Route path='/about/board-of-directors' element={<Board/>} />
             <Route path='/our-work' element={<OurWork/>} />
             <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
             <Route path='/register' element={<Auth />} />
