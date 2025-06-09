@@ -4,7 +4,6 @@
     column-count: auto;
     align-items: flex-start;
     justify-content: center;
-    background:#fffcc;
 }
 .text-story{
     padding-left: 10px;
@@ -99,4 +98,106 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.about__card{
+    border: 1px solid #ccc;
+
+}
+/* Add to Story.css */
+.improved-team-section {
+  text-align: center;
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.improved-team-title {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.improved-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.improved-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.improved-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13);
+}
+
+.improved-img-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: 3px solid #e0e7ef;
+  background: #f1f5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.improved-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__content h4 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.about__content h5 {
+  margin: 0 0 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3b4252;
+}
+
+.team-desc {
+  font-size: 0.97rem;
+  color: #4b5563;
+  margin-bottom: 1.1rem;
+  min-height: 48px;
+}
+
+.improved-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  transition: background 0.18s;
+  text-decoration: none;
+}
+
+.improved-link:hover {
+  background: #1e40af;
+  color: #fff;
 }
