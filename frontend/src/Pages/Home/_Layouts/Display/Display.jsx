@@ -14,7 +14,7 @@ const Display = () => {
                             <div className="text">
                                 <p>We foster a mindset of innovation, growth, and positive impact.</p>
                             </div>
-                            <Link to={'/about#programs'} className='cta'>Our Programs</Link>
+                            <Link to={'/our-work'} className='cta'>Our Programs</Link>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ const Display = () => {
                             <div className="text">
                                 <p>Our programs empower communities through sustainable development.</p>
                             </div>
-                            <Link to={'/about#programs'} className='cta'>Explore Initiatives</Link>
+                            <Link to={'/our-work'} className='cta'>Explore Initiatives</Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const Display = () => {
                             <div className="text">
                                 <p>We nurture talent and provide tools for lifelong learning and success.</p>
                             </div>
-                            <Link to={'/about#programs'} className='cta'>See How We Help</Link>
+                            <Link to={'/our-work'} className='cta'>See How We Help</Link>
                         </div>
                     </div>
                 </div>
