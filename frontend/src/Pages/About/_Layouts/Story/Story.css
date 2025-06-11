@@ -201,3 +201,10 @@
   background: #1e40af;
   color: #fff;
 }
+.flex-container{
+  display: inline-flex;
+  position: relative;
+}
+.left-move{
+  position: absolute;
+}

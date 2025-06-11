@@ -1,7 +1,7 @@
 import React from "react";
 import "./Board.css";
-import { assets } from "../../../../assets/assets";
-
+import { assets } from "../../../assets/assets";
+import HeroBoard from './HeroBoard/HeroBoard'
 const boardMembers = [
   {
     name: "Jane Mwangi",
@@ -12,7 +12,7 @@ const boardMembers = [
   {
     name: "Samuel Otieno",
     title: "Treasurer",
-    image: assets.board2, // Add this image to your assets
+    image: assets.Board2, // Add this image to your assets
     story: "Samuel brings over 15 years of experience in finance and non-profit management. He is dedicated to ensuring transparency and accountability in all our operations."
   },
 
@@ -21,6 +21,7 @@ const boardMembers = [
 
 const Board = () => (
   <div className="board-section">
+    <HeroBoard />
     <h1 className="board-title">Board of Directors</h1>
     <div className="board-grid">
       {boardMembers.map((member, idx) => (

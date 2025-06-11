@@ -63,9 +63,14 @@ const Story = () => {
           </div>
 
           <div className="about__card improved-card">
-            <div className="founder_people improved-img-wrapper">
+           <div className="flex-container">
+             <div className="founder_people improved-img-wrapper">
               <img src={assets.board} alt="Board of Directors" />
             </div>
+              <div className="founder_people improved-img-wrapper left-move">
+              <img src={assets.Board2} alt="Board of Directors" />
+            </div>
+           </div>
             <Link style={{textDecoration: 'none'}} to={'/about/board-of-directors'} className="about__content">
               <h4>Our Board of Directors</h4>
               <p className="team-desc">

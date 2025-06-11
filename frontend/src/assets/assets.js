@@ -24,8 +24,10 @@ import board from './board.JPG'
 import Cyril from './cyril.jpg'
 import Nutrition from './IMG-0880.JPG'
 import Livelihood from './IMG-0223.jpg'
+import Board2 from './board2.jpg'
 export const assets = {
     Livelihood,
+    Board2,
     Nutrition,
     content,
     Cyril,
@@ -51,5 +53,4 @@ export const assets = {
     softNetLogo,
     Vayacom,
     PeanutLogo
-
-};
+}
