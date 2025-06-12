@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import Loader from './Loader';
 import './newslist.css';
 import baseURL from '../../../../../config.js'; // Update as needed
+import NewsHero from '../../NewsHero/NewsHero.jsx'; // Adjust the import path as necessary
 
 const fetchNews = async () => {
   const res = await axios.get(`${baseURL}/news`);
@@ -35,7 +36,7 @@ const NewsList = () => {
 
   return (
     <div className="news-list">
-      <h2>Latest News</h2>
+      <NewsHero />
       <div className="news-cards">
         {news.map((item) => (
           <Link

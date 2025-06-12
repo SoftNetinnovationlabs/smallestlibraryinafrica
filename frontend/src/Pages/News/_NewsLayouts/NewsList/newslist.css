@@ -1,11 +1,13 @@
-.news-list {
-    padding: 2rem;
-  }
+
   
   .news-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-in-out;
   }
   
   .news-card {
