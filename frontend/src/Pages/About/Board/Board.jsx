@@ -30,7 +30,7 @@ With a global outlook and a deep understanding of local dynamics, Anne brings st
   {
     name: "Katharine Machon",
     title: " Sustainability & Community Engagement",
-    image: assets.Cyril, // Add this image to your assets
+    image:` https://avatar.iran.liara.run/username?username=Katherine+Machon`, // Add this image to your assets
     story: `Katharine Machon is the founder and operator of Safari Series, a tented safari camp based in Laikipia, Kenya, where she blends adventure tourism with environmental stewardship. A passionate environmentalist, Katharine believes that every individual has a role to play in combating the climate crisis and is committed to promoting sustainable practices through her work and advocacy.
 
 She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
