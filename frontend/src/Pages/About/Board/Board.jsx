@@ -4,6 +4,16 @@ import { assets } from "../../../assets/assets";
 import HeroBoard from "./HeroBoard/HeroBoard";
 
 const boardMembers = [
+   {
+    name: "Katharine Machon",
+    title: " Sustainability & Community Engagement",
+    image:` https://avatar.iran.liara.run/username?username=Katherine+Machon`, // Add this image to your assets
+    story: `Katharine Machon is the founder and operator of Safari Series, a tented safari camp based in Laikipia, Kenya, where she blends adventure tourism with environmental stewardship. A passionate environmentalist, Katharine believes that every individual has a role to play in combating the climate crisis and is committed to promoting sustainable practices through her work and advocacy.
+
+She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
+
+Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`,
+  },
   {
     name: "Maurine Wambui",
     title: " financial professional ",
@@ -28,16 +38,7 @@ Anne holds a Diploma in Professional Marketing from The Chartered Institute of M
 
 With a global outlook and a deep understanding of local dynamics, Anne brings strategic insight, purpose-driven leadership, and a strong commitment to social impact to the Smallest Library in Africa Initiative board.`,
   },
-  {
-    name: "Katharine Machon",
-    title: " Sustainability & Community Engagement",
-    image:` https://avatar.iran.liara.run/username?username=Katherine+Machon`, // Add this image to your assets
-    story: `Katharine Machon is the founder and operator of Safari Series, a tented safari camp based in Laikipia, Kenya, where she blends adventure tourism with environmental stewardship. A passionate environmentalist, Katharine believes that every individual has a role to play in combating the climate crisis and is committed to promoting sustainable practices through her work and advocacy.
-
-She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
-
-Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`,
-  },
+ 
   // Add more members as needed
 ];
 
@@ -50,41 +51,43 @@ const Board = () => {
     );
   };
 
-  return (
-    <div className="board-section">
-      <HeroBoard />
-      <h1 className="board-title">Board of Directors</h1>
-      <div className="board-grid">
-        {boardMembers.map((member, idx) => {
-          const paragraphs = member.story.split('\n\n');
-          const isExpanded = expanded[idx];
-          return (
-            <div className="board-card" key={idx}>
-              <div className="board-img-wrapper">
-                <img src={member.image} alt={member.name} />
-              </div>
-              <h3>{member.name}</h3>
-              <h5>{member.title}</h5>
-              <div className="board-story">
-                {isExpanded
-                  ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
-                  : <p>{paragraphs[0]}</p>
-                }
-                {paragraphs.length > 1 && (
-                  <button
-                    className="load-more-btn"
-                    onClick={() => handleToggle(idx)}
-                  >
-                    {isExpanded ? "Show Less" : "Load More"}
-                  </button>
-                )}
-              </div>
+ // ...existing code...
+return (
+  <div className="board-section">
+    <HeroBoard />
+    <h1 className="board-title">Board of Directors</h1>
+    <div className="board-grid">
+      {boardMembers.map((member, idx) => {
+        const paragraphs = member.story.split('\n\n');
+        const isExpanded = expanded[idx];
+        return (
+          <div className={`board-card${isExpanded ? " expanded" : ""}`} key={idx}>
+            <div className="board-img-wrapper">
+              <img src={member.image} alt={member.name} />
             </div>
-          );
-        })}
-      </div>
+            <h3>{member.name}</h3>
+            <h5>{member.title}</h5>
+            <div className="board-story">
+              {isExpanded
+                ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
+                : <p>{paragraphs[0]}</p>
+              }
+              {paragraphs.length > 1 && (
+                <button
+                  className="load-more-btn"
+                  onClick={() => handleToggle(idx)}
+                >
+                  {isExpanded ? "Show Less" : "Load More"}
+                </button>
+              )}
+            </div>
+          </div>
+        );
+      })}
     </div>
-  );
+  </div>
+);
+// ...existing code...
 };
 
 export default Board;

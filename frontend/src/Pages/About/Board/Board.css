@@ -70,6 +70,18 @@
   min-height: 48px;
 }
 
+/* Add or update in Board.css */
+.board-story {
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
+  max-height: 120px; /* enough for one paragraph */
+  opacity: 0.95;
+  position: relative;
+}
+
+.board-card.expanded .board-story {
+  max-height: 1000px; /* enough for all paragraphs */
+  opacity: 1;
+}
 
 /* Add to Board.css */
 .load-more-btn {
