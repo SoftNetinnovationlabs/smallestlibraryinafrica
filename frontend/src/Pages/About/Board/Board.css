@@ -69,3 +69,20 @@
   color: #4b5563;
   min-height: 48px;
 }
+
+
+/* Add to Board.css */
+.load-more-btn {
+  margin-top: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  cursor: pointer;
+  font-size: 0.98rem;
+  transition: background 0.18s;
+}
+.load-more-btn:hover {
+  background: #1e40af;
+}

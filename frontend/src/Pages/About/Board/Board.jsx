@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Board.css";
 import { assets } from "../../../assets/assets";
 import HeroBoard from "./HeroBoard/HeroBoard";
+
 const boardMembers = [
   {
     name: "Maurine Wambui",
@@ -40,25 +41,51 @@ Katharine joined the board of the Smallest Library in Africa Initiative inspired
   // Add more members as needed
 ];
 
-const Board = () => (
-  <div className="board-section">
-    <HeroBoard />
-    <h1 className="board-title">Board of Directors</h1>
-    <div className="board-grid">
-      {boardMembers.map((member, idx) => (
-        <div className="board-card" key={idx}>
-          <div className="board-img-wrapper">
-            <img src={member.image} alt={member.name} />
-          </div>
-          <h3>{member.name}</h3>
-          <h5>{member.title}</h5>
-          <p className="board-story">{member.story.split('\n\n').map((paragraph, idx) =>(
-            <p key={idx}>{paragraph}</p>
-          ))}</p>
-        </div>
-      ))}
+const Board = () => {
+  const [expanded, setExpanded] = useState(Array(boardMembers.length).fill(false));
+
+  const handleToggle = idx => {
+    setExpanded(prev =>
+      prev.map((val, i) => (i === idx ? !val : val))
+    );
+  };
+
+  return (
+    <div className="board-section">
+      <HeroBoard />
+      <h1 className="board-title">Board of Directors</h1>
+      <div className="board-grid">
+        {boardMembers.map((member, idx) => {
+          const paragraphs = member.story.split('\n\n');
+          const isExpanded = expanded[idx];
+          return (
+            <div className="board-card" key={idx}>
+              <div className="board-img-wrapper">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <h3>{member.name}</h3>
+              <h5>{member.title}</h5>
+              <div className="board-story">
+                {isExpanded
+                  ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
+                  : <p>{paragraphs[0]}</p>
+                }
+                {paragraphs.length > 1 && (
+                  <button
+                    className="load-more-btn"
+                    onClick={() => handleToggle(idx)}
+                  >
+                    {isExpanded ? "Show Less" : "Load More"}
+                  </button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Board;
+
