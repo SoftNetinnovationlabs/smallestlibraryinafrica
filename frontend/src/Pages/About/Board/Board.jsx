@@ -16,7 +16,7 @@ Katharine joined the board of the Smallest Library in Africa Initiative inspired
   },
   {
     name: "Donata Moerz",
-    title: " environmentalist ",
+    title: " board member ",
     image: null,
     story: `Donata Moerz is an Occupational Safety Specialist and consultant dedicated to fostering safe and healthy work environments. With over 30 years of voluntary service to the German Red Cross—including international missions to Tanzania in 1997 and Sri Lanka in 2005—Donata brings a deep commitment to humanitarian service and community care.
 
