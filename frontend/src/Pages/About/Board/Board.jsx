@@ -67,7 +67,6 @@ const Board = () => {
 return (
   <div className="board-section">
     <HeroBoard />
-    <h1 className="board-title">Board of Directors</h1>
     <div className="board-grid">
       {boardMembers.map((member, idx) => {
         const paragraphs = member.story.split('\n\n');

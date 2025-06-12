@@ -31,3 +31,21 @@
     font-size: 12px;
     color: azure;
  }
+
+ @media screen and (max-width: 768px) {
+    .hero-board{
+        height: 40vw;
+    }
+    .hero-board_c{
+        padding: 10px;
+    }
+    .overlay_bottom-left{
+        width: 30%;
+        bottom: 5%;
+        left: 5%;
+    }
+    .overlay_bottom-left p{
+        font-size: 10px;
+    }
+    
+ }
