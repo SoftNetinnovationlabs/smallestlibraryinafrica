@@ -5,6 +5,13 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useAuth } from '../Auth/Context/Auth.context'; 
 import BASE_URL from '../../../config.js'
 import {assets} from '../../assets/assets'
+import { Helmet } from "react-helmet";
+
+const metaTitle = "Volunteer Login & Registration | Smallest Library in Africa";
+const metaDescription = "Sign up or log in to volunteer with the Smallest Library in Africa Initiative. Join our mission to empower communities through education and service.";
+const metaUrl = "https://smallestlibraryinafrica.org/auth";
+const metaImage = "https://smallestlibraryinafrica.org/images/volunteer-auth-cover.jpg"; // Replace with your actual image
+
 const Auth = () => {
   const [currState, setCurrState] = useState('signup');
   const [formData, setFormData] = useState({
@@ -50,73 +57,86 @@ const Auth = () => {
 
   return (
     <div className="Auth">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
       <Link to="/" className="back"><FaArrowLeft /></Link>
       <h2>Volunteer Process</h2>
       <h1>{currState === 'signup' ? 'Sign Up Details' : 'Welcome Back!'}</h1>
 
-<div className="auth__content">
-  <div className="auth__body">
-    <div className="auth__image">
-      <img src={assets.Selection} />
-    </div>
-  </div>
-  <form className="auth__body" onSubmit={handleSubmit}>
-        {currState === 'signup' && (
-          <>
-            <input
-              type="text"
-              required
-              placeholder="Full Name"
-              name="fullName"
-              onChange={handleChange}
-            />
-            <input
-              type="tel"
-              required
-              placeholder="Phone Number"
-              name="phoneNumber"
-              onChange={handleChange}
-            />
-          </>
-        )}
+      <div className="auth__content">
+        <div className="auth__body">
+          <div className="auth__image">
+            <img src={assets.Selection} />
+          </div>
+        </div>
+        <form className="auth__body" onSubmit={handleSubmit}>
+          {currState === 'signup' && (
+            <>
+              <input
+                type="text"
+                required
+                placeholder="Full Name"
+                name="fullName"
+                onChange={handleChange}
+              />
+              <input
+                type="tel"
+                required
+                placeholder="Phone Number"
+                name="phoneNumber"
+                onChange={handleChange}
+              />
+            </>
+          )}
 
-        <input
-          type="email"
-          required
-          placeholder="Email"
-          name="email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          required
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-        />
+          <input
+            type="email"
+            required
+            placeholder="Email"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            required
+            placeholder="Password"
+            name="password"
+            onChange={handleChange}
+          />
 
-<button
-  className={`btn__primary ${loading ? 'btn__loading' : ''}`}
-  type="submit"
-  disabled={loading}
->
-  {loading ? 'Please wait...' : (currState === 'signup' ? 'Register' : 'Login')}
-</button>
-
-
-        <p>
-          {currState === 'signup'
-            ? 'Already have an account? '
-            : "Don't have an account? "}
-          <span
-            onClick={() => setCurrState(currState === 'signup' ? 'login' : 'signup')}
-            style={{ cursor: 'pointer', color: 'blue' }}
+          <button
+            className={`btn__primary ${loading ? 'btn__loading' : ''}`}
+            type="submit"
+            disabled={loading}
           >
-            {currState === 'signup' ? 'Login here' : 'Register here'}
-          </span>
-        </p>
-      </form>
-</div>
+            {loading ? 'Please wait...' : (currState === 'signup' ? 'Register' : 'Login')}
+          </button>
+
+          <p>
+            {currState === 'signup'
+              ? 'Already have an account? '
+              : "Don't have an account? "}
+            <span
+              onClick={() => setCurrState(currState === 'signup' ? 'login' : 'signup')}
+              style={{ cursor: 'pointer', color: 'blue' }}
+            >
+              {currState === 'signup' ? 'Login here' : 'Register here'}
+            </span>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

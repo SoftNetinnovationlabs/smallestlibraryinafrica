@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import "./Board.css";
 import { assets } from "../../../assets/assets";
 import HeroBoard from "./HeroBoard/HeroBoard";
+import { Helmet } from "react-helmet";
+
+const metaTitle = "Board of Directors | Smallest Library in Africa";
+const metaDescription = "Meet the dedicated Board of Directors guiding the Smallest Library in Africa Initiative. Discover their expertise, stories, and commitment to empowering communities through education.";
+const metaUrl = "https://smallestlibraryinafrica.org/about/board-of-directors";
+const metaImage = "https://smallestlibraryinafrica.org/images/board-cover.jpg"; // Replace with your actual image
 
 const boardMembers = [
    {
@@ -64,40 +70,54 @@ const Board = () => {
     );
   };
 
-return (
-  <div className="board-section">
-    <HeroBoard />
-    <div className="board-grid">
-      {boardMembers.map((member, idx) => {
-        const paragraphs = member.story.split('\n\n');
-        const isExpanded = expanded[idx];
-        return (
-          <div className={`board-card${isExpanded ? " expanded" : ""}`} key={idx}>
-            <div className="board-img-wrapper">
-              <img src={member.image} alt={member.name} />
+  return (
+    <div className="board-section">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
+      <HeroBoard />
+      <div className="board-grid">
+        {boardMembers.map((member, idx) => {
+          const paragraphs = member.story.split('\n\n');
+          const isExpanded = expanded[idx];
+          return (
+            <div className={`board-card${isExpanded ? " expanded" : ""}`} key={idx}>
+              <div className="board-img-wrapper">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <h3>{member.name}</h3>
+              <h5>{member.title}</h5>
+              <div className="board-story">
+                {isExpanded
+                  ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
+                  : <p>{paragraphs[0]}</p>
+                }
+                {paragraphs.length > 1 && (
+                  <button
+                    className="load-more-btn"
+                    onClick={() => handleToggle(idx)}
+                  >
+                    {isExpanded ? "Show Less" : "Load More"}
+                  </button>
+                )}
+              </div>
             </div>
-            <h3>{member.name}</h3>
-            <h5>{member.title}</h5>
-            <div className="board-story">
-              {isExpanded
-                ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
-                : <p>{paragraphs[0]}</p>
-              }
-              {paragraphs.length > 1 && (
-                <button
-                  className="load-more-btn"
-                  onClick={() => handleToggle(idx)}
-                >
-                  {isExpanded ? "Show Less" : "Load More"}
-                </button>
-              )}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Board;

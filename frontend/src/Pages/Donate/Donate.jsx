@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Donate.css';
 import baseURL from '../../../config'; // Ensure this points to your backend base URL
+import { Helmet } from "react-helmet";
+
+const metaTitle = "Donate | Smallest Library in Africa";
+const metaDescription = "Support the Smallest Library in Africa Initiative. Donate securely via M-Pesa and help empower communities through education, literacy, and sustainable development.";
+const metaUrl = "https://smallestlibraryinafrica.org/donate";
+const metaImage = "https://smallestlibraryinafrica.org/images/donate-cover.jpg"; // Replace with your actual image
 
 const Donate = () => {
   const [phone, setPhone] = useState('');
@@ -40,6 +46,20 @@ const Donate = () => {
 
   return (
     <div className="donate-container">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
       <h2>Donate via M-Pesa</h2>
       <form onSubmit={handleDonation}>
         <input

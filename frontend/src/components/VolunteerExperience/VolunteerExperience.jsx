@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import './VolunteerExperience.css';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+
+const metaTitle = "Volunteer Experience | Smallest Library in Africa";
+const metaDescription = "Share your skills and motivation to volunteer with the Smallest Library in Africa Initiative. Help us empower communities through education and service.";
+const metaUrl = "https://smallestlibraryinafrica.org/volunteer-experience";
+const metaImage = "https://smallestlibraryinafrica.org/images/volunteer-cover.jpg"; // Replace with your actual image
+
 const VolunteerExperience = () => {
   const [skills, setSkills] = useState('');
   const [motivation, setMotivation] = useState('');
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
@@ -14,13 +22,25 @@ const VolunteerExperience = () => {
     console.log('Volunteer Experience Submitted:', formData);
     alert('Experience submitted!');
     // Navigate or send to backend
-    navigate('/volunteer-consent')
-
-
+    navigate('/volunteer-consent');
   };
 
   return (
     <div className="volunteer-experience">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
       <h2>Skills & Motivation</h2>
       <form onSubmit={handleSubmit}>
         <label>

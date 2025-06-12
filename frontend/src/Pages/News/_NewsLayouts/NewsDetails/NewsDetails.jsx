@@ -5,6 +5,7 @@ import './newsdetails.css';
 
 import baseURL from '../../../../../config.js';
 import Loader from '../NewsList/Loader'; // Import your custom loader
+import { Helmet } from 'react-helmet';
 
 const NewsDetails = () => {
   const { id } = useParams();
@@ -30,8 +31,28 @@ const NewsDetails = () => {
 
   if (!newsItem) return <div className="error">No news found.</div>;
 
+  // Build meta tags dynamically
+  const metaTitle = newsItem.title || "News | Smallest Library in Africa";
+  const metaDescription = newsItem.excerpt || "Read the latest news from the Smallest Library in Africa Initiative.";
+  const metaUrl = `https://smallestlibraryinafrica.org/news/${id}`;
+  const metaImage = newsItem.mainImage || "https://smallestlibraryinafrica.org/default-news-image.jpg";
+
   return (
     <div className="news-details">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
       <h1>{newsItem.title}</h1>
 
       {newsItem.mainImage && (

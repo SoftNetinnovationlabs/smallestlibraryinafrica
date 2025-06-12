@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import './VolunteerDetails.css';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from "react-helmet";
+
+const metaTitle = "Volunteer Details | Smallest Library in Africa";
+const metaDescription = "Share your preferred volunteer role, availability, and background with the Smallest Library in Africa Initiative. Join us in making a difference through education and service.";
+const metaUrl = "https://smallestlibraryinafrica.org/volunteer-details";
+const metaImage = "https://smallestlibraryinafrica.org/images/volunteer-details-cover.jpg"; // Replace with your actual image
 
 const roles = [
   "Reading Buddy",
@@ -36,7 +42,6 @@ const VolunteerDetails = () => {
     navigate('/volunteer-experience');
   };
 
-
   const handleCheckboxChange = (option) => {
     setAvailability((prev) =>
       prev.includes(option)
@@ -60,6 +65,20 @@ const VolunteerDetails = () => {
 
   return (
     <div className="volunteer-details">
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={metaUrl} />
+        <meta property="og:image" content={metaImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={metaImage} />
+        <link rel="canonical" href={metaUrl} />
+      </Helmet>
       <h2>Volunteer Details</h2>
 
       <form onSubmit={handleSubmit}>

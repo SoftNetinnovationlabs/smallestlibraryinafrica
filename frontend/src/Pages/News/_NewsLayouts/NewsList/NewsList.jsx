@@ -6,7 +6,8 @@ import Loader from './Loader';
 import './newslist.css';
 import baseURL from '../../../../../config.js'; // Update as needed
 import NewsHero from '../../NewsHero/NewsHero.jsx'; // Adjust the import path as necessary
-
+import { Helmet } from 'react-helmet';
+import { assets } from '../../../../assets/assets.js'; // Adjust the import path as necessary
 const fetchNews = async () => {
   const res = await axios.get(`${baseURL}/news`);
   return res.data;
@@ -36,6 +37,43 @@ const NewsList = () => {
 
   return (
     <div className="news-list">
+      <Helmet>
+        <title>Latest News & Updates | Smallest Library in Africa</title>
+        <meta
+          name="description"
+          content="Stay informed with the latest stories, events, and milestones from the Smallest Library in Africa Initiative."
+        />
+        <meta property="og:title" content="Latest News & Updates | Smallest Library in Africa" />
+        <meta
+          property="og:description"
+          content="Stay informed with the latest stories, events, and milestones from the Smallest Library in Africa Initiative."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://smallestlibraryinafrica.org/news" />
+        <meta
+          property="og:image"
+          content={
+            news.length > 0 && news[0].mainImage
+              ? news[0].mainImage
+              : `https://smallestlibraryinafrica.org/${assets.Nutrition}`
+          }
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Latest News & Updates | Smallest Library in Africa" />
+        <meta
+          name="twitter:description"
+          content="Stay informed with the latest stories, events, and milestones from the Smallest Library in Africa Initiative."
+        />
+        <meta
+          name="twitter:image"
+          content={
+            news.length > 0 && news[0].mainImage
+              ? news[0].mainImage
+              : "https://smallestlibraryinafrica.org/"
+          }
+        />
+        <link rel="canonical" href="https://smallestlibraryinafrica.org/news" />
+      </Helmet>
       <NewsHero />
       <div className="news-cards">
         {news.map((item) => (
