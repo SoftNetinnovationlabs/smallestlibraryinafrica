@@ -7,12 +7,25 @@ const boardMembers = [
    {
     name: "Katharine Machon",
     title: " Sustainability & Community Engagement",
-    image:` https://avatar.iran.liara.run/username?username=Katherine+Machon`, // Add this image to your assets
+    image: assets.Katherine, // Add this image to your assets
     story: `Katharine Machon is the founder and operator of Safari Series, a tented safari camp based in Laikipia, Kenya, where she blends adventure tourism with environmental stewardship. A passionate environmentalist, Katharine believes that every individual has a role to play in combating the climate crisis and is committed to promoting sustainable practices through her work and advocacy.
 
 She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
 
 Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`,
+  },
+  {
+    name: "Donata Moerz",
+    title: " environmentalist ",
+    image: null,
+    story: `Donata Moerz is an Occupational Safety Specialist and consultant dedicated to fostering safe and healthy work environments. With over 30 years of voluntary service to the German Red Cross—including international missions to Tanzania in 1997 and Sri Lanka in 2005—Donata brings a deep commitment to humanitarian service and community care.
+
+She holds a PhD in Linguistics, with academic studies in both linguistics and Human-Machine Interaction, and has also worked as a paramedic during her years of study—reflecting a unique blend of intellectual rigor and practical service.
+
+Donata believes in sharing the true wealth life has offered her. When she came across The Smallest Library in Africa through a social media post, she felt an immediate connection. A visit to Nairobi 20 years ago left a lasting impact on her, and the organization’s mission—to nurture a reading culture among children in low-income communities—resonated deeply with her passion for reading and lifelong learning.
+
+As a board member, Donata contributes international perspective, thoughtful leadership, and an unwavering belief in the transformative power of books and education for every child.`
+
   },
   {
     name: "Maurine Wambui",
