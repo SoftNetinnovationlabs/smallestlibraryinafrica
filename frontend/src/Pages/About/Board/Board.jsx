@@ -51,7 +51,6 @@ const Board = () => {
     );
   };
 
- // ...existing code...
 return (
   <div className="board-section">
     <HeroBoard />
@@ -87,7 +86,6 @@ return (
     </div>
   </div>
 );
-// ...existing code...
 };
 
 export default Board;
