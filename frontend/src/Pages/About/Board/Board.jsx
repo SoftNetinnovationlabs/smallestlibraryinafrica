@@ -13,7 +13,7 @@ Maureen has dedicated her career to guiding immigrants and minority communities 
 
 She holds a degree in Business and has extensive experience in Finance and Banking within the U.S. Financial System. She has also enhanced her expertise through a range of leadership and civic engagement programs. Her work bridges the gap between policy and people, particularly advocating for youth access to education, entrepreneurship, and empowerment.
 
-“I joined the Advisory Board of The Smallest Library in Africa because I believe access to knowledge is one of the greatest equalizers in society. As someone who has benefited from education and mentorship, I see this initiative as a chance to give back by investing in the minds of future leaders. This library is more than a building—it’s a beacon of hope, a safe space for imagination, and a launchpad for young dreamers across the continent. Being part of this vision allows me to contribute to a legacy of literacy, empowerment, and generational change."`,
+“I joined the Advisory Board of The Smallest Library in Africa because I believe access to knowledge is one of the greatest equalizers in society. As someone who has benefited from education and mentorship, I see this initiative as a chance to give back by investing in the minds of future leaders. This library is more than a building—it’s a beacon of hope, a safe space for imagination, and a launchpad for young dreamers across the continent. Being part of this vision allows me to contribute to a legacy of literacy, empowerment, and generational change.”`,
   },
   {
     name: "ANN NGATIA",
@@ -35,7 +35,7 @@ With a global outlook and a deep understanding of local dynamics, Anne brings st
 
 She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
 
-Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`
+Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`,
   },
   // Add more members as needed
 ];
@@ -52,7 +52,9 @@ const Board = () => (
           </div>
           <h3>{member.name}</h3>
           <h5>{member.title}</h5>
-          <p className="board-story">{member.story}</p>
+          <p className="board-story">{member.story.split('\n\n').map((paragraph, idx) =>(
+            <p key={idx}>{paragraph}</p>
+          ))}</p>
         </div>
       ))}
     </div>
