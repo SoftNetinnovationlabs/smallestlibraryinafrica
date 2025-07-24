@@ -21,7 +21,11 @@ import Spinner from './components/Spinner';
 import Contact from './Pages/Contact/Contact'
 import Donate from './Pages/Donate/Donate'
 import Board from './Pages/About/Board/Board'
+import ContactSupport from './Pages/Contact/ContactSupport'; // ✅ Import the lock screen
 import './App.css';
+
+// 🔐 Set to false to block the site
+const hasPaid = false;
 
 const App = () => {
   const location = useLocation();
@@ -32,12 +36,19 @@ const App = () => {
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 800); // adjust duration as needed
+    }, 800);
     return () => clearTimeout(timeout);
   }, [location]);
 
-  const hideLayoutPaths = ['/register', "/volunteer-details", '/volunteer-experience', '/volunteer-consent'];
-  const hideLayout = hideLayoutPaths.includes(location.pathname) || location.pathname.startsWith("/dashboard");
+  const hideLayoutPaths = [
+    '/register',
+    "/volunteer-details",
+    '/volunteer-experience',
+    '/volunteer-consent'
+  ];
+  const hideLayout =
+    hideLayoutPaths.includes(location.pathname) ||
+    location.pathname.startsWith("/dashboard");
 
   return (
     <div className="App">
@@ -45,30 +56,36 @@ const App = () => {
         <Spinner />
       ) : (
         <>
-          {!hideLayout && <Navbar />}
-          <KeepAlive /> 
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/Donate' element={<Donate />} />
-            <Route path='/about/founder' element={<Founder />} />
-            <Route path='/about/board-of-directors' element={<Board/>} />
-            <Route path='/our-work' element={<OurWork/>} />
-            <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
-            <Route path='/register' element={<Auth />} />
-            <Route path="/volunteer-details" element={<VolunteerDetails />} />
-            <Route path="/volunteer-experience" element={<VolunteerExperience />} />
-            <Route path="/volunteer-consent" element={<VolunteerConsent />} />
-            <Route path="/news" element={<NewsList />} />
-            <Route path="/news/:id" element={<NewsDetails />} />
-            <Route path='/dashboard' element={<Dashboard />}>
-              <Route index element={<DashboardHome />} />
-              <Route path='profile' element={<Profile />} />
-              <Route path='newsletters' element={<Newsletters />} />
-            </Route>
-          </Routes>
-          {!hideLayout && <Footer />}
+          {!hasPaid ? (
+            <ContactSupport />
+          ) : (
+            <>
+              {!hideLayout && <Navbar />}
+              <KeepAlive />
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/Donate' element={<Donate />} />
+                <Route path='/about/founder' element={<Founder />} />
+                <Route path='/about/board-of-directors' element={<Board />} />
+                <Route path='/our-work' element={<OurWork />} />
+                <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
+                <Route path='/register' element={<Auth />} />
+                <Route path="/volunteer-details" element={<VolunteerDetails />} />
+                <Route path="/volunteer-experience" element={<VolunteerExperience />} />
+                <Route path="/volunteer-consent" element={<VolunteerConsent />} />
+                <Route path="/news" element={<NewsList />} />
+                <Route path="/news/:id" element={<NewsDetails />} />
+                <Route path='/dashboard' element={<Dashboard />}>
+                  <Route index element={<DashboardHome />} />
+                  <Route path='profile' element={<Profile />} />
+                  <Route path='newsletters' element={<Newsletters />} />
+                </Route>
+              </Routes>
+              {!hideLayout && <Footer />}
+            </>
+          )}
         </>
       )}
     </div>
