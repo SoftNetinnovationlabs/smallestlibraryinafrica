@@ -25,7 +25,7 @@ import ContactSupport from './Pages/Contact/ContactSupport'; // ✅ Import the l
 import './App.css';
 
 // 🔐 Set to false to block the site
-const hasPaid = false;
+const hasPaid = true;
 
 const App = () => {
   const location = useLocation();
