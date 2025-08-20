@@ -18,10 +18,11 @@ import Founder from './Pages/About/Founder/Founder';
 import OurWork from './Pages/OurWork/OurWork';
 import KeepAlive from './Pages/About/keepAlive.jsx';
 import Spinner from './components/Spinner';
-import Contact from './Pages/Contact/Contact'
-import Donate from './Pages/Donate/Donate'
-import Board from './Pages/About/Board/Board'
-import ContactSupport from './Pages/Contact/ContactSupport'; // ✅ Import the lock screen
+import Contact from './Pages/Contact/Contact';
+import Donate from './Pages/Donate/Donate';
+import Board from './Pages/About/Board/Board';
+import Board from './Pages/About/Board/Board';
+import ContactSupport from './Pages/Contact/ContactSupport'; 
 import './App.css';
 
 // 🔐 Set to false to block the site
@@ -32,7 +33,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a short loading time on route change
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
@@ -42,13 +42,13 @@ const App = () => {
 
   const hideLayoutPaths = [
     '/register',
-    "/volunteer-details",
+    '/volunteer-details',
     '/volunteer-experience',
     '/volunteer-consent'
   ];
   const hideLayout =
     hideLayoutPaths.includes(location.pathname) ||
-    location.pathname.startsWith("/dashboard");
+    location.pathname.startsWith('/dashboard');
 
   return (
     <div className="App">
@@ -66,17 +66,21 @@ const App = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/Donate' element={<Donate />} />
+                <Route path='/donate' element={<Donate />} />
                 <Route path='/about/founder' element={<Founder />} />
                 <Route path='/about/board-of-directors' element={<Board />} />
                 <Route path='/our-work' element={<OurWork />} />
+
+            <Route path="/about/board/:id" element={<Board />} />
+
+
                 <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
                 <Route path='/register' element={<Auth />} />
-                <Route path="/volunteer-details" element={<VolunteerDetails />} />
-                <Route path="/volunteer-experience" element={<VolunteerExperience />} />
-                <Route path="/volunteer-consent" element={<VolunteerConsent />} />
-                <Route path="/news" element={<NewsList />} />
-                <Route path="/news/:id" element={<NewsDetails />} />
+                <Route path='/volunteer-details' element={<VolunteerDetails />} />
+                <Route path='/volunteer-experience' element={<VolunteerExperience />} />
+                <Route path='/volunteer-consent' element={<VolunteerConsent />} />
+                <Route path='/news' element={<NewsList />} />
+                <Route path='/news/:id' element={<NewsDetails />} />
                 <Route path='/dashboard' element={<Dashboard />}>
                   <Route index element={<DashboardHome />} />
                   <Route path='profile' element={<Profile />} />

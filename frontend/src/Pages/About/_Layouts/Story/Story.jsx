@@ -2,14 +2,16 @@ import React from "react";
 import "./Story.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { assets } from "../../../../assets/assets";
+import boardMembers from "../../Board/BoardData"; // ✅ import shared data
+
 const Story = () => {
   return (
-    <div>
+    <>
       <div className="story__wrapper">
         <div className="text-story">
           <h3>Our Story: the humble beginnings</h3>
         </div>
+
         <div className="story__container">
           <div className="story__content">
             <p>
@@ -43,47 +45,31 @@ const Story = () => {
           </p>
         </div>
       </div>
-      <div className="team improved-team-section">
-        <h1 className="improved-team-title">Our Team</h1>
-        <section className="about__container improved-team-grid">
-          <div className="about__card improved-card">
-            <div className="founder_people improved-img-wrapper">
-              <img src={assets.Cyril} alt="Founder" />
-            </div>
-            <Link style={{textDecoration: 'none'}} to={'/about/founder'} className="about__content">
-              <h4>Our Founder</h4>
-              <h5>Cyril Peter Otieno</h5>
-              <p className="team-desc">
-                Meet the visionary behind the initiative—a young entrepreneur
-                passionate about transforming communities through education and
-                opportunity.
-              </p>
-            
-            </Link>
-          </div>
 
-          <div className="about__card improved-card">
-           <div className="flex-container">
-             <div className="founder_people improved-img-wrapper">
-              <img src={assets.board} alt="Board of Directors" />
+      <section className="about__container">
+        <h1 className="improved-team-title">Our People</h1>
+        <div className="flex-container">
+          {boardMembers.map((member) => (
+            <div key={member.id} className="founder_people">
+              <img src={member.image} alt={member.name} />
+              <div className="overlay_data">
+                <p className="overlay-data_text">
+                  {member.title}: {member.name}
+                </p>
+                <div className="overlay-data_btns">
+                  <Link
+                    to={`/about/board/${member.id}`}
+                    className="overlay-data_link"
+                  >
+                    Story <FaArrowRight />
+                  </Link>
+                </div>
+              </div>
             </div>
-              <div className="founder_people improved-img-wrapper left-move">
-              <img src={assets.Board2} alt="Board of Directors" />
-            </div>
-           </div>
-            <Link style={{textDecoration: 'none'}} to={'/about/board-of-directors'} className="about__content">
-              <h4>Our Board of Directors</h4>
-              <p className="team-desc">
-                Our board is composed of experienced leaders dedicated to
-                advancing our mission and ensuring transparency, accountability,
-                and sustainability.
-              </p>
-          </Link>
-            
-            </div>
-        </section>
-      </div>
-    </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

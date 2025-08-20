@@ -1,124 +1,33 @@
-import React, { useState } from "react";
-import "./Board.css";
-import { assets } from "../../../assets/assets";
-import HeroBoard from "./HeroBoard/HeroBoard";
-import { Helmet } from "react-helmet";
-
-const metaTitle = "Board of Directors | Smallest Library in Africa";
-const metaDescription = "Meet the dedicated Board of Directors guiding the Smallest Library in Africa Initiative. Discover their expertise, stories, and commitment to empowering communities through education.";
-const metaUrl = "https://smallestlibraryinafrica.org/about/board-of-directors";
-const metaImage = "https://smallestlibraryinafrica.org/images/board-cover.jpg"; // Replace with your actual image
-
-const boardMembers = [
-   {
-    name: "Katharine Machon",
-    title: " Sustainability & Community Engagement",
-    image: assets.Katherine, // Add this image to your assets
-    story: `Katharine Machon is the founder and operator of Safari Series, a tented safari camp based in Laikipia, Kenya, where she blends adventure tourism with environmental stewardship. A passionate environmentalist, Katharine believes that every individual has a role to play in combating the climate crisis and is committed to promoting sustainable practices through her work and advocacy.
-
-She holds a degree in History from the University of Leeds in the UK, where she developed a strong appreciation for storytelling, culture, and the transformative power of education. Katharine believes that education, paired with dedication and hard work, is the most reliable path to creating a brighter, more equitable future. A lifelong lover of books, she is especially passionate about promoting literacy and a love for reading among children and youth.
-
-Katharine joined the board of the Smallest Library in Africa Initiative inspired by Cyril’s unwavering passion for his community and vision for change. She brings her environmental insight, entrepreneurial spirit, and deep belief in grassroots impact to support the organization’s mission of empowering young minds through learning.`,
-  },
-  {
-    name: "Donata Moerz",
-    title: " board member ",
-    image: null,
-    story: `Donata Moerz is an Occupational Safety Specialist and consultant dedicated to fostering safe and healthy work environments. With over 30 years of voluntary service to the German Red Cross—including international missions to Tanzania in 1997 and Sri Lanka in 2005—Donata brings a deep commitment to humanitarian service and community care.
-
-She holds a PhD in Linguistics, with academic studies in both linguistics and Human-Machine Interaction, and has also worked as a paramedic during her years of study—reflecting a unique blend of intellectual rigor and practical service.
-
-Donata believes in sharing the true wealth life has offered her. When she came across The Smallest Library in Africa through a social media post, she felt an immediate connection. A visit to Nairobi 20 years ago left a lasting impact on her, and the organization’s mission—to nurture a reading culture among children in low-income communities—resonated deeply with her passion for reading and lifelong learning.
-
-As a board member, Donata contributes international perspective, thoughtful leadership, and an unwavering belief in the transformative power of books and education for every child.`
-
-  },
-  {
-    name: "Maurine Wambui",
-    title: " financial professional ",
-    image: assets.board, // Add this image to your assets
-    story: `Maureen Wambui is a seasoned financial professional and a passionate community leader with over a decade of experience in financial coaching, nonprofit leadership, and grassroots advocacy. Maureen is deeply committed to advancing youth empowerment, economic equity, and inclusive community development.
-
-Maureen has dedicated her career to guiding immigrants and minority communities in navigating complex financial systems, helping families build sustainable wealth and access economic opportunities. Her leadership is grounded in empathy and service, evident through her hands-on initiatives such organizing community-based financial literacy workshops and partnering with different community organizations to better serve the community. 
-
-She holds a degree in Business and has extensive experience in Finance and Banking within the U.S. Financial System. She has also enhanced her expertise through a range of leadership and civic engagement programs. Her work bridges the gap between policy and people, particularly advocating for youth access to education, entrepreneurship, and empowerment.
-
-“I joined the Advisory Board of The Smallest Library in Africa because I believe access to knowledge is one of the greatest equalizers in society. As someone who has benefited from education and mentorship, I see this initiative as a chance to give back by investing in the minds of future leaders. This library is more than a building—it’s a beacon of hope, a safe space for imagination, and a launchpad for young dreamers across the continent. Being part of this vision allows me to contribute to a legacy of literacy, empowerment, and generational change.”`,
-  },
-  {
-    name: "ANN NGATIA",
-    title: " Strategic Growth & Marketing",
-    image: assets.Board2, // Add this image to your assets
-    story: `Anne W. Ngatia is a seasoned Strategic Business Leader with over 15 years of experience in marketing, advertising, and business development across Sub-Saharan Africa. Currently serving as the Growth and Marketing Lead at Statsspeak, Anne has consistently driven top-line growth, strengthened brand positioning, and led innovative go-to-market strategies for leading organizations including Ogilvy Africa Kenya and Scanad Kenya.
-
-Her expertise spans integrated communications, PR, digital marketing, and commercial best practices—resulting in increased market share, improved pitch-to-win rates, and operational excellence. She is also a dedicated Consultant Course Facilitator at ISA Africa, where she supports aspiring marketers through knowledge transfer and mentorship.
-
-Anne holds a Diploma in Professional Marketing from The Chartered Institute of Marketing, complemented by specialized training in Consumer Neuroscience and Advertising. Beyond her professional pursuits, Anne is passionate about nurturing a reading culture in children and actively advocates for the empowerment of the boy child.
-
-With a global outlook and a deep understanding of local dynamics, Anne brings strategic insight, purpose-driven leadership, and a strong commitment to social impact to the Smallest Library in Africa Initiative board.`,
-  },
- 
-  // Add more members as needed
-];
-
+// src/pages/Board.jsx
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import boardMembers from "./BoardData";
+import './Board.css'
 const Board = () => {
-  const [expanded, setExpanded] = useState(Array(boardMembers.length).fill(false));
+  const { id } = useParams();
+  const member = boardMembers.find((m) => String(m.id) === String(id));
 
-  const handleToggle = idx => {
-    setExpanded(prev =>
-      prev.map((val, i) => (i === idx ? !val : val))
-    );
-  };
+  if (!member) {
+    return <h2>Member not found</h2>;
+  }
 
   return (
-    <div className="board-section">
-      <Helmet>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:type" content="profile" />
-        <meta property="og:url" content={metaUrl} />
-        <meta property="og:image" content={metaImage} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={metaImage} />
-        <link rel="canonical" href={metaUrl} />
-      </Helmet>
-      <HeroBoard />
-      <div className="board-grid">
-        {boardMembers.map((member, idx) => {
-          const paragraphs = member.story.split('\n\n');
-          const isExpanded = expanded[idx];
-          return (
-            <div className={`board-card${isExpanded ? " expanded" : ""}`} key={idx}>
-              <div className="board-img-wrapper">
-                <img src={member.image} alt={member.name} />
-              </div>
-              <h3>{member.name}</h3>
-              <h5>{member.title}</h5>
-              <div className="board-story">
-                {isExpanded
-                  ? paragraphs.map((p, i) => <p key={i}>{p}</p>)
-                  : <p>{paragraphs[0]}</p>
-                }
-                {paragraphs.length > 1 && (
-                  <button
-                    className="load-more-btn"
-                    onClick={() => handleToggle(idx)}
-                  >
-                    {isExpanded ? "Show Less" : "Load More"}
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })}
+    <section className="board">
+      <h2>{member.name}</h2>
+      <div className="board-card">
+       <div className="side-body">
+        <div className="img">
+           <img src={member.image} alt={member.name} />
+        </div>
+       </div>
+       <div className="side-body">
+         <h3>{member.title}</h3>
+        <p>{member.story}</p>
+     <Link to={"/about#board"}>Back to Board</Link>
+       </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Board;
-

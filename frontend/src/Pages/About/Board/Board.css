@@ -1,100 +1,40 @@
-.board-section {
-  background: #f8fafc;
-  min-height: 100vh;
+.board{
+  padding: 100px 0;
   text-align: center;
 }
-
-.board-title {
-  font-size: 2.3rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #222;
+.board h2{
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
+.board-card{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 8px;
+padding: 10px
+}
+.side-body{
 
-.board-grid {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
+  padding: 6px;
+  border-radius: 6px;
+
+  font-size: 12px;
+  position: relative;
+  display:  flex;
   flex-direction: column;
-  gap: 20px;
-
- 
-}
-
-.board-card {
-  border-radius: 16px;
-  padding: 2rem 1.2rem 1.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.16s, box-shadow 0.16s;
-}
-
-.board-img-wrapper {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  border: 2.5px solid #e0e7ef;
-  background: #f1f5fa;
-  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: left;
 }
-
-.board-img-wrapper img {
+.side-body .img {
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.side-body img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.board-card h3 {
-  margin: 0.3rem 0 0.1rem 0;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #1a202c;
-}
-
-.board-card h5 {
-  margin: 0 0 0.7rem 0;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #3b4252;
-}
-
-.board-story {
-  font-size: 0.97rem;
-  color: #4b5563;
-  min-height: 48px;
-}
-
-/* Add or update in Board.css */
-.board-story {
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
-  max-height: 120px; /* enough for one paragraph */
-  opacity: 0.95;
-  position: relative;
-}
-
-.board-card.expanded .board-story {
-  max-height: 1000px; /* enough for all paragraphs */
-  opacity: 1;
-}
-
-/* Add to Board.css */
-.load-more-btn {
-  margin-top: 10px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 18px;
-  cursor: pointer;
-  font-size: 0.98rem;
-  transition: background 0.18s;
-}
-.load-more-btn:hover {
-  background: #1e40af;
 }
