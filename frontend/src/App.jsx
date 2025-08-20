@@ -21,7 +21,6 @@ import Spinner from './components/Spinner';
 import Contact from './Pages/Contact/Contact';
 import Donate from './Pages/Donate/Donate';
 import Board from './Pages/About/Board/Board';
-import Board from './Pages/About/Board/Board';
 import ContactSupport from './Pages/Contact/ContactSupport'; 
 import './App.css';
 
