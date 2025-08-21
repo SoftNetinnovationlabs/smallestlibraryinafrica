@@ -1,7 +1,7 @@
 .display{
     width: 80%;
     margin: auto;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 .display__container{
     display: flex;
@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    width: 300px;
+    max-width: 500px;
     height: 400px;
     overflow: hidden;
     object-fit: cover;

@@ -1,59 +1,200 @@
-.vision2{
-    padding: 100px 0;
-    margin: auto;
-    width: 80%;
-}
-.vision2__container{
-    display:flex;
-    flex-wrap: wrap;
-
-}
-.vision2__content{
-    flex: 1 1 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: center;
-    padding: 20px;
-    gap: 20px;
-}
-.vision__img{
-    overflow: hidden;
-    border-radius: 20px;
-}
-.vision__img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.vision2 {
+  padding: 100px 0;
+  margin: auto;
+  width: 80%;
 }
 
+.vision2__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vision2__content {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Tabs */
 .vision2__content ul {
-    display: flex;
-    list-style: none;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 20px;
+  gap: 40px;
+  padding: 0;
+  justify-content: center;
 }
+
 .vision2__content ul li span {
-    cursor: pointer;
-    padding: 0.5rem;
-    font-weight: 500;
-    font-size: 30px;
-  }
-  
-  .vision2__content  ul li span.active {
-    color: rgb(61, 115, 187);
-    border-bottom: 2px solid rgb(0, 38, 255);
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 4rem; /* Desktop large */
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.vision2__content ul li span:hover {
+  color: #ff6a00;
+}
+
+.vision2__content ul li span.active {
+  color: #ff6a00;
+  border-bottom: 4px solid #ff6a00;
+}
+
+/* Vision / Mission text */
+.vision__mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+}
+
+.vision__mission p {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+}
+
+/* CTA Button */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6a00, #ff8c1a);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff8c1a, #ff6a00);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================
+   RESPONSIVE STYLES
+   ===================== */
+@media (max-width: 1200px) {
+  .vision2__content ul li span {
+    font-size: 3rem;
   }
 
+  .vision__mission p {
+    font-size: 1.4rem;
+  }
+}
 
-  .vision__mission{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    text-align: center;
+@media (max-width: 992px) {
+  .vision2 {
+    width: 90%;
+    padding: 80px 0;
+  }
+
+  .vision2__content ul {
+    gap: 25px;
+  }
+
+  .vision2__content ul li span {
+    font-size: 2.5rem;
+  }
+
+  .vision__mission p {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision2 {
+    width: 95%;
+    padding: 60px 0;
+  }
+
+  .vision2__content ul {
     gap: 20px;
   }
-  .visionMission__sect .vision__mision p{
-    margin-bottom: 20px;
-   }
-  
+
+  .vision2__content ul li span {
+    font-size: 2rem;
+  }
+
+  .vision__mission p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vision2__content ul li span {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .vision__mission p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 8px 18px;
+  }
+}
+/* Tabs */
+.vision2__content ul li span {
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 4rem; /* Desktop large */
+  color: #333;
+  transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+.vision2__content ul li span:hover {
+  color: #ff6a00;
+  transform: translateY(-4px); /* subtle lift effect */
+}
+
+.vision2__content ul li span.active {
+  color: #ff6a00;
+  border-bottom: 4px solid #ff6a00;
+  transform: scale(1.05); /* small scale-up */
+}
+
+/* Smooth fade for Vision/Mission text */
+.vision__mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.vision__mission.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}

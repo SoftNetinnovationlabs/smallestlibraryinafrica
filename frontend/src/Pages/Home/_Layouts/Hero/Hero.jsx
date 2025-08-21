@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Hero.css";
 import { Link } from "react-router-dom";
-      import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
-      import {FaXTwitter} from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import gsap from "gsap";
+
 const Hero = () => {
   const DataSet = [
     {
@@ -23,22 +25,29 @@ const Hero = () => {
   ];
 
   const [activeTitle, setActiveTitle] = useState(DataSet[0].title);
-
-  const handleClick = (title) => {
-    setActiveTitle(title);
-  };
-
   const activeItem = DataSet.find((item) => item.title === activeTitle);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".grid-overlay",
+      { opacity: 0, x: 50 },
+      { opacity: 1, x: -20, duration: 2, ease: "power2.out" }
+    );
+  }, []);
 
   return (
     <div className="hero">
+      {/* animated grid overlay */}
+      <div className="grid-overlay"></div>
+
       <div className="hero__content">
         <div className="dynamic_btns">
           {DataSet.map((item, index) => (
-            <span style={{cursor: "pointer"}}
+            <span
+              style={{ cursor: "pointer" }}
               key={index}
               className={`d_btn ${activeTitle === item.title ? "active" : ""}`}
-              onClick={() => handleClick(item.title)}
+              onClick={() => setActiveTitle(item.title)}
             >
               {item.title}
             </span>
@@ -52,26 +61,27 @@ const Hero = () => {
           Learn More
         </Link>
       </div>
-        
 
-<section className="social-section">
-  <div className="socialmedia-links">
-    <a href="https://www.facebook.com/share/12M22t7mL97/" target="_blank" rel="noopener noreferrer">
-      <FaFacebook />
-    </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <FaXTwitter />
-    </a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-      <FaInstagram />
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-      <FaLinkedin />
-    </a>
-  </div>
-</section>
-
-
+      <section className="social-section">
+        <div className="socialmedia-links">
+          <a
+            href="https://www.facebook.com/share/12M22t7mL97/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

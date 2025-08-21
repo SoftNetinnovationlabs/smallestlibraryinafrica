@@ -27,7 +27,9 @@ import Livelihood from './IMG-0223.jpg'
 import Board2 from './board2.jpg'
 import Katherine from './katherine.jpg'
 import Wibecke from './wibecke.jpg'
+import DishCyril from './dish_cyril.jpg'
 export const assets = {
+    DishCyril,
     Wibecke,
     Katherine,
     Livelihood,

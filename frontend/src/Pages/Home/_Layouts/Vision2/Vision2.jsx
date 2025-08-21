@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { assets } from '../../../../assets/assets';
 import './Vision2.css';
-import {FaArrowRight} from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 
 const Vision2 = () => {
@@ -16,34 +14,18 @@ const Vision2 = () => {
 
   const handleToggleData = (value) => {
     setToggleData(value);
-  };
+/*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Sets the state of the toggle data
+   * @param {string} value Value to set the state to
+   */
+/*******  13836a60-3324-4e82-91ac-8d6c18f934d2  *******/  };
 
   return (
     <div className="vision2">
       <div className="vision2__container">
-        <div className="vision2__content">
-          <div className="two__cards">
-            <div className="cardDet green">
-              <div className='flex-wrapper-container'>
-              <div className="card-wrapper">
-                <h3>Our digital</h3>
-                <h3>space</h3>
-                <div>
-                  <FaArrowRight/>
-                  </div>
-              </div>
-              <div className="card-wrapper">
-                <div className='card_img'>
-                  <img src={assets.content} alt="Digital space" />
-                  </div>
-             
-                </div>
-              </div>
-            </div>
-            <div className="cardDet gray"></div>
-          </div>
-        </div>
 
+        {/* Vision / Mission Toggle Tabs */}
         <div className="vision2__content">
           <ul className="toggle-tabs">
             <li>
@@ -64,18 +46,19 @@ const Vision2 = () => {
             </li>
           </ul>
 
+          {/* Display Vision or Mission */}
           <section className="visionMission__sect">
             <div className="vision__mission">
               <p>{visionMissionDataSet[toggleData]}</p>
 
-              {toggleData === 'mission'? (
+              {toggleData === 'mission' ? (
                 <div style={{ marginTop: '20px' }}>
                   <Link to="/our-work" className="btn">
                     Our Programs
                   </Link>
                 </div>
               ) : (
-                  <div style={{ marginTop: '20px' }}>
+                <div style={{ marginTop: '20px' }}>
                   <Link to="/our-impact" className="btn">
                     Our Impact
                   </Link>
