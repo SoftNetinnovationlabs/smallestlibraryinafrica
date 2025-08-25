@@ -9,7 +9,7 @@ import Partners from "./_Layouts/Partners/Partners.jsx";
 import CoreValues from "./_Layouts/CoreValues/CoreValues.jsx";
 import Counter from './_Layouts/Counter/Counter'
 import { Helmet } from "react-helmet";
-
+import News from "../News/_NewsLayouts/NewsList/NewsList.jsx";
 const metaTitle = "Smallest Library in Africa | Empowering Communities Through Education";
 const metaDescription = "Welcome to the Smallest Library in Africa Initiative. Discover our mission, vision, and impact as we empower communities through education, literacy, and sustainable development.";
 const metaUrl = "https://smallestlibraryinafrica.org/";
@@ -40,6 +40,7 @@ const Home = () => {
       <Vision2 />
       <CoreValues />
       <Counter />
+      <News/>
       <Partners />
     </div>
   );
