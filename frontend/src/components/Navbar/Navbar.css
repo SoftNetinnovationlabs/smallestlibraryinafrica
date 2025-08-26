@@ -145,7 +145,7 @@ header.scrolled {
         Font-size: 2rem;
     }
 
-    .nav_btn{
+   header .nav_btn{
         display: none;
     }
 }
