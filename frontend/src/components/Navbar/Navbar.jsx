@@ -25,7 +25,7 @@ function Navbar() {
     <header className={isScrolled ? "scrolled" : ""}>
       <div className="header_container">
         <div className="logo_2">
-          <NavLink to="/"><img src={assets.Logo} alt="" /></NavLink>
+          <NavLink to="/"><img src={assets.bgRemovedLogo} alt="" /></NavLink>
         </div>
 
         <nav className={`navbar ${isOpen ? "open" : ""}`}>

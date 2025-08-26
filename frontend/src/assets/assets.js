@@ -28,8 +28,10 @@ import Board2 from './board2.jpg'
 import Katherine from './katherine.jpg'
 import Wibecke from './wibecke.jpg'
 import DishCyril from './dish_cyril.jpg'
+import bgRemovedLogo from './bgremovedLogo.png'
 export const assets = {
     DishCyril,
+    bgRemovedLogo,
     Wibecke,
     Katherine,
     Livelihood,

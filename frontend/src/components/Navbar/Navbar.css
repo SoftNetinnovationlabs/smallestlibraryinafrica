@@ -28,8 +28,8 @@ header.scrolled {
     width: 100%;
 }
 .logo_2 {
-    width: 150px;
-    height: 150px;
+    max-width: 100px;
+    max-height: 100px;
     object-fit: cover;
     object-position: fill;
     overflow: hidden;
