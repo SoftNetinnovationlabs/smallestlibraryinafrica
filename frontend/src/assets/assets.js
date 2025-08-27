@@ -23,6 +23,7 @@ import PeanutLogo from './TPG_new_logo__1_-removebg-preview.png'
 import board from './board.JPG'
 import Cyril from './cyril.jpg'
 import Nutrition from './IMG-0880.JPG'
+import Nutrition2 from './Nutri.jpeg'
 import Livelihood from './IMG-0223.jpg'
 import Board2 from './board2.jpg'
 import Katherine from './katherine.jpg'
@@ -30,6 +31,7 @@ import Wibecke from './wibecke.jpg'
 import DishCyril from './dish_cyril.jpg'
 import bgRemovedLogo from './bgremovedLogo.png'
 export const assets = {
+    Nutrition2,
     DishCyril,
     bgRemovedLogo,
     Wibecke,

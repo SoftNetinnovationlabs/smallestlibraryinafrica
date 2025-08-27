@@ -4,12 +4,17 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import boardMembers from "../../Board/BoardData"; // ✅ import shared data
 
+
+
 const Story = () => {
   return (
     <>
+    <div className="hero-story">
+      <h1>Our Story</h1>
+    </div>
       <div className="story__wrapper">
         <div className="text-story">
-          <h3>Our Story: the humble beginnings</h3>
+          <h3> the humble beginnings</h3>
         </div>
 
         <div className="story__container">

@@ -1,151 +1,354 @@
-header{
-    /* background-color: var(--navbar-bg-color); */
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    z-index: 1;
-    padding: 2.3rem 2rem;
-    max-height: 20px;
-    height: 100%;
-    z-index: 1000;
-    position: relative;
+/* ==============================
+   HEADER
+============================== */
+header {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 1000;
+  padding: 2.3rem 2rem;
+  max-height: 60px;
+  position: relative;
   transition: top 0.3s ease, background-color 0.3s ease;
-  overflow: hidden;
+  overflow: visible; /* ensure dropdown isn't clipped */
 }
 header.scrolled {
-    position: fixed;
-    top: 0;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-.header_container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative; /* anchor for large dropdown if needed */
+}
+
+/* LOGO */
 .logo_2 {
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: cover;
-    object-position: fill;
-    overflow: hidden;
-  }
-  
-  .logo_2 img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .nav-links{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .nav-links ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    width: 100%;
-  }
-
-  .active-link {
-    border-bottom: 3px solid #f9004d; /* Blue border when active */
-    color: #4A90E2; /* Change text color to match the border */
-  }
-
-  .register-icon{
-    font-size: 40px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-.navbar{
-    display: flex;
-    gap: 1rem;
+  max-width: 100px;
+  max-height: 100px;
+  overflow: hidden;
 }
-.nav-links{
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-}
-.nav-links li{
-    margin-left: 1rem;
-}
-.nav-links a{
-    color: #000;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-.nav-links a:hover{
-    color: red;
-}
-.menu{
-    display: none;
+.logo_2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* NAV LINKS */
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links li {
+  margin-left: 1rem;
+}
+.nav-links a,
+.link {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-links a:hover,
+.link:hover {
+  color: red;
+}
+.active-link {
+  border-bottom: 3px solid #f9004d;
+  color: #4a90e2;
+}
+
+/* REGISTER ICON */
+.register-icon {
+  font-size: 40px;
+}
+
+/* DROPDOWNS */
+.dropdown-parent {
+  position: relative; /* keep this so small rectangular dropdown positions under parent */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 800px;
+  max-width: calc(100vw - 60px);
+  animation: fadeIn 0.22s ease-in-out;
+  z-index: 2000;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Show dropdown when .open is set (React) */
+.dropdown-parent.open .dropdown {
+  display: flex !important;
+}
+
+/* Or on hover (desktop fallback) */
+.dropdown-parent:hover .dropdown {
+  display: flex !important;
+}
+
+
+/* inside columns */
+.dropdown-content {
+  flex: 1;
+  padding: 0 0.5rem;
+}
+.dropdown-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #222;
+}
+.dropdown-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+.dropdown-content img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.dropdown-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dropdown-content ul li {
+  margin-bottom: 0.5rem;
+}
+.dropdown-content ul li a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: #000;
+  text-decoration: none;
+  transition: 0.18s ease;
+}
+.dropdown-content ul li a:hover {
+  background: #f5f5f5;
+  color: red;
+}
+
+/* vertical divider */
+.vertical-line {
+  width: 1px;
+  background: #e6e6e6;
+  align-self: stretch;
+}
+
+/* Rectangular (Our Work) - keep positioned under the li */
+.dropdown-rectangular {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem 0;
+  display: none;
+  min-width: 200px;
+  animation: fadeIn 0.18s ease-in-out;
+  z-index: 2000;
+}
+.dropdown-rectangular ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-rectangular ul li a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: #000;
+  text-decoration: none;
+}
+.dropdown-rectangular ul li a:hover {
+  background: #f0f0f0;
+  color: red;
+}
+
+/* Show on hover (desktop) AND when React adds .open */
+.dropdown-parent:hover .dropdown,
+.dropdown-parent.open:hover .dropdown {
+  display: flex !important;
+}
+.dropdown-parent:hover .dropdown-rectangular,
+.dropdown-parent.open .dropdown-rectangular {
+  display: block !important;
+}
+
+/* small styling for the toggle text so it looks interactive */
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Accessibility focus */
+.dropdown-toggle:focus {
+  outline: 2px solid rgba(0,0,0,0.12);
+  outline-offset: 2px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+.menu {
+  display: none;
+}
 @media screen and (max-width: 768px) {
-    .navbar{
-        width: 300px;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        background-color: #fff;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        text-align: left;
-    }
-    .navbar.open{
-        display: flex;
-    }
-    .nav-links{
-        flex-direction: column;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2rem;
-    }
-    
-    .nav-links li{
-        margin: 1rem 0;
-    }
-    .menu{
-        display: block;
-        cursor: pointer;
-    }
-    .menu-icon{
-        font-size: 2rem;
-        color: var(--navbar-text-color);
-    }
-    .navbar.active{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .close,.menu{
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-        Font-size: 2rem;
-    }
+  .navbar {
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    text-align: left;
+  }
+  .navbar.open { display: flex; }
+  .nav-links {
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 3rem;
+    padding-left: 0;
+  }
+  .nav-links li { margin: 0.25rem 0; padding: 0 1rem; }
+  .menu { display: block; cursor: pointer; }
 
-   header .nav_btn{
-        display: none;
-    }
+  header .nav_btn { display: none; }
+
+  /* mobile dropdown -> stacked blocks */
+  .dropdown,
+  .dropdown-rectangular {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border: none;
+    min-width: 100%;
+    flex-direction: column;
+    padding: 0;
+    display: none;
+    transform: translate(0);
+  }
+  .dropdown-content { padding: 0.75rem 1rem; }
+  .dropdown-content img { max-width: 100%; height: auto; }
+  .dropdown-parent.open .dropdown,
+  .dropdown-parent.open .dropdown-rectangular {
+    display: flex !important;
+  }
+
+  /* ensure mega menu looks readable on mobile */
+  .dropdown { padding: 1rem 0; gap: 0.5rem; }
+  .dropdown-content ul li{
+    border-bottom: 1px solid #ddd;
+  }
 }
+
+
+/* Large desktops (≥1400px) */
+@media screen and (min-width: 1400px) {
+  .dropdown {
+    min-width: 1200px;        /* extra wide */
+    padding: 2.5rem 3rem;
+  }
+  .dropdown-content img {
+    max-width: 320px;         /* bigger image column */
+  }
+}
+
+/* Medium screens (769px–1199px) */
+@media screen and (max-width: 1199px) and (min-width: 769px) {
+  .dropdown {
+    min-width: 700px;         /* shrink gracefully */
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .dropdown-content img {
+    max-width: 200px;
+  }
+  .dropdown-content h2 {
+    font-size: 1.1rem;
+  }
+  .dropdown-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small screens (≤768px) - mobile rules (you already had these, refining a bit) */
+@media screen and (max-width: 768px) {
+  .dropdown,
+  .dropdown-rectangular {
+    top: 0;
+    right: 0;
+    box-shadow: none;
+    border: none;
+    width: 100%;               /* take full width */
+    min-width: auto;
+    flex-direction: column;
+    padding: 0;
+    display: none;  }
+
+  .dropdown-content {
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  .dropdown-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-parent.open .dropdown,
+  .dropdown-parent.open .dropdown-rectangular {
+    display: flex !important;
+  }
+
+  .dropdown {
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+  .dropdown-content .data {
+  display: none;
+}
+}
+
+

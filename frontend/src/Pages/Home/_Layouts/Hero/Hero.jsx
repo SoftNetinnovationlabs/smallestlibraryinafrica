@@ -53,7 +53,7 @@ const Hero = () => {
             </span>
           ))}
         </div>
-        <h1 className="hero__title">
+        <h1 className="hero__title" style={{ color: "white" }}>
           Welcome to the Smallest Library in Africa!
         </h1>
         <p className="hero__description">{activeItem.description}</p>

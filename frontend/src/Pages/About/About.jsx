@@ -28,7 +28,6 @@ const About = () => {
         <link rel="canonical" href={metaUrl} />
       </Helmet>
       <Hero />
-      <Story />
       <Embedded />
       <Outlet />
     </div>

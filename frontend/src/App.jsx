@@ -23,6 +23,8 @@ import Donate from './Pages/Donate/Donate';
 import Board from './Pages/About/Board/Board';
 import ContactSupport from './Pages/Contact/ContactSupport'; 
 import './App.css';
+import Story from './Pages/About/_Layouts/Story/Story.jsx';
+import { Education } from './Pages/OurWork/_Layouts/Approach/ApproachItem.jsx';
 
 // 🔐 Set to false to block the site
 const hasPaid = true;
@@ -69,6 +71,8 @@ const App = () => {
                 <Route path='/about/founder' element={<Founder />} />
                 <Route path='/about/board-of-directors' element={<Board />} />
                 <Route path='/our-work' element={<OurWork />} />
+                <Route path='/about/our-story' element={<Story />} />
+                <Route path='/approach/education' element={<Education/>} />
 
             <Route path="/about/board/:id" element={<Board />} />
 
