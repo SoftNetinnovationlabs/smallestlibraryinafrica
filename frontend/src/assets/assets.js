@@ -30,7 +30,11 @@ import Katherine from './katherine.jpg'
 import Wibecke from './wibecke.jpg'
 import DishCyril from './dish_cyril.jpg'
 import bgRemovedLogo from './bgremovedLogo.png'
+import digitalSpace from './digitalSpace.jpeg'
+import aboutBanner from './aboutp.JPG'
 export const assets = {
+    aboutBanner,
+    digitalSpace,
     Nutrition2,
     DishCyril,
     bgRemovedLogo,
