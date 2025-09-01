@@ -8,6 +8,9 @@ import { Svgs } from '../../../../assets/svgs/svgs';
 const ApproachItem = ({ title, description, asset, overlayText, BgSvg }) => {
   return (
     <div className="approach-asset" style={{ position: 'relative', overflow: 'hidden' }}>
+      <div className="image-approach" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
+
+      </div>
       
       {BgSvg && (
         <div className="bg-svg-wrapper" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
@@ -16,7 +19,7 @@ const ApproachItem = ({ title, description, asset, overlayText, BgSvg }) => {
       )}
 
       <div className="approach__wrapper" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="approach__content">
+        <div className="approach__content" >
           <h2>{title}</h2>
           <p>{description}</p>
         </div>

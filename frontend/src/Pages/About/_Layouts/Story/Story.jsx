@@ -1,8 +1,6 @@
 import React from "react";
 import "./Story.css";
-import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import boardMembers from "../../Board/BoardData"; // ✅ import shared data
+
 
 
 
@@ -10,15 +8,11 @@ const Story = () => {
   return (
     <>
     <div className="hero-story">
-      <h1>Our Story</h1>
-    </div>
-      <div className="story__wrapper">
-        <div className="text-story">
-          <h3> the humble beginnings</h3>
-        </div>
+
 
         <div className="story__container">
           <div className="story__content">
+                  <h1>Our Story</h1>
             <p>
               The Smallest Library In Africa Initiative began as an open-air
               library in Mugure slums, founded by Cyril Peter Otieno. The
@@ -51,29 +45,7 @@ const Story = () => {
         </div>
       </div>
 
-      <section className="about__container">
-        <h1 className="improved-team-title">Our People</h1>
-        <div className="flex-container">
-          {boardMembers.map((member) => (
-            <div key={member.id} className="founder_people">
-              <img src={member.image} alt={member.name} />
-              <div className="overlay_data">
-                <p className="overlay-data_text">
-                  {member.title}: {member.name}
-                </p>
-                <div className="overlay-data_btns">
-                  <Link
-                    to={`/about/board/${member.id}`}
-                    className="overlay-data_link"
-                  >
-                    Story <FaArrowRight />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+
     </>
   );
 };

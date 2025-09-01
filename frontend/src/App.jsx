@@ -24,7 +24,7 @@ import Board from './Pages/About/Board/Board';
 import ContactSupport from './Pages/Contact/ContactSupport'; 
 import './App.css';
 import Story from './Pages/About/_Layouts/Story/Story.jsx';
-import { Education } from './Pages/OurWork/_Layouts/Approach/ApproachItem.jsx';
+import { Education, Nutrition } from './Pages/OurWork/_Layouts/Approach/ApproachItem.jsx';
 import BoardMembers from './Pages/About/Board/BoardMembers/BoardMembers.jsx';
 
 // 🔐 Set to false to block the site
@@ -74,6 +74,7 @@ const App = () => {
                 <Route path='/our-work' element={<OurWork />} />
                 <Route path='/about/our-story' element={<Story />} />
                 <Route path='/approach/education' element={<Education/>} />
+                <Route path='/approach/nutrition' element={<Nutrition />} />
                 <Route path='/about/board-of-directors' element={<BoardMembers />} />
             <Route path="/about/board/:id" element={<Board />} />
 
