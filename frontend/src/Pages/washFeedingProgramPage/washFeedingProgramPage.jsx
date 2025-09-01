@@ -9,7 +9,7 @@ export default function WashFeedingProgramPage() {
         <div className="wash-hero-bg" />
         <div className="wash-hero-content">
           <h1 className="wash-hero-title">Smallest Library WASH & Feeding Program</h1>
-          <p className="wash-hero-subtitle" color="white">
+          <p className="wash-hero-subtitle">
             Ensuring no child misses school because of hunger, lack of clean water,
             or poor nutrition awareness at home.
           </p>

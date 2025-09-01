@@ -1,13 +1,13 @@
 .wash-page {
   font-family: Arial, sans-serif;
-  color: #222;
+
   line-height: 1.6;
   background: #fafafa;
 }
 
 .wash-hero {
   position: relative;
-  text-align: left;
+  text-align: center;
   padding: 4rem 1rem;
   color: white;
   background: url(./bg.svg);
