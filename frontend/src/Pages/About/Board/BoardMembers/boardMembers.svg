@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+  <!-- Background -->
+  <rect width="1920" height="500" fill="#d6edf9"/>
+
+  <!-- Angular polygon layers -->
+  <polygon points="1000,0 1920,0 1920,500 1600,500" fill="#264653"/>
+  <polygon points="950,0 1850,0 1920,500 1550,500" fill="#2a9d8f"/>
+  <polygon points="900,0 1780,0 1920,500 1500,500" fill="#e9c46a"/>
+  <polygon points="850,0 1710,0 1920,500 1450,500" fill="#f4a261"/>
+  <polygon points="800,0 1640,0 1920,500 1400,500" fill="#e76f51"/>
+</svg>

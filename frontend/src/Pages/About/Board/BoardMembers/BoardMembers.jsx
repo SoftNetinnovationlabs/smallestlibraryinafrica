@@ -2,10 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa";
 import boardMembers from "../BoardData";
+import './BoardMembers.css'
 const BoardMembers = () => {
   return (
-     <section className="about__container">
+    <>
+   <div className="board-members">
         <h1 className="improved-team-title">Our Board of Directors</h1>
+
+       </div>
+      <section className="about__container">
         <div className="flex-container">
           {boardMembers.map((member) => (
             <div key={member.id} className="founder_people">
@@ -27,6 +32,8 @@ const BoardMembers = () => {
           ))}
         </div>
       </section>
+
+   </>
   )
 }
 
