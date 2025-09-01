@@ -1,0 +1,104 @@
+.wash-page {
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+.wash-hero {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: white;
+}
+
+.wash-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #4facfe, #00f2fe);
+  z-index: -1;
+}
+
+.wash-hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.wash-hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.wash-section {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wash-section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+  text-align: center;
+}
+
+.wash-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.wash-list li {
+  margin-bottom: 0.75rem;
+}
+
+.wash-highlight {
+  font-weight: bold;
+  color: #023e8a;
+}
+
+.wash-note {
+  margin-top: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.wash-cta {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.wash-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.wash-btn-group {
+  margin-top: 1.5rem;
+}
+
+.wash-btn-primary,
+.wash-btn-outline {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.wash-btn-primary {
+  background: #90e0ef;
+  color: #023e8a;
+}
+
+.wash-btn-outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}

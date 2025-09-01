@@ -27,6 +27,8 @@ import Story from './Pages/About/_Layouts/Story/Story.jsx';
 import { Education, Nutrition } from './Pages/OurWork/_Layouts/Approach/ApproachItem.jsx';
 import BoardMembers from './Pages/About/Board/BoardMembers/BoardMembers.jsx';
 import InternetScholarshipPage from './Pages/InternetScholarshiPage/internetScholarshipPage.jsx';
+import WashFeedingProgramPage from './Pages/washFeedingProgramPage/washFeedingProgramPage.jsx';
+import YouthDigitalSpaceProgram from './Pages/Youths/YouthsDigitalSpace.jsx';
 // 🔐 Set to false to block the site
 const hasPaid = true;
 
@@ -78,8 +80,8 @@ const App = () => {
                 <Route path='/about/board-of-directors' element={<BoardMembers />} />
             <Route path="/about/board/:id" element={<Board />} />
                 <Route path='/programs/internet-scholarship' element={<InternetScholarshipPage />} />
-
-
+                <Route path='/programs/smallest-library' element={<WashFeedingProgramPage />} />
+                <Route path='/programs/youth-digital-space' element={<YouthDigitalSpaceProgram />} />
                 <Route path='/our-impact' element={<h1>Our impact under development</h1>} />
                 <Route path='/register' element={<Auth />} />
                 <Route path='/volunteer-details' element={<VolunteerDetails />} />

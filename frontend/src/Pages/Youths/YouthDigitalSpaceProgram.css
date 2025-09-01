@@ -1,0 +1,49 @@
+.program-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.program-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.program-header h1 {
+  font-size: 2.2rem;
+  color: #1a5276;
+  margin-bottom: 0.5rem;
+}
+
+.program-subtitle {
+  font-size: 1.1rem;
+  color: #5d6d7e;
+}
+
+.program-section {
+  margin-bottom: 2rem;
+}
+
+.program-section h2 {
+  font-size: 1.5rem;
+  color: #154360;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid #1a5276;
+  padding-left: 0.5rem;
+}
+
+.program-section p {
+  margin-bottom: 1rem;
+}
+
+.program-section ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+.program-section li {
+  margin-bottom: 0.8rem;
+}
