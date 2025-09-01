@@ -1,54 +1,74 @@
 .program-container {
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    color: #2c3e50;
-    line-height: 1.6;
+
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2c3e50;
+  line-height: 1.7;
 }
 
+/* Header */
 .program-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    background: url(./youthsbg.svg);
-    background-size: cover;
-    background-position: center;
-    padding: 4rem 1rem;
-    color: white;
-    min-height: 30vw;
-}
-
-.program-header h1 {
-    font-size: 2.2rem;
-    color: #1a5276;
-    max-width: 900px;
-  margin-bottom: 0.5rem;
-}
-
-.program-subtitle {
-  font-size: 1.1rem;
-  color: #5d6d7e;
-}
-
-.program-section {
+  position: relative;
+  background: url("./youthsbg.svg") no-repeat center center/cover;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
   margin-bottom: 2rem;
 }
 
+.program-header .overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.program-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f1f1f1;
+}
+
+.program-subtitle {
+  font-size: 1.2rem;
+  color: #d5d8dc;
+}
+
+/* Sections */
+.program-section {
+    margin: auto;
+    max-width: 950px;
+  margin-bottom: 2.5rem;
+}
+
 .program-section h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #154360;
-  margin-bottom: 0.8rem;
-  border-left: 4px solid #1a5276;
-  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #1a5276;
+  padding-left: 0.7rem;
 }
 
 .program-section p {
   margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #34495e;
 }
 
 .program-section ul {
   margin-left: 1.5rem;
+  padding-left: 0.5rem;
   list-style: disc;
+  color: #2c3e50;
 }
 
 .program-section li {
   margin-bottom: 0.8rem;
+  font-size: 1.05rem;
 }
