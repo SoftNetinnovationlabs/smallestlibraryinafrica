@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+  <!-- Background -->
+  <rect width="1920" height="500" fill="#d6edf9"/>
+
+  <!-- Wave layers -->
+  <path d="M1000 0 Q1200 200 1000 500 L1920 500 L1920 0 Z" fill="#264653" opacity="0.95"/>
+  <path d="M1100 0 Q1300 220 1100 500 L1920 500 L1920 0 Z" fill="#2a9d8f" opacity="0.9"/>
+  <path d="M1200 0 Q1400 240 1200 500 L1920 500 L1920 0 Z" fill="#e9c46a" opacity="0.85"/>
+  <path d="M1300 0 Q1500 260 1300 500 L1920 500 L1920 0 Z" fill="#f4a261" opacity="0.85"/>
+  <path d="M1400 0 Q1600 280 1400 500 L1920 500 L1920 0 Z" fill="#e76f51" opacity="0.9"/>
+</svg>

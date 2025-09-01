@@ -26,7 +26,7 @@ import './App.css';
 import Story from './Pages/About/_Layouts/Story/Story.jsx';
 import { Education, Nutrition } from './Pages/OurWork/_Layouts/Approach/ApproachItem.jsx';
 import BoardMembers from './Pages/About/Board/BoardMembers/BoardMembers.jsx';
-
+import InternetScholarshipPage from './Pages/InternetScholarshiPage/internetScholarshipPage.jsx';
 // 🔐 Set to false to block the site
 const hasPaid = true;
 
@@ -77,6 +77,7 @@ const App = () => {
                 <Route path='/approach/nutrition' element={<Nutrition />} />
                 <Route path='/about/board-of-directors' element={<BoardMembers />} />
             <Route path="/about/board/:id" element={<Board />} />
+                <Route path='/programs/internet-scholarship' element={<InternetScholarshipPage />} />
 
 
                 <Route path='/our-impact' element={<h1>Our impact under development</h1>} />

@@ -1,0 +1,264 @@
+/* Page wrapper */
+.page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-color: #f9fafb;
+}
+
+/* --- Hero Section --- */
+.page .hero {
+    background: url('./inter.svg');
+  position: relative;
+  padding: 4rem 2rem;
+
+}
+
+.page .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png");
+  opacity: 0.1;
+}
+
+.page .hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.page .badge {
+  background: #ffcc00;
+  color: #222;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.page .hero-title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.page .hero-subtitle {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Buttons */
+.page .btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page .btn-primary,
+.page .btn-ghost,
+.page .btn-light,
+.page .btn-outline {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.page .btn-primary {
+  background: #ffcc00;
+  color: #222;
+}
+
+.page .btn-primary:hover {
+  background: #e6b800;
+}
+
+.page .btn-ghost {
+  border: 2px solid white;
+  color: white;
+}
+
+.page .btn-ghost:hover {
+  background: white;
+  color: #004aad;
+}
+
+.page .btn-light {
+  background: white;
+  color: #004aad;
+}
+
+.page .btn-light:hover {
+  background: #f2f2f2;
+}
+
+.page .btn-outline {
+  border: 2px solid #004aad;
+  color: #004aad;
+}
+
+.page .btn-outline:hover {
+  background: #004aad;
+  color: white;
+}
+
+/* Stats */
+.page .stats-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.page .stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.page .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.page .stats-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* --- Sections --- */
+.page .section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page .section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #004aad;
+}
+
+.page .highlight {
+  color: #0073e6;
+  font-weight: bold;
+}
+
+/* --- Solution --- */
+.page .solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.page .solution-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.page .solution-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.page .solution-icon {
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.page .solution-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+/* Money flow */
+.page .money-flow {
+  background: #f0f4f8;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.page .money-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.page .money-step {
+  padding: 1rem;
+  border-left: 4px solid #0073e6;
+  background: white;
+  border-radius: 6px;
+}
+
+.page .money-step-num {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #0073e6;
+}
+
+/* --- Impact --- */
+.page .impact-box {
+  background: #eef6ff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.page .impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.page .impact-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.page .impact-value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #004aad;
+}
+
+/* --- CTA --- */
+.page .cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.page .cta-dark,
+.page .cta-light {
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.page .cta-dark {
+  background: #004aad;
+  color: white;
+}
+
+.page .cta-light {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
