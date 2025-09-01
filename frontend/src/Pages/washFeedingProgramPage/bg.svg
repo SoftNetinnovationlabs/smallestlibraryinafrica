@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+  <!-- Background -->
+  <rect width="1920" height="500" fill="#d6edf9"/>
+
+  <!-- Bluish layered diagonals -->
+  <polygon points="1100,0 1920,0 1920,500 1650,500" fill="#1d3557" opacity="0.95"/>
+  <polygon points="1000,0 1820,0 1920,500 1550,500" fill="#457b9d" opacity="0.9"/>
+  <polygon points="900,0 1720,0 1920,500 1450,500" fill="#a8dadc" opacity="0.9"/>
+  <polygon points="800,0 1620,0 1920,500 1350,500" fill="#219ebc" opacity="0.85"/>
+  <polygon points="700,0 1520,0 1920,500 1250,500" fill="#023047" opacity="0.85"/>
+</svg>

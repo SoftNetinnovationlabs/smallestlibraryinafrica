@@ -7,9 +7,12 @@
 
 .wash-hero {
   position: relative;
-  text-align: center;
+  text-align: left;
   padding: 4rem 1rem;
   color: white;
+  background: url(./bg.svg);
+  background-size: cover;
+  background-position: center;
 }
 
 .wash-hero-bg {
@@ -18,7 +21,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, #4facfe, #00f2fe);
   z-index: -1;
 }
 
