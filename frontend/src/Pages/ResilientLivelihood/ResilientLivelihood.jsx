@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { assets } from '../../assets/assets'
 const DataResilientLivelihood = [{
 
             id: 3,
