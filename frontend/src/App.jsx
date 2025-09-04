@@ -29,7 +29,7 @@ import BoardMembers from './Pages/About/Board/BoardMembers/BoardMembers.jsx';
 import InternetScholarshipPage from './Pages/InternetScholarshiPage/internetScholarshipPage.jsx';
 import WashFeedingProgramPage from './Pages/washFeedingProgramPage/washFeedingProgramPage.jsx';
 import YouthDigitalSpaceProgram from './Pages/Youths/YouthsDigitalSpace.jsx';
-import ResilientLivelihood from './'
+import ResilientLivelihood from './Pages/ResilientLivelihood/ResilientLivelihood.jsx'
 // 🔐 Set to false to block the site
 const hasPaid = true;
 
