@@ -29,6 +29,7 @@ import BoardMembers from './Pages/About/Board/BoardMembers/BoardMembers.jsx';
 import InternetScholarshipPage from './Pages/InternetScholarshiPage/internetScholarshipPage.jsx';
 import WashFeedingProgramPage from './Pages/washFeedingProgramPage/washFeedingProgramPage.jsx';
 import YouthDigitalSpaceProgram from './Pages/Youths/YouthsDigitalSpace.jsx';
+import ResilientLivelihood from './'
 // 🔐 Set to false to block the site
 const hasPaid = true;
 
@@ -77,6 +78,7 @@ const App = () => {
                 <Route path='/about/our-story' element={<Story />} />
                 <Route path='/approach/education' element={<Education/>} />
                 <Route path='/approach/nutrition' element={<Nutrition />} />
+                <Route path='/approach/resilient-livelihood' element={<ResilientLivelihood />} />    
                 <Route path='/about/board-of-directors' element={<BoardMembers />} />
             <Route path="/about/board/:id" element={<Board />} />
                 <Route path='/programs/internet-scholarship' element={<InternetScholarshipPage />} />
