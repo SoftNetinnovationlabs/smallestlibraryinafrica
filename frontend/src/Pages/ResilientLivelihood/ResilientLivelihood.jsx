@@ -16,7 +16,7 @@ const ResilientLivelihood = () => {
              <h1 className='approach__title'>Approach</h1>
              <p className='approach__paragraph'>we are committed to creating a world where every child has the opportunity to thrive and reach their full potential. Our approach is centered around three key pillars:</p>
              <div className="approach-assets">
-                 {approachData.map((approach) => (
+                 {DataResilientLivelihood.map((approach) => (
                      <div className="approach-asset" key={approach.id}>
                         <div className="approach__wrapper">
                          <div className="approach__content">
