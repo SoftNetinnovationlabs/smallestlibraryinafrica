@@ -134,7 +134,7 @@ function Navbar() {
                       <NavLink to="/approach/nutrition" onClick={() => setIsOpen(false)}>Nutrition & Health</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/approach/resilint-livelihood" onClick={() => setIsOpen(false)}>Resilient Livelihood</NavLink>
+                      <NavLink to="/approach/resilient-livelihood" onClick={() => setIsOpen(false)}>Resilient Livelihood</NavLink>
                     </li>
                   </ul>
                 </div>
