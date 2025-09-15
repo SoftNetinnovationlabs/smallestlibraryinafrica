@@ -59,7 +59,7 @@ const Vision2 = () => {
                 </div>
               ) : (
                 <div style={{ marginTop: '20px' }}>
-                  <Link to="/our-impact" className="btn">
+                  <Link to="/programs/youth-digital-space" className="btn">
                     Our Impact
                   </Link>
                 </div>

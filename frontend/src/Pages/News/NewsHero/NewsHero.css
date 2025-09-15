@@ -17,7 +17,7 @@
 }
 
 .news-hero__content {
-  color: #fff;
+  color: var(--dark-purple);
   text-align: center;
   padding: 2rem;
 }

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 2rem;
     margin-top: 50px;
     width: 90%;
     margin: auto;
@@ -13,6 +13,7 @@
 .container__theneed {
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .theneed__content {
@@ -25,7 +26,6 @@
 }
 
 .description {
-    font-size: 1.2rem;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -38,25 +38,21 @@
 }
 
 .description p {
-    margin-bottom: 10px;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    margin-bottom: 1rem;
     color: #444;
+    line-height: 1.5;
 }
 
 .description .img {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    
-        /* inner glow 👇 */
-box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
-        100%, 0.075),
-        /* shadow ring 👇 */
-        0 0 0 1px hsla(0, 0%, 0%, 0.05),
-        /* multiple soft shadows 👇 */
-        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
-        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
-
+    box-shadow: inset 0 0 0.5px 1px hsla(0,0%,100%,0.075),
+                0 0 0 1px hsla(0,0%,0%,0.05),
+                0 0.3px 0.4px hsla(0,0%,0%,0.02),
+                0 0.9px 1.5px hsla(0,0%,0%,0.045),
+                0 3.5px 6px hsla(0,0%,0%,0.09);
 }
 
 .description .img img {
@@ -65,38 +61,32 @@ box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    transition: transform .3s;
 }
 
 .description .img:hover img {
     transform: scale(1.1);
-    filter: grayscale(0%)  contrast(1.2);
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: grayscale(0%) contrast(1.2);
 }
 
-/* Overlay text setup */
 .overlay_text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #444; 
+    color: #fff;
     font-size: clamp(1rem, 2vw, 2rem);
     text-align: center;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    padding: 20px;
+    padding: 1rem;
 }
 
-/* Show overlay text on hover */
 .description .img:hover .overlay_text {
     opacity: 1;
-    animation: fadeIn 0.5s ease-in-out;
-    animation-fill-mode: forwards;
-    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out forwards;
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
     display: flex;
@@ -104,80 +94,67 @@ box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
     justify-content: center;
     backdrop-filter: blur(5px);
     filter: grayscale(0%) brightness(0.8) contrast(1.2);
-
-
-
 }
+/* Description container: make content centered */
+.description {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    color: #444;
+    text-align: center; /* ensure text is centered along with button */
+}
+
+/* Button styling */
+.description .btn {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin: 1rem 0 0 0; /* top spacing only; horizontally centered by container */
+    text-align: center;
+}
+
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Responsive Design */
+/* Buttons */
+.description .btn {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: 0.5rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .theneed__content { flex: 1 1 45%; }
+    .description p { font-size: clamp(0.85rem, 1.6vw, 1.1rem); }
+    .overlay_text { font-size: clamp(0.9rem, 2.2vw, 1.8rem); }
+}
+
 @media (max-width: 768px) {
-    .theneed {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin: auto;
-        border: 1px solid #ccc;
-    }
+    .theneed { width: 95%; padding: 1.5rem; }
+    .theneed__content { flex: 1 1 100%; }
+    .description p { font-size: clamp(0.8rem, 2vw, 1rem); text-align: center; }
+    .overlay_text { font-size: clamp(0.9rem, 3vw, 1.5rem); padding: 0.5rem; }
+    /* Center the Learn More button */
+.description .btn {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    padding: 0.5rem 1rem;
+    display: inline-block;          /* ensures proper width */
+    margin: 1rem auto 0 auto;       /* centers horizontally */
+    text-align: center;
+}
 
-    .theneed h1 {
-        font-size: 2rem;
-    }
-
-    .container__theneed {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin: auto;
-    }
-
-    .theneed__content {
-        flex: 1 1 100%;
-    }
-
-    .description .img img {
-        min-height: 200px;
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .overlay_text {
-        font-size: 1.2rem;
-        padding: 10px;
-    }
 }
 
 @media (max-width: 480px) {
-    .theneed__content {
-        flex: 1 1 100%;
-    }
-
-    .description .img img {
-        min-height: 150px;
-    }
-
-    .description {
-        font-size: 1rem;
-    }
-
-    .description p {
-        font-size: 0.8rem;
-        text-align: center;
-    }
-
-    .overlay_text {
-        font-size: 1rem;
-    }
+    .description .img img { min-height: 150px; }
+    .description p { font-size: clamp(0.75rem, 3vw, 0.95rem); }
+    .overlay_text { font-size: clamp(0.8rem, 3.5vw, 1.2rem); }
 }
