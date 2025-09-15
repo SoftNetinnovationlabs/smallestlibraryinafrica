@@ -32,6 +32,7 @@
   font-size: 1.2rem;
   margin-bottom: 4px;
   line-height: 1.6;
+  color: var(--dark-purple);
 }
 
 @media screen and (max-width: 768px) {
@@ -49,6 +50,8 @@
   padding: 20px;
   text-align: center;
   gap: 20px;
+  color: var(--dark-purple);
+
 
 }
 .flex-container{
@@ -96,49 +99,10 @@
 }
 
 .overlay_data p{
-  color: white;
+  color: var(--dark-purple);
   font-size: 18px;
   font-weight: bold;
 }
 
-.overlay_data .overlay-data_link{
-  padding: 5px 15px;
-  background-color: yellow;
-  margin-top: 10px;
-  border-radius: 10px;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  
-}
 
-/* wrapper for multiple buttons */
-.overlay-data_btns {
-  display: flex;
-  gap: 10px;          /* space between buttons */
-  margin-top: 12px;
-  flex-wrap: wrap;    /* wrap if too many */
-}
 
-/* button styles */
-.overlay-data_btns .overlay-data_link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background-color: #facc15; /* yellow-400 */
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-/* hover effect */
-.overlay-data_btns .overlay-data_link:hover {
-  background-color: #eab308; /* darker yellow */
-  transform: translateY(-2px);
-}
