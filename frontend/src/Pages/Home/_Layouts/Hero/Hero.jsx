@@ -36,7 +36,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % DataSet.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
