@@ -27,6 +27,12 @@
   gap: 20px;
   text-align: justify;
 }
+.story__container p{
+  color: var(--dark-purple);
+}
+.story__content {
+  color: var(--dark-purple);
+}
 
 .story__content p {
   font-size: 1.2rem;
