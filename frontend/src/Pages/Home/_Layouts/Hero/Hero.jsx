@@ -107,7 +107,7 @@ const Hero = () => {
         </h1>
         <p className="hero__description">{DataSet[current].description}</p>
 
-        <Link to="/about" className="hero__button btn">
+        <Link to="/programs/smallest-library" className="hero__button btn">
           Learn More
         </Link>
       </div>
