@@ -112,7 +112,7 @@ const Hero = () => {
         </Link>
       </div>
 
-      <section className="social-section">
+      <section className="social-section" style={{zIndex:'1000'}}>
         <div className="socialmedia-links">
           <a
             href="https://www.facebook.com/share/12M22t7mL97/"
