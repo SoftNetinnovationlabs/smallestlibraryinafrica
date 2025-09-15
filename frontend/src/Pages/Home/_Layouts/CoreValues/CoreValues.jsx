@@ -38,7 +38,9 @@ const CoreValues = () => {
                 {values.map((value, index) => (
                     <div key={index} className="value-item">
                         <FontAwesomeIcon icon={value.icon} className="value-icon" />
-             <h3>{value.title}</h3>
+             <h3 style={
+                {color:'white'}
+             }>{value.title}</h3>
                         <p className='value-description'>{value.description}</p>
                     </div>
                 ))}
