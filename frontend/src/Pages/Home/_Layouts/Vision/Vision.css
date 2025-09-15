@@ -10,6 +10,20 @@
     text-align: center;
     color: var(--dark-purple);
 }
+.vision__container__content p{
+    color: var(--dark-purple);
+    font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+    width: 60%;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .vision__container__content p{
+        width: 80%;
+        text-align: left;
+    }
+    
+}
 
 .vision h1 {
     font-size: 1.4rem; /* smaller heading size */
