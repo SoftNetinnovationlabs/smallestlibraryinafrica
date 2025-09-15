@@ -277,6 +277,7 @@ header.scrolled {
     overflow-y: auto;
   }
   .dropdown-content { padding: 0.75rem 1rem; }
+    .dropdown-content ul li a { color: #fff; }
   .dropdown-content img { max-width: 100%; height: auto; }
   .dropdown-parent.open .dropdown,
   .dropdown-parent.open .dropdown-rectangular {
