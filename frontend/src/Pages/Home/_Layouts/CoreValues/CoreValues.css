@@ -1,77 +1,80 @@
 .core-values {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0;
-    background: linear-gradient(hsl(18, 68%, 14%, 0.3), #3a190b), 
-                url(../../../../assets/dish_cyril.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  background: linear-gradient(hsl(18, 68%, 14%, 0.3), var(--deep-charcoal)),
+              url(../../../../assets/dish_cyril.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .values-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  gap: 20px;
+  justify-content: center;
 }
 
 .value-item {
-    flex: 1 1 300px;
-    max-width: 300px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    backdrop-filter: blur(12px);
-    background: rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+  flex: 1 1 300px;
+  max-width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .value-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  border-color: var(--burgundy);
 }
 
 .value-icon {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: #fff;
-    transition: transform 0.3s ease;
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: white; /* accent color */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 .value-item:hover .value-icon {
-    transform: scale(1.2);
+  transform: scale(1.2);
+  color: var(--dark-purple); /* subtle hover shift */
 }
 
 .value-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
 }
+
 .value-description {
-    font-size: 1rem;
-    color: #f5f5f5;
+  font-size: 1rem;
+  color: #d7d7d7; /* keeps contrast readable */
 }
 
 .title {
-    position: relative;
-    margin-bottom: 30px;
-    color: #fff;
+  position: relative;
+  margin-bottom: 30px;
+  color: white;
 }
 .title-design {
-    position: absolute;
-    right: 0;
-    bottom: 10%;
-    border-radius: 10px;
-    background: rgba(107, 46, 46, 0.9);
-    width: 10rem;
-    height: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  border-radius: 10px;
+  background: var(--dark-purple);
+  width: 10rem;
+  height: 10px;
 }
