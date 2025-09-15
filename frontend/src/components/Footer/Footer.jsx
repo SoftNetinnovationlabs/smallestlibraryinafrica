@@ -44,9 +44,6 @@ function Footer() {
         </div>
 
       </div>
-<div className="big_text">
-  <h1>Smallest Library in Africa</h1>
-</div>
       <div className="footer__bottom">
         &copy; {new Date().getFullYear()} Smallest Library in Africa. All rights reserved.
       </div>

@@ -1,4 +1,4 @@
-.vision{
+.vision {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,151 +8,72 @@
     font-size: 2rem;
     padding: 100px 0;
     text-align: center;
-    background: url(../../../../assets/svgs/light.svg) center/cover no-repeat;
+    color: var(--dark-purple);
 }
 
-.vision h1{
-    font-size: 3rem;
+.vision h1 {
+    font-size: 1.4rem; /* smaller heading size */
     margin-bottom: 1rem;
+    color: var(--dark-purple);
 }
 
-.vision p{
+.vision p {
     font-size: 1.4rem;
+    color: var(--dark-purple);
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
-    .vision{
+    .vision {
         font-size: 1.5rem;
         padding: 50px 0;
     }
-    .vision h1{
-        font-size: 2rem;
+    .vision h1 {
+        font-size: 1.4rem; /* keep consistent on mobile */
     }
-    .vision p{
+    .vision p {
         font-size: 1rem;
     }
-    
 }
 
-.vision__images{
+.vision__images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 10px auto 2rem;
     gap: 50px;
-    margin-top: 10px;
     width: 80%;
-    margin: auto;
-
 }
 
-.vision__image{
+.vision__image {
     flex: 1 1 250px;
-    width: 100%;
     min-width: 400px;
     min-height: 400px;
-    height: 250px;
     border-radius: 10px;
-    object-fit: cover;
-    border-radius: 5px;
+    overflow: hidden;
     transition: transform 0.3s ease;
-    object-fit: cover;
-    
 }
 
-.vision__images img{
+.vision__images img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-           /* inner glow 👇 */
-box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
-100%, 0.075),
-/* shadow ring 👇 */
-0 0 0 1px hsla(0, 0%, 0%, 0.05),
-/* multiple soft shadows 👇 */
-0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
-0 3.5px 6px hsla(0, 0%, 0%, 0.09);
-
+    box-shadow:
+      0 0.3px 0.4px rgba(0,0,0,0.02),
+      0 0.9px 1.5px rgba(0,0,0,0.045),
+      0 3.5px 6px rgba(0,0,0,0.09);
 }
-@media screen  and (max-width: 768px) { 
-    .vision__images{
+
+@media screen and (max-width: 768px) { 
+    .vision__images {
         flex-direction: column;
         gap: 10px;
     }
-    .vision__image{
+    .vision__image {
         min-width: 100%;
-        min-height: 100%;
-        width: 100%;
-        height: auto;
+        min-height: auto;
         border-radius: 0;
     }
-    
-}
-.two__cards{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
-}
-
-
-.cardDet{
-    flex: 1 1 250px;
-    border-radius: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    Outline: 1px solid black;
-    box-shadow: 0 5px 0 0 black;
-}
-@media screen and (max-width: 768px){
-    .cardDet{
-            min-width: 300px;
-    }
-}
-.flex-wrapper-container{
-    flex: 1 1 250px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-    
-}
-.card-wrapper{
-    flex: 1 1 50px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    padding: 20px 0;
-    flex-wrap: wrap;
-}
-.card-wrapper h3{
-    background: rgba(255, 255, 255, 1);
-    border-radius: 3px;
-    padding: 4px;
-    margin-top: 3px;
-}
-.card_img{
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-}
-.card_img img{
-    width: 100%;
-    height: 100%;
-}
-.green{
-    background: rgba(185, 255, 102, 1);
-    box-shadow: 0 5px 0 0 black;
-}
-.gray{
-    display: none;
-    background: rgba(25, 26, 35, 1);
 }

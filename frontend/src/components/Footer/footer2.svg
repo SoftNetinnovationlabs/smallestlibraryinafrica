@@ -1,29 +1,26 @@
-<svg width="100%" height="100%" viewBox="0 0 1920 600" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="100%" height="100%" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff5f6d;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffc371;stop-opacity:1" />
+    <!-- Light sky gradient for white background -->
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/> <!-- White top -->
+      <stop offset="60%" stop-color="#E3F2FD"/> <!-- Very light blue -->
+      <stop offset="85%" stop-color="#BBDEFB"/> <!-- Soft blue-gray -->
+      <stop offset="100%" stop-color="#90CAF9"/> <!-- Medium sky blue -->
     </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#7b2ff7;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#f107a3;stop-opacity:0.8" />
-    </linearGradient>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:0.5" />
-      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:0.5" />
-    </linearGradient>
+
+    <!-- Soft blur for glow -->
+    <filter id="softBlur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
   </defs>
 
-  <!-- Base background -->
-  <rect width="100%" height="100%" fill="#5c00ff"/>
+  <!-- Background (white-friendly gradient) -->
+  <rect width="100%" height="100%" fill="url(#skyGradient)"/>
 
-  <!-- Large overlapping circles shifted left -->
-  <circle cx="200" cy="250" r="180" fill="url(#grad1)" />
-  <circle cx="400" cy="300" r="220" fill="url(#grad2)" />
-  <circle cx="650" cy="280" r="160" fill="url(#grad3)" />
-
-  <!-- Transparent shapes for layering / subtle effect -->
-  <rect x="150" y="0" width="100" height="600" fill="rgba(255,255,255,0.1)" />
-  <rect x="500" y="0" width="100" height="600" fill="rgba(255,255,255,0.1)" />
-  <rect x="800" y="0" width="80" height="600" fill="rgba(255,255,255,0.08)" />
+  <!-- Subtle bluish horizon glow -->
+  <ellipse cx="720" cy="600" rx="900" ry="200" fill="#42A5F5" opacity="0.18" filter="url(#softBlur)">
+    <!-- Gentle animation -->
+    <animate attributeName="opacity" values="0.12;0.22;0.12" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="rx" values="850;950;850" dur="14s" repeatCount="indefinite"/>
+  </ellipse>
 </svg>

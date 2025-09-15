@@ -32,7 +32,13 @@ import DishCyril from './dish_cyril.jpg'
 import bgRemovedLogo from './bgremovedLogo.png'
 import digitalSpace from './digitalSpace.jpeg'
 import aboutBanner from './aboutp.JPG'
+import innovation from './innovation.jpeg'
+import ChildrenWith from './childrenwith.jpg'
+import Take43 from './take43.jpg'
 export const assets = {
+    Take43,
+    ChildrenWith,
+    innovation,
     aboutBanner,
     digitalSpace,
     Nutrition2,

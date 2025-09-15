@@ -1,6 +1,7 @@
 .area_of_focus{
     padding: 100px 0;
-    background-color: #3a190b;
+    /* background-color: #3a190b; */
+    background: var(--primary-bg);
     width: 100%;
     margin: auto;
     display: flex;
@@ -12,6 +13,7 @@
 .area_of_focus h1{
     margin-bottom: 20px;
     color: #fff;
+    text-align: center;
 }
 
 .Area__focus_container{

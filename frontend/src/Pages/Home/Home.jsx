@@ -10,6 +10,9 @@ import CoreValues from "./_Layouts/CoreValues/CoreValues.jsx";
 import Counter from './_Layouts/Counter/Counter'
 import { Helmet } from "react-helmet";
 import News from "../News/_NewsLayouts/NewsList/NewsList.jsx";
+// import Parallax from "./_Layouts/Parallax/Parallax.jsx";
+// import TestParallax from "./_Layouts/Parallax/testParallax.jsx";
+// import TestParallax from "./_Layouts/Parallax/testParallax.jsx";
 const metaTitle = "Smallest Library in Africa | Empowering Communities Through Education";
 const metaDescription = "Welcome to the Smallest Library in Africa Initiative. Discover our mission, vision, and impact as we empower communities through education, literacy, and sustainable development.";
 const metaUrl = "https://smallestlibraryinafrica.org/";
@@ -33,6 +36,8 @@ const Home = () => {
         <link rel="canonical" href={metaUrl} />
       </Helmet>
       <Hero />
+      {/* <Parallax/> */}
+      {/* <TestParallax/> */}
       <Vision />
       <TheNeed />
       <AreaOfFocus />

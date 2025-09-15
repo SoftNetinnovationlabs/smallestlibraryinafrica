@@ -18,7 +18,7 @@
 .value-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #2C3E50;
+  color: var(--dark-purple);
   margin-bottom: 0.5rem;
 }
 @media screen and (max-width: 768px){
@@ -28,7 +28,7 @@
 }
 
 .title.dark .value-title {
-  color: #EEEEEE;
+  color: var(--dark-purple);
 }
 
 .title-design {
