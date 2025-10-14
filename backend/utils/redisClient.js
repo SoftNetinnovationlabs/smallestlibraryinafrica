@@ -1,40 +1,32 @@
-import Redis from 'ioredis';
+import Redis from "ioredis";
 
-let redis;
+let redisClient;
 
-const tryConnectProd = async () => {
+const connectRedis = async () => {
   try {
-    redis = new Redis({
-      url: process.env.REDIS_REST_URL,
+    const redisUrl =
+      process.env.NODE_ENV === "production"
+        ? process.env.REDIS_REST_URL
+        : process.env.REDIS_REST_URL_LOCAL || "redis://localhost:6379";
+
+    console.log(`🔗 Connecting to Redis using URL: ${redisUrl}`);
+    redisClient = new Redis(redisUrl, {
+      retryStrategy: (times) => Math.min(times * 100, 3000),
+      maxRetriesPerRequest: null,
     });
 
-    redis.on('connect', () => console.log('✅ Connected to Redis (Production)'));
-    redis.on('error', (err) => console.error('❌ Redis connection error:', err));
+    redisClient.on("connect", () => console.log(`✅ Redis connected (${process.env.NODE_ENV})`));
+    redisClient.on("ready", () => console.log("🚀 Redis ready"));
+    redisClient.on("error", (err) => console.error("❌ Redis error:", err));
+    redisClient.on("close", () => console.warn("🔌 Redis connection closed"));
 
-    return redis;
+    return redisClient;
   } catch (err) {
-    console.error('Redis connection error:', err);
+    console.error("Redis connection error:", err);
   }
 };
 
-const tryConnectLocal = async () => {
-  try {
-    redis = new Redis(
-      process.env.REDIS_REST_URL_LOCAL || 'redis://localhost:6379'
-    ); // defaults to localhost:6379
-    redis.on('connect', () => console.log('✅ Connected to Redis (Local)'));
-    redis.on('error', (err) => console.error('❌ Redis connection error:', err));
+// ✅ Immediately connect, then export the connected instance
+const redisPromise = connectRedis();
 
-    return redis;
-  } catch (err) {
-    console.error('Redis connection error:', err);
-  }
-};
-
-// Choose which to run based on NODE_ENV, not the URL itself
-const connectRedis = process.env.NODE_ENV === 'production' ? tryConnectProd : tryConnectLocal;
-
-// Initialize immediately
-connectRedis();
-
-export default redis;
+export default redisPromise;

@@ -1,9 +1,11 @@
 import NewsModel from '../models/news.model.js';
-import redisClient from '../utils/redisClient.js';
+import redisPromise from '../utils/redisClient.js'; // Notice: redisPromise instead of redisClient
 
 // Create News Post
 export const createNewsPost = async (req, res) => {
   try {
+    const redisClient = await redisPromise; // ✅ Ensure Redis is ready
+
     const { mainTitle, excerpt } = req.body;
 
     console.log('Incoming body keys:', Object.keys(req.body));
@@ -57,6 +59,8 @@ export const getAllNews = async (req, res) => {
   const cacheKey = 'news:all';
 
   try {
+    const redisClient = await redisPromise; // ✅ Ensure Redis is ready
+
     const cached = await redisClient.get(cacheKey);
     if (cached) {
       try {
@@ -72,7 +76,7 @@ export const getAllNews = async (req, res) => {
     // Fetch from DB
     const news = await NewsModel.find().sort({ createdAt: -1 });
 
-    // ✅ Correct for ioredis
+    // ✅ Store in Redis cache for 1 hour (3600 seconds)
     await redisClient.set(cacheKey, JSON.stringify(news), 'EX', 3600);
 
     console.log('Serving /news from DB and cached');
@@ -98,6 +102,8 @@ export const getSingleNews = async (req, res) => {
 // Delete News Post
 export const deleteNewsPost = async (req, res) => {
   try {
+    const redisClient = await redisPromise; // ✅ Ensure Redis is ready
+
     const deletedPost = await NewsModel.findByIdAndDelete(req.params.id);
     if (!deletedPost) {
       return res.status(404).json({ message: 'News post not found' });
