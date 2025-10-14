@@ -10,7 +10,7 @@ import DonationRoute from './routes/Donation.routes.js'
 dotenv.config();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://admin.smallestlibraryinafrica.org' ,'https://smallestlibraryinafrica.org'],
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://admin.smallestlibraryinafrica.org' ,'https://smallestlibraryinafrica.org',  'http://192.168.0.103:5173', 'http://192.168.0.103:5174'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'x-admin-secret'], // add your custom headers here
   credentials: true,
@@ -34,7 +34,7 @@ app.use('/api/donation', DonationRoute)
 
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const PORT = 9000;
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

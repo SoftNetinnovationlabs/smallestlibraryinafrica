@@ -64,9 +64,9 @@ const NewsDetails = () => {
       {newsItem.sections?.map((sec, idx) => (
         <div key={idx} className="section">
           <h2>{sec.title}</h2>
-          {sec.image && (
+         <div className='news-img-tag'> {sec.image && (
             <img src={sec.image} alt={sec.title} className="section-image" />
-          )}
+          )}</div>
           <p>{sec.content}</p>
         </div>
       ))}

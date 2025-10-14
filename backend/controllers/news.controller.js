@@ -1,5 +1,5 @@
 import NewsModel from '../models/news.model.js';
-import redisClient from '../utils/redisClient.js'; // Adjust if located elsewhere
+import redisClient from '../utils/redisClient.js';
 
 // Create News Post
 export const createNewsPost = async (req, res) => {
@@ -65,15 +65,15 @@ export const getAllNews = async (req, res) => {
         return res.status(200).json(parsed);
       } catch (jsonErr) {
         console.warn('Corrupted cache found. Deleting it...');
-        await redisClient.del(cacheKey); // Remove corrupted cache
+        await redisClient.del(cacheKey);
       }
     }
 
     // Fetch from DB
     const news = await NewsModel.find().sort({ createdAt: -1 });
 
-    // Store in Redis cache for 1 hour (3600 seconds)
-    await redisClient.set(cacheKey, JSON.stringify(news), { ex: 3600 });
+    // ✅ Correct for ioredis
+    await redisClient.set(cacheKey, JSON.stringify(news), 'EX', 3600);
 
     console.log('Serving /news from DB and cached');
     res.status(200).json(news);
