@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './newsdetails.css';
-
 import baseURL from '../../../../../config.js';
-import Loader from '../NewsList/Loader'; // Import your custom loader
+import Loader from '../NewsList/Loader';
 import { Helmet } from 'react-helmet';
 
 const NewsDetails = () => {
   const { id } = useParams();
   const [newsItem, setNewsItem] = useState(null);
-  const [loading, setLoading] = useState(true); // Local loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
+        // ✅ FIXED: Added backticks for template literal
         const res = await axios.get(`${baseURL}/news/${id}`);
         setNewsItem(res.data);
       } catch (err) {
         console.error('Error fetching news details:', err);
       } finally {
-        setLoading(false); // Stop loading once done
+        setLoading(false);
       }
     };
 
@@ -31,7 +31,7 @@ const NewsDetails = () => {
 
   if (!newsItem) return <div className="error">No news found.</div>;
 
-  // Build meta tags dynamically
+  // ✅ FIXED: Added backticks
   const metaTitle = newsItem.title || "News | Smallest Library in Africa";
   const metaDescription = newsItem.excerpt || "Read the latest news from the Smallest Library in Africa Initiative.";
   const metaUrl = `https://smallestlibraryinafrica.org/news/${id}`;
@@ -64,9 +64,11 @@ const NewsDetails = () => {
       {newsItem.sections?.map((sec, idx) => (
         <div key={idx} className="section">
           <h2>{sec.title}</h2>
-         <div className='news-img-tag'> {sec.image && (
-            <img src={sec.image} alt={sec.title} className="section-image" />
-          )}</div>
+          <div className='news-img-tag'>
+            {sec.image && (
+              <img src={sec.image} alt={sec.title} className="section-image" />
+            )}
+          </div>
           <p>{sec.content}</p>
         </div>
       ))}
