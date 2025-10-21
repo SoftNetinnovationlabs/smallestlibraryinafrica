@@ -66,18 +66,18 @@ Katharine joined the board of the Smallest Library in Africa Initiative inspired
 
     image: assets.Katherine,
   },
-//   },{
-//     id: "Donata Moerz",
-//     name: "Donata Moerz", 
-//     title: "board member",
-//     story: `Donata Moerz is an Occupational Safety Specialist and consultant dedicated to fostering safe and healthy work environments. With over 30 years of voluntary service to the German Red Cross—including international missions to Tanzania in 1997 and Sri Lanka in 2005—Donata brings a deep commitment to humanitarian service and community care.
+  ,{
+    id: "Donata Moerz",
+    name: "Donata Moerz", 
+    title: "board member",
+    story: `Donata Moerz is an Occupational Safety Specialist and consultant dedicated to fostering safe and healthy work environments. With over 30 years of voluntary service to the German Red Cross—including international missions to Tanzania in 1997 and Sri Lanka in 2005—Donata brings a deep commitment to humanitarian service and community care.
 
-// She holds a PhD in Linguistics, with academic studies in both linguistics and Human-Machine Interaction, and has also worked as a paramedic during her years of study—reflecting a unique blend of intellectual rigor and practical service.
+She holds a PhD in Linguistics, with academic studies in both linguistics and Human-Machine Interaction, and has also worked as a paramedic during her years of study—reflecting a unique blend of intellectual rigor and practical service.
 
-// Donata believes in sharing the true wealth life has offered her. When she came across The Smallest Library in Africa through a social media post, she felt an immediate connection. A visit to Nairobi 20 years ago left a lasting impact on her, and the organization’s mission—to nurture a reading culture among children in low-income communities—resonated deeply with her passion for reading and lifelong learning.
+Donata believes in sharing the true wealth life has offered her. When she came across The Smallest Library in Africa through a social media post, she felt an immediate connection. A visit to Nairobi 20 years ago left a lasting impact on her, and the organization’s mission—to nurture a reading culture among children in low-income communities—resonated deeply with her passion for reading and lifelong learning.
 
-// As a board member, Donata contributes international perspective, thoughtful leadership, and an unwavering belief in the transformative power of books and education for every `,
-//   }
+As a board member, Donata contributes international perspective, thoughtful leadership, and an unwavering belief in the transformative power of books and education for every `,
+  }
 ];
 
 export default boardMembers;

@@ -1,73 +1,345 @@
-.program-container {
+/* ==============================
+   YOUTH DIGITAL SPACE PROGRAM
+============================== */
 
-  margin: 0 auto;
-  font-family: "Segoe UI", Arial, sans-serif;
+.program-container {
+  min-height: 100vh;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   color: #2c3e50;
-  line-height: 1.7;
+  line-height: 1.8;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
 }
 
-/* Header */
+/* ==============================
+   PROGRAM HEADER
+============================== */
 .program-header {
   position: relative;
-  background: url("./youthsbg.svg") no-repeat center center/cover;
-  min-height: 40vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+.program-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./youthsbg.svg") no-repeat center center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.program-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(249, 147, 13, 0.15), transparent 50%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  z-index: 1;
 }
 
 .program-header .overlay {
-  background: rgba(0, 0, 0, 0.55);
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  max-width: 800px;
+  position: relative;
+  /* z-index: ; */
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .program-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #f1f1f1;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(167, 139, 250, 0.3);
 }
 
 .program-subtitle {
-  font-size: 1.2rem;
-  color: #d5d8dc;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
 }
 
-/* Sections */
+/* ==============================
+   PROGRAM SECTIONS
+============================== */
 .program-section {
-    margin: auto;
-    max-width: 950px;
-  margin-bottom: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 3rem 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa, #f9930d);
+}
+
+.program-section:first-of-type {
+  margin-top: -3rem;
+  z-index: 10;
 }
 
 .program-section h2 {
-  font-size: 1.6rem;
-  color: #154360;
-  margin-bottom: 1rem;
-  border-left: 5px solid #1a5276;
-  padding-left: 0.7rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.program-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 70%;
+  background: linear-gradient(180deg, #a78bfa, #f9930d);
+  border-radius: 3px;
 }
 
 .program-section p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  color: #34495e;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: #4a5568;
+  line-height: 1.8;
 }
 
+.program-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   LISTS
+============================== */
 .program-section ul {
-  margin-left: 1.5rem;
-  padding-left: 0.5rem;
-  list-style: disc;
-  color: #2c3e50;
+  margin: 1.5rem 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 .program-section li {
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+.program-section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #a78bfa, #f9930d);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.4);
+}
+
+.program-section li:last-child {
+  margin-bottom: 0;
+}
+
+.program-section li strong {
+  color: #1a1a2e;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.1em;
+}
+
+/* ==============================
+   SPECIAL HIGHLIGHTS
+============================== */
+.program-section:nth-child(2) {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.05), rgba(249, 147, 13, 0.05));
+}
+
+.program-section:last-child {
+  background: linear-gradient(135deg, #a78bfa, #f9930d);
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.program-section:last-child h2 {
+  color: #ffffff;
+}
+
+.program-section:last-child h2::before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.program-section:last-child p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .program-header {
+    min-height: 50vh;
+  }
+
+  .program-section {
+    padding: 2.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .program-container {
+    padding: 0;
+  }
+
+  .program-header {
+    min-height: 45vh;
+  }
+
+  .program-header .overlay {
+    padding: 3rem 1.5rem;
+  }
+
+  .program-header h1 {
+    font-size: 2rem;
+  }
+
+  .program-subtitle {
+    font-size: 1rem;
+  }
+
+  .program-section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 12px;
+  }
+
+  .program-section:first-of-type {
+    margin-top: -2rem;
+  }
+
+  .program-section h2 {
+    font-size: 1.5rem;
+    padding-left: 1.2rem;
+  }
+
+  .program-section h2::before {
+    width: 4px;
+  }
+
+  .program-section p,
+  .program-section li {
+    font-size: 1rem;
+  }
+
+  .program-section li {
+    padding-left: 2rem;
+  }
+
+  .program-section li::before {
+    width: 10px;
+    height: 10px;
+    top: 0.4rem;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .program-header .overlay {
+    padding: 2.5rem 1rem;
+  }
+
+  .program-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .program-section {
+    padding: 1.5rem 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .program-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .program-section p,
+  .program-section li {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+@media (prefers-reduced-motion: reduce) {
+  .program-section {
+    transition: none;
+  }
+
+  .program-section:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .program-header h1 {
+    -webkit-text-fill-color: #ffffff;
+    text-shadow: none;
+  }
+
+  .program-section::before {
+    height: 6px;
+  }
 }

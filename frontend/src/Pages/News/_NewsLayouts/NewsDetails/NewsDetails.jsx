@@ -66,7 +66,12 @@ const NewsDetails = () => {
           <h2>{sec.title}</h2>
           <div className='news-img-tag'>
             {sec.image && (
-              <img src={sec.image} alt={sec.title} className="section-image" />
+              <img style={
+              {
+                
+              }
+
+              } src={sec.image} alt={sec.title} className="section-image" />
             )}
           </div>
           <p>{sec.content}</p>

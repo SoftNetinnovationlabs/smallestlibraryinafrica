@@ -7,54 +7,197 @@ import { IoPersonCircle } from "react-icons/io5";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); // "about", "work", "programs" or null
+  const [openDropdown, setOpenDropdown] = useState(null);
 
-  const dropdownRefs = useRef({}); // ref for each dropdown
+  const dropdownRefs = useRef({});
+  const navbarRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setOpenDropdown(null); // close all dropdowns when menu toggles
+    setOpenDropdown(null);
+    // Prevent body scroll when mobile menu is open
+    if (!isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
   };
 
   const toggleDropdown = (menuName) => {
     setOpenDropdown(openDropdown === menuName ? null : menuName);
   };
 
-  // scroll effect
+  const closeMenu = () => {
+    setIsOpen(false);
+    setOpenDropdown(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  // Scroll effect
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // click outside dropdowns
+  // Click outside dropdowns - improved logic
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Check if click is outside all dropdown refs
+      let isOutside = true;
+      
       for (let key in dropdownRefs.current) {
-        if (dropdownRefs.current[key] && !dropdownRefs.current[key].contains(event.target)) {
-          setOpenDropdown(null);
+        if (dropdownRefs.current[key] && dropdownRefs.current[key].contains(event.target)) {
+          isOutside = false;
+          break;
+        }
+      }
+      
+      if (isOutside && openDropdown) {
+        setOpenDropdown(null);
+      }
+    };
+
+    if (openDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openDropdown]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    const handleRouteChange = () => {
+      closeMenu();
+    };
+
+    // Listen for popstate (browser back/forward)
+    window.addEventListener('popstate', handleRouteChange);
+    
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      document.body.style.overflow = 'unset'; // Cleanup on unmount
+    };
+  }, []);
+
+  // Close dropdown on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setOpenDropdown(null);
+        if (isOpen) {
+          closeMenu();
         }
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
+
+  // Dropdown data structure
+  const dropdownData = {
+    about: {
+      title: "About us",
+      description: "The Smallest Library In Africa Initiative began as an open-air library in Mugure slums, founded by Cyril Peter Otieno. The library operated five days a week from 5:30 pm to 7:30 pm, closing during the short and long rainy seasons.",
+      links: [
+        { label: "Story", path: "/about/our-story" },
+        { label: "Board", path: "/about/board-of-directors" },
+        { label: "Team", path: "/about/team" }
+      ],
+      image: assets.aboutBanner,
+      imageAlt: "About Us"
+    },
+    work: {
+      title: "Our Work",
+      description: "We focus on empowering communities through education, nutrition, health, and mentorship programs designed to create lasting impact.",
+      subtitle: "Approach",
+      links: [
+        { label: "Education", path: "/approach/education" },
+        { label: "Nutrition & Health", path: "/approach/nutrition" },
+        { label: "Resilient Livelihood", path: "/approach/resilient-livelihood" }
+      ],
+      image: assets.Nutrition2,
+      imageAlt: "Our Work"
+    },
+    programs: {
+      title: "Our Programs",
+      description: "We run initiatives like Youth Digital Space, Internet for Scholarship, and Smallest Library WASH & Feeding.",
+      links: [
+        { label: "Youth Digital Space", path: "/programs/youth-digital-space" },
+        { label: "Internet for Scholarship", path: "/programs/internet-scholarship" },
+        { label: "Smallest Library WASH & Feeding", path: "/programs/smallest-library" }
+      ],
+      image: assets.digitalSpace,
+      imageAlt: "Our Programs"
+    }
+  };
+
+  // Reusable Dropdown Component
+  const DropdownMenu = ({ type }) => {
+    const data = dropdownData[type];
+    
+    return (
+      <div className="dropdown">
+        <div className="dropdown-content">
+          <div className="data">
+            <h2>{data.title}</h2>
+            <p>{data.description}</p>
+          </div>
+        </div>
+        <div className="vertical-line"></div>
+        <div className="dropdown-content">
+          <ul>
+            {data.subtitle && <h2>{data.subtitle}</h2>}
+            {data.links.map((link, index) => (
+              <li key={index}>
+                <NavLink to={link.path} onClick={closeMenu}>
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="dropdown-content">
+          <img src={data.image} alt={data.imageAlt} loading="lazy" />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <header className={isScrolled ? "scrolled" : ""}>
       <div className="header_container">
         {/* Logo */}
         <div className="logo_2">
-          <NavLink to="/">
-            <img src={assets.bgRemovedLogo} alt="Logo" />
+          <NavLink to="/" onClick={closeMenu} aria-label="Home">
+            <img src={assets.bgRemovedLogo} alt="Company Logo" />
           </NavLink>
         </div>
 
         {/* Navigation */}
-        <nav className={`navbar ${isOpen ? "open" : ""}`}>
+        <nav 
+          ref={navbarRef}
+          className={`navbar ${isOpen ? "open" : ""}`}
+          aria-label="Main navigation"
+        >
           {/* Mobile close button */}
           {isOpen && (
-            <span className="material-symbols-outlined menu close" onClick={toggleMenu}>
+            <span 
+              className="material-symbols-outlined menu close" 
+              onClick={toggleMenu}
+              role="button"
+              aria-label="Close menu"
+              tabIndex={0}
+              onKeyPress={(e) => e.key === 'Enter' && toggleMenu()}
+            >
               close
             </span>
           )}
@@ -64,7 +207,7 @@ function Navbar() {
             <li className="links">
               <NavLink
                 to="/"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
                 className={({ isActive }) => (isActive ? "link active-link" : "link")}
               >
                 HOME
@@ -76,35 +219,18 @@ function Navbar() {
               className={`links dropdown-parent ${openDropdown === "about" ? "open" : ""}`}
               ref={(el) => (dropdownRefs.current["about"] = el)}
             >
-              <span className="link" onClick={() => toggleDropdown("about")}>ABOUT US</span>
-              <div className="dropdown">
-                <div className="dropdown-content">
-                  <div className="data">
-                    <h2>About us</h2>
-                    <p>
-                      The Smallest Library In Africa Initiative began as an open-air library in Mugure slums, founded by Cyril Peter Otieno.
-                      The library operated five days a week from 5:30 pm to 7:30 pm, closing during the short and long rainy seasons.
-                    </p>
-                  </div>
-                </div>
-                <div className="vertical-line"></div>
-                <div className="dropdown-content">
-                  <ul>
-                    <li>
-                      <NavLink to="/about/our-story" onClick={() => setIsOpen(false)}>Story</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/about/board-of-directors" onClick={() => setIsOpen(false)}>Board</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/about/team" onClick={() => setIsOpen(false)}>Team</NavLink>
-                    </li>
-                  </ul>
-                </div>
-                <div className="dropdown-content">
-                  <img src={assets.aboutBanner} alt="About Us" />
-                </div>
-              </div>
+              <span 
+                className="link" 
+                onClick={() => toggleDropdown("about")}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => e.key === 'Enter' && toggleDropdown("about")}
+                aria-expanded={openDropdown === "about"}
+                aria-haspopup="true"
+              >
+                ABOUT US
+              </span>
+              <DropdownMenu type="about" />
             </li>
 
             {/* OUR WORK */}
@@ -112,36 +238,18 @@ function Navbar() {
               className={`links dropdown-parent ${openDropdown === "work" ? "open" : ""}`}
               ref={(el) => (dropdownRefs.current["work"] = el)}
             >
-              <span className="link" onClick={() => toggleDropdown("work")}>OUR WORK</span>
-              <div className="dropdown">
-                <div className="dropdown-content">
-                  <div className="data">
-                    <h2>Our Work</h2>
-                    <p>
-                      We focus on empowering communities through education, nutrition, health,
-                      and mentorship programs designed to create lasting impact.
-                    </p>
-                  </div>
-                </div>
-                <div className="vertical-line"></div>
-                <div className="dropdown-content">
-                  <ul>
-                    <h2>Approach</h2>
-                    <li>
-                      <NavLink to="/approach/education" onClick={() => setIsOpen(false)}>Education</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/approach/nutrition" onClick={() => setIsOpen(false)}>Nutrition & Health</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/approach/resilient-livelihood" onClick={() => setIsOpen(false)}>Resilient Livelihood</NavLink>
-                    </li>
-                  </ul>
-                </div>
-                <div className="dropdown-content">
-                  <img src={assets.Nutrition2} alt="Our Work" />
-                </div>
-              </div>
+              <span 
+                className="link" 
+                onClick={() => toggleDropdown("work")}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => e.key === 'Enter' && toggleDropdown("work")}
+                aria-expanded={openDropdown === "work"}
+                aria-haspopup="true"
+              >
+                OUR WORK
+              </span>
+              <DropdownMenu type="work" />
             </li>
 
             {/* OUR PROGRAMS */}
@@ -149,39 +257,25 @@ function Navbar() {
               className={`links dropdown-parent ${openDropdown === "programs" ? "open" : ""}`}
               ref={(el) => (dropdownRefs.current["programs"] = el)}
             >
-              <span className="link" onClick={() => toggleDropdown("programs")}>OUR PROGRAMS</span>
-              <div className="dropdown">
-                <div className="dropdown-content">
-                  <div className="data">
-                    <h2>Our Programs</h2>
-                    <p>We run initiatives like Youth Digital Space, Internet for Scholarship, and Smallest Library WASH & Feeding.</p>
-                  </div>
-                </div>
-                <div className="vertical-line"></div>
-                <div className="dropdown-content">
-                  <ul>
-                    <li>
-                      <NavLink to="/programs/youth-digital-space" onClick={() => setIsOpen(false)}>Youth Digital Space</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/programs/internet-scholarship" onClick={() => setIsOpen(false)}>Internet for Scholarship</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/programs/smallest-library" onClick={() => setIsOpen(false)}>Smallest Library WASH & Feeding</NavLink>
-                    </li>
-                  </ul>
-                </div>
-                <div className="dropdown-content">
-                  <img src={assets.digitalSpace} alt="Our Programs" />
-                </div>
-              </div>
+              <span 
+                className="link" 
+                onClick={() => toggleDropdown("programs")}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => e.key === 'Enter' && toggleDropdown("programs")}
+                aria-expanded={openDropdown === "programs"}
+                aria-haspopup="true"
+              >
+                OUR PROGRAMS
+              </span>
+              <DropdownMenu type="programs" />
             </li>
 
             {/* CONTACT */}
             <li className="links">
               <NavLink
                 to="/contact"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
                 className={({ isActive }) => (isActive ? "link active-link" : "link")}
               >
                 CONTACT US
@@ -192,7 +286,7 @@ function Navbar() {
             <li className="links">
               <NavLink
                 to="/news"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMenu}
                 className={({ isActive }) => (isActive ? "link active-link" : "link")}
               >
                 NEWS
@@ -203,8 +297,11 @@ function Navbar() {
             <li className="links">
               <NavLink
                 to="/register"
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) => (isActive ? "link active-link register-icon" : "link register-icon")}
+                onClick={closeMenu}
+                className={({ isActive }) => 
+                  isActive ? "link active-link" : "link"
+                }
+                aria-label="Register or Login"
               >
                 <IoPersonCircle className="register-icon" />
               </NavLink>
@@ -213,17 +310,33 @@ function Navbar() {
         </nav>
 
         {/* Donate Button */}
-        <NavLink to="/donate" className="btn nav_btn">
+        <NavLink to="/donate" className="btn nav_btn" onClick={closeMenu}>
           DONATE
         </NavLink>
 
         {/* Mobile menu icon */}
         {!isOpen && (
-          <span className="material-symbols-outlined menu" onClick={toggleMenu}>
+          <span 
+            className="material-symbols-outlined menu" 
+            onClick={toggleMenu}
+            role="button"
+            aria-label="Open menu"
+            tabIndex={0}
+            onKeyPress={(e) => e.key === 'Enter' && toggleMenu()}
+          >
             menu
           </span>
         )}
       </div>
+
+      {/* Overlay for mobile menu */}
+      {isOpen && (
+        <div 
+          className="navbar-overlay" 
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
     </header>
   );
 }

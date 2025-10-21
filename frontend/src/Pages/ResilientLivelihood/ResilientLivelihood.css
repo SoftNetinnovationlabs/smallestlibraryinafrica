@@ -1,0 +1,364 @@
+/* ==============================
+   RESILIENT LIVELIHOOD PAGE
+============================== */
+
+.livelihood-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.livelihood-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.livelihood-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(249, 147, 13, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.livelihood-hero-content {
+  /* max-width: 900px; */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.livelihood-main-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.livelihood-intro-text {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ==============================
+   CONTENT WRAPPER
+============================== */
+.livelihood-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* ==============================
+   LIVELIHOOD CARD
+============================== */
+.livelihood-card {
+  /* background: #ffffff; */
+  /* border-radius: 20px; */
+  padding: 3rem;
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); */
+  position: relative;
+  overflow: hidden;
+  margin-top: -3rem;
+}
+
+.livelihood-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  /* background: linear-gradient(90deg, #a78bfa, #f9930d); */
+}
+
+/* ==============================
+   GRID LAYOUT
+============================== */
+.livelihood-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ==============================
+   TEXT SECTION
+============================== */
+.livelihood-text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(249, 147, 13, 0.1));
+  border: 2px solid rgba(167, 139, 250, 0.3);
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.section-badge span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #a78bfa, #f9930d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.livelihood-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.title-divider {
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #a78bfa, #f9930d);
+  border-radius: 3px;
+}
+
+.livelihood-description {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: #4a5568;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* ==============================
+   IMAGE SECTION
+============================== */
+.livelihood-image-section {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.livelihood-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container:hover .livelihood-image {
+  transform: scale(1.08);
+}
+
+/* ==============================
+   IMAGE OVERLAY
+============================== */
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-message {
+  color: #ffffff;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+/* Large Tablets */
+@media screen and (max-width: 1024px) {
+  .livelihood-grid {
+    gap: 3rem;
+  }
+
+  .livelihood-card {
+    padding: 2.5rem;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media screen and (max-width: 900px) {
+  .livelihood-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .image-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .livelihood-text-section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .section-badge {
+    margin: 0 auto;
+  }
+
+  .image-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .livelihood-hero {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .livelihood-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .livelihood-intro-text {
+    font-size: 1rem;
+  }
+
+  .livelihood-content-wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .livelihood-card {
+    padding: 2rem 1.5rem;
+    margin-top: -2rem;
+    border-radius: 16px;
+  }
+
+  .livelihood-grid {
+    gap: 2rem;
+  }
+
+  .livelihood-title {
+    font-size: 1.75rem;
+  }
+
+  .livelihood-description {
+    font-size: 1rem;
+  }
+
+  .title-divider {
+    width: 80px;
+    height: 4px;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .livelihood-hero {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .livelihood-main-title {
+    font-size: 2rem;
+  }
+
+  .livelihood-intro-text {
+    font-size: 0.95rem;
+  }
+
+  .livelihood-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .livelihood-title {
+    font-size: 1.5rem;
+  }
+
+  .section-badge {
+    padding: 0.4rem 1rem;
+  }
+
+  .section-badge span {
+    font-size: 0.8rem;
+  }
+
+  .overlay-message {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+@media (prefers-reduced-motion: reduce) {
+  .livelihood-image,
+  .image-overlay {
+    transition: none;
+  }
+
+  .image-container:hover .livelihood-image {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .livelihood-main-title {
+    -webkit-text-fill-color: #ffffff;
+  }
+
+  .livelihood-card::before {
+    height: 6px;
+  }
+
+  .section-badge {
+    border-width: 3px;
+  }
+}
