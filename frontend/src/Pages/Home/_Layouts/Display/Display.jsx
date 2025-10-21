@@ -14,7 +14,7 @@ const Display = () => {
                             <div className="text">
                                 <p>We foster a mindset of innovation, growth, and positive impact.</p>
                             </div>
-                            <Link to={'/our-work'} className='cta'>Our Programs</Link>
+                            <Link to={'/programs/youth-digital-space'} className='cta'>Our Programs</Link>
                         </div>
                     </div>
                 </div>

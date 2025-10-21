@@ -9,7 +9,7 @@ const connectRedis = async () => {
         ? process.env.REDIS_REST_URL
         : process.env.REDIS_REST_URL_LOCAL || "redis://localhost:6379";
 
-    console.log(`🔗 Connecting to Redis using URL: ${redisUrl}`);
+    console.log(` Connecting to Redis using URL: ${redisUrl}`);
     redisClient = new Redis(redisUrl, {
       retryStrategy: (times) => Math.min(times * 100, 3000),
       maxRetriesPerRequest: null,
