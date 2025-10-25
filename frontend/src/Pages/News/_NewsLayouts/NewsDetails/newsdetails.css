@@ -1,74 +1,685 @@
-.news-details {
+.news-details-container {
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #f4f4f9 0%, #e0e7ff 50%, #c7d2fe 100%); Softer blues/purples for IG vibe */
   padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #222;
-  background-color: #fff;
 }
 
-.news-details h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
+/* Header Navigation - Minimal, story-like top bar */
+.news-details-header {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideDown 0.5s ease;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1); /* Subtle divider like IG stories */
+  padding-bottom: 1rem;
+  background: white;
 }
 
-.news-details img {
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-button,
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent for modern feel */
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px; /* More rounded, IG-button style */
+  color: #6366f1; /* IG purple */
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(10px); /* Glassmorphism touch */
+}
+
+.back-button:hover,
+.share-button:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Share Menu - Dropdown like IG share sheet */
+.share-container {
+  position: relative;
+}
+
+.share-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 1000;
+  animation: dropdownSlide 0.3s ease;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.share-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
-  max-height: 400px;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: #6366f1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+}
+
+.share-item:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #4f46e5;
+}
+
+.share-item:not(:last-child) {
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.share-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* Light overlay like IG modals */
+  z-index: 999;
+}
+
+/* Article Container - Card-like with IG polish */
+.news-details-article {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px; /* Softer rounds */
+  /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); Lighter, more modern shadow */
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease;
+  border-left: 1px solid rgba(102, 126, 234, 0.1);
+    border-right: 1px solid rgba(102, 126, 234, 0.1);
+
+}
+.article-header{
+  background: white;
+  z-index: 0;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Article Header - Bold, engaging typography */
+.article-header {
+  padding: 3rem 3rem 2rem;
+}
+
+.article-title {
+  margin: 0 0 1.5rem 0;
+  color: #1e293b; /* Deeper navy for readability */
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.meta-item svg {
+  color: #6366f1; /* IG purple accent */
+}
+
+/* Main Image - IG-Style: Full-bleed hero with subtle filter */
+.main-image-container {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.main-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(0, 0, 0, 0.02); Subtle vignette */
+  z-index: 1;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(1.05) contrast(1.1); /* IG-like enhancement */
+  position: relative;
+  z-index: 2;
 }
 
-.news-details .excerpt {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
+.main-image-container:hover .main-image {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.15);
+}
+
+/* Excerpt - Highlight like IG captions */
+.article-excerpt {
+  padding: 2.5rem 3rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border-left: 4px solid #6366f1;
+  margin: 0;
+  position: relative;
+}
+
+.article-excerpt::after {
+  content: '💭'; /* Emoji accent for IG feel */
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.article-excerpt p {
+  margin: 0;
+  color: #475569;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
   font-style: italic;
-  border-left: 4px solid #4a90e2;
-  padding-left: 1rem;
 }
 
-.section {
-  margin-bottom: 2.5rem;
+/* Article Content - Clean, readable blocks */
+.article-content {
+  padding: 3rem;
 }
 
-.section h2 {
-  color: #4a90e2;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+.content-section {
+  margin-bottom: 3rem;
 }
 
-.section .news-img-tag{
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  margin: 0 0 1.5rem 0;
+  color: #1e293b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 2px;
+}
+
+/* Section Images - IG-Enhanced: Filters, rounded, immersive */
+.section-image-container {
+  margin: 2rem 0;
+  border-radius: 20px; /* Rounded like IG posts */
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   max-height: 400px;
-}
-.section img {
-  width:100%;
-  height:auto;
-  margin: 1rem 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.section p {
-  font-size: 1rem;
-  color: #444;
+.section-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(99, 102, 241, 0.03); /* Tint for cohesion */
+  z-index: 1;
 }
 
-/* Optional responsive tweak */
-@media (max-width: 600px) {
-  .news-details {
+.section-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  object-fit: contain;
+  object-position: center top;
+  position: relative;
+  z-index: 2;
+  filter: brightness(1.02) contrast(1.05);
+}
+
+.section-image-container:hover .section-image {
+  transform: scale(1.05);
+  filter: brightness(1.08) contrast(1.1);
+}
+
+.section-content {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.section-content p {
+  margin: 0 0 1.25rem 0;
+}
+
+.section-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Article Footer - Clean close like IG post footers */
+.article-footer {
+  padding: 2.5rem 3rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.footer-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  width: 80px; /* Slightly wider */
+}
+
+.footer-text {
+  margin: 0 0 1.5rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-back-button,
+.footer-share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-decoration: none;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.footer-back-button {
+  background: rgba(255, 255, 255, 0.9);
+  color: #6366f1;
+}
+
+.footer-share-button {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.footer-back-button:hover {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #6366f1;
+  color: #4f46e5;
+  transform: translateX(-3px);
+}
+
+.footer-share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* Error Container - Friendly, IG-error style */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); /* Warm yellow for approachable error */
+  border-radius: 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.5s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+.error-container svg {
+  color: #f59e0b;
+  margin-bottom: 1.5rem;
+}
+
+.error-container h2 {
+  margin: 0 0 1rem 0;
+  color: #92400e;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.error-container p {
+  margin: 0 0 2rem 0;
+  color: #d97706;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Tablet Styles - Optimized flow */
+@media (max-width: 1024px) {
+  .news-details-container {
+    padding: 1.5rem;
+  }
+
+  .article-header {
+    padding: 2.5rem 2.5rem 1.5rem;
+  }
+
+  .article-title {
+    font-size: 2.2rem;
+  }
+
+  .main-image-container {
+    max-height: 400px;
+  }
+
+  .article-excerpt {
+    padding: 2rem 2.5rem;
+  }
+
+  .article-content {
+    padding: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-image-container,
+  .section-image {
+    max-height: 350px;
+  }
+
+  .article-footer {
+    padding: 2rem 2.5rem;
+  }
+}
+
+/* Mobile Styles - Vertical story-like scroll */
+@media (max-width: 768px) {
+  .news-details-container {
     padding: 1rem;
   }
 
-  .news-details h1 {
+  .news-details-header {
+    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 1rem; /* Stack for thumb-friendly */
+  }
+
+  .back-button span,
+  .share-button span {
+    display: none;
+  }
+
+  .back-button,
+  .share-button {
+    padding: 0.75rem;
+    border-radius: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .article-header {
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .article-title {
+    font-size: 1.8rem;
+  }
+
+  .article-meta {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .meta-item {
+    font-size: 0.85rem;
+  }
+
+  .main-image-container {
+    max-height: 300px;
+  }
+
+  .article-excerpt {
+    padding: 1.5rem;
+    border-left: none;
+    border-radius: 16px;
+    margin: 1rem;
+  }
+
+  .article-excerpt::after {
+    display: none; /* Hide emoji on small screens */
+  }
+
+  .article-excerpt p {
+    font-size: 1.05rem;
+  }
+
+  .article-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-image-container,
+  .section-image {
+    max-height: 300px;
+    margin: 1.5rem 0;
+  }
+
+  .section-content {
+    font-size: 1rem;
+  }
+
+  .article-footer {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+  }
+
+  .footer-back-button,
+  .footer-share-button {
+    width: 100%;
+  }
+}
+
+/* Small Mobile - Ultra-compact */
+@media (max-width: 480px) {
+  .news-details-container {
+    padding: 0.75rem;
+  }
+
+  .article-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .article-title {
     font-size: 1.5rem;
   }
 
-  .section h2 {
-    font-size: 1.2rem;
+  .main-image-container {
+    max-height: 250px;
   }
+
+  .article-excerpt {
+    padding: 1.25rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .article-excerpt p {
+    font-size: 1rem;
+  }
+
+  .article-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .section-image-container,
+  .section-image {
+    max-height: 250px;
+  }
+
+  .section-content {
+    font-size: 0.95rem;
+  }
+
+  .content-section {
+    margin-bottom: 2rem;
+  }
+
+  .article-footer {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* Print Styles - Clean black/white */
+@media print {
+  .news-details-header,
+  .share-container,
+  .article-footer,
+  .footer-actions {
+    display: none;
+  }
+
+  .news-details-container {
+    background: white;
+    padding: 0;
+  }
+
+  .news-details-article {
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  .main-image,
+  .section-image {
+    page-break-inside: avoid;
+    max-height: none;
+    filter: none;
+  }
+}
+
+/* Accessibility - Respect user prefs */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States - High visibility */
+.back-button:focus-visible,
+.share-button:focus-visible,
+.share-item:focus-visible,
+.footer-back-button:focus-visible,
+.footer-share-button:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
