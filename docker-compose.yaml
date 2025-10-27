@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  slia-backend:
+    build: ./backend
+    container_name: slia-backend
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - PORT=9000
+      - REDIS_HOST=192.168.0.103
+      - REDIS_PORT=6379
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.slia-backend.rule=Host(`slia.netoracloud.com`)"
+      - "traefik.http.routers.slia-backend.entrypoints=web"
+      - "traefik.http.services.slia-backend.loadbalancer.server.port=9000"
+    networks:
+      - netoracloud
+
+networks:
+  netoracloud:
+    external: true
