@@ -31,7 +31,7 @@ import WashFeedingProgramPage from './Pages/washFeedingProgramPage/washFeedingPr
 import YouthDigitalSpaceProgram from './Pages/Youths/YouthsDigitalSpace.jsx';
 import ResilientLivelihood from './Pages/ResilientLivelihood/ResilientLivelihood.jsx'
 // 🔐 Set to false to block the site
-const hasPaid = false;
+const hasPaid = true;
 
 const App = () => {
   const location = useLocation();
